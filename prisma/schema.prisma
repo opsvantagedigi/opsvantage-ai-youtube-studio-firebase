@@ -19,6 +19,7 @@ model User {
   updatedAt DateTime @updatedAt
   memberships UserWorkspaceMembership[]
   workspaces  Workspace[] @relation("WorkspaceOwner")
+  auditLogs  AuditLog[]
 }
 
 enum UserRole {
