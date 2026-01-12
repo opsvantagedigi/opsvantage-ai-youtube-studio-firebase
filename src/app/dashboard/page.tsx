@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma"
 import { getServerSession } from "next-auth"
-import { authOptions } from "../../lib/auth"
+import { authOptions } from "@/lib/auth"
+import { getUserSubscriptionStatus } from "@/lib/subscription"
 import Link from "next/link"
 
 export default async function DashboardPage() {
@@ -32,6 +33,8 @@ export default async function DashboardPage() {
 
   const workspaces = user?.memberships.map((m) => m.workspace) ?? []
 
+  const subscriptionStatus = await getUserSubscriptionStatus(user?.id ?? null)
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100">
       <header className="border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
@@ -56,6 +59,19 @@ export default async function DashboardPage() {
           <p className="text-sm text-slate-300">
             Choose a workspace to open the AI Explainer Engine.
           </p>
+        </div>
+
+        <div className="mb-6">
+          <div className="rounded-xl border border-white/10 bg-slate-950/70 p-4">
+            <p className="text-sm text-slate-200">Account status: <span className="font-semibold">{subscriptionStatus}</span></p>
+            {subscriptionStatus !== "active" && (
+              <div className="mt-3">
+                <Link href="/app/billing/upgrade" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#003B73] via-[#00A676] to-[#F2C14E] text-slate-950 text-sm font-semibold">
+                  Upgrade to Pro
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">

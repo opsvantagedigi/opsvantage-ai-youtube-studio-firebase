@@ -5,9 +5,11 @@ import EmailProvider from "next-auth/providers/email"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { prisma } from "./prisma"
 import nodemailer from "nodemailer"
+import Redis from "ioredis"
 
-// Simple in-memory rate limiter for verification emails.
-// Production: replace with Redis or a durable store.
+// Rate limiter: prefer Redis when REDIS_URL is provided, else fallback to in-memory map.
+const redisUrl = process.env.REDIS_URL
+const redisClient = redisUrl ? new Redis(redisUrl) : null
 const emailRateMap = new Map<string, { count: number; firstTs: number }>()
 const EMAIL_RATE_LIMIT = Number(process.env.EMAIL_RATE_LIMIT ?? 5) // max sends
 const EMAIL_RATE_WINDOW_MS = Number(process.env.EMAIL_RATE_WINDOW_MS ?? 1000 * 60 * 60) // default 1 hour
@@ -53,22 +55,38 @@ export const authOptions: NextAuthOptions = {
       try {
         const email = identifier
 
-        // rate limit
-        const now = Date.now()
-        const entry = emailRateMap.get(email)
-        if (!entry) {
-          emailRateMap.set(email, { count: 1, firstTs: now })
-        } else {
-          if (now - entry.firstTs > EMAIL_RATE_WINDOW_MS) {
-            emailRateMap.set(email, { count: 1, firstTs: now })
-          } else {
-            entry.count += 1
-            if (entry.count > EMAIL_RATE_LIMIT) {
-              // too many sends — skip sending to prevent spam
-              console.warn(`Rate limit hit for ${email}`)
+        // rate limit: try Redis, otherwise fallback to in-memory map
+        if (redisClient) {
+          try {
+            const key = `email:verify:${email}`
+            const count = await redisClient.incr(key)
+            if (count === 1) {
+              await redisClient.pexpire(key, EMAIL_RATE_WINDOW_MS)
+            }
+            if (count > EMAIL_RATE_LIMIT) {
+              console.warn(`Rate limit hit for ${email} (redis)`)
               return
             }
-            emailRateMap.set(email, entry)
+          } catch (err) {
+            console.warn("Redis rate limiter failed, falling back to memory", err)
+          }
+        } else {
+          const now = Date.now()
+          const entry = emailRateMap.get(email)
+          if (!entry) {
+            emailRateMap.set(email, { count: 1, firstTs: now })
+          } else {
+            if (now - entry.firstTs > EMAIL_RATE_WINDOW_MS) {
+              emailRateMap.set(email, { count: 1, firstTs: now })
+            } else {
+              entry.count += 1
+              if (entry.count > EMAIL_RATE_LIMIT) {
+                // too many sends — skip sending to prevent spam
+                console.warn(`Rate limit hit for ${email}`)
+                return
+              }
+              emailRateMap.set(email, entry)
+            }
           }
         }
 
