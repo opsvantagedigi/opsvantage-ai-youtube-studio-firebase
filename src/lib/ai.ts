@@ -1,4 +1,4 @@
-import prisma from './prisma';
+import { prisma } from './prisma';
 
 type GenerateResult = {
   script: string;
@@ -23,7 +23,7 @@ async function callOpenAI(prompt: string): Promise<string> {
     }),
   });
   if (!res.ok) throw new Error(`OpenAI error: ${res.statusText}`);
-  const data = await res.json();
+  const data: any = await res.json();
   const text = data?.choices?.[0]?.message?.content ?? data?.choices?.[0]?.text;
   return String(text ?? '').trim();
 }

@@ -69,7 +69,7 @@ export async function generateExplainer({ prompt, niche }: { prompt: string; nic
         }),
       });
 
-      const data = await res.json().catch(() => null);
+      const data: any = await res.json().catch(() => null);
       const text =
         data?.choices?.[0]?.message?.content ?? data?.choices?.[0]?.text ?? String(data ?? '');
       const parsed = safeExtractJSON(String(text));
@@ -94,7 +94,7 @@ export async function generateExplainer({ prompt, niche }: { prompt: string; nic
           candidate_count: 1,
         }),
       });
-      const data = await res.json().catch(() => null);
+      const data: any = await res.json().catch(() => null);
       const text = data?.candidates?.[0]?.content ?? data?.candidates?.[0]?.output ?? String(data ?? '');
       const parsed = safeExtractJSON(String(text));
       if (parsed && parsed.title && parsed.script) {

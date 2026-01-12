@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { prisma } from '@/lib/prma';
+import { prisma } from '@/lib/prisma';
 import { uploadShort } from '@/lib/youtube';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

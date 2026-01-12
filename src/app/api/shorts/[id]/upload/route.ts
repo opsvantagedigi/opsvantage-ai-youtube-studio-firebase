@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
+import { prisma } from '@/lib/prisma';
 import { uploadShort } from '@/lib/youtube';
 
 export async function POST(req: Request, ctx: any) {
