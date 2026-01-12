@@ -10,7 +10,8 @@ export async function POST(req: NextRequest) {
     basic: { price: 10, name: 'Basic' },
     pro: { price: 30, name: 'Pro' },
   };
-  const plan = plans[planId];
+  type PlanKey = keyof typeof plans;
+  const plan = plans[planId as PlanKey];
   if (!plan) return NextResponse.json({ error: 'Invalid plan' }, { status: 400 });
 
   // Create payment via NowPayments API
