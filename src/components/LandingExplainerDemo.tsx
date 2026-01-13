@@ -52,7 +52,7 @@ export default function LandingExplainerDemo() {
     </div>
   )
 }
-"use client";
+
 import React, { useState } from "react";
 
 export function LandingExplainerDemo() {
