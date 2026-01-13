@@ -17,10 +17,11 @@ export async function POST(req: NextRequest) {
     const sub = await prisma.subscription.create({
       data: {
         userId,
+        planId: 'dev',
         provider: "nowpayments",
         providerOrderId,
-        priceAmount: Number(price),
-        priceCurrency: currency,
+        amountCents: Math.round(Number(price) * 100),
+        currency,
         status: "pending",
       },
     });
