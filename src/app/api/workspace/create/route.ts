@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
-import { prisma } from '@/lib/prisma';
+const { getPrisma } = require('@/lib/getPrisma');
 
 export async function POST(req: NextRequest) {
+  const prisma = getPrisma();
   const session = await getServerSession();
   if (!session?.user?.email) return NextResponse.redirect('/login');
   const form = await req.formData();

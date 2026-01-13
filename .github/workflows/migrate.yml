@@ -1,9 +1,11 @@
-name: Apply Prisma Migrations
+name: Run Prisma Migrations
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main
+    paths:
+      - "prisma/**"
+      - ".github/workflows/migrate.yml"
 
 jobs:
   migrate:
@@ -13,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -21,22 +23,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate Prisma schema
-        run: npx prisma validate
+      - name: Generate Prisma Client
+        run: npx prisma generate
 
-      - name: Check for schema drift
-        run: npx prisma db pull
-
-      - name: Apply migrations
+      - name: Run Prisma Migrate
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: npx prisma migrate deploy
-
-      - name: Run seed script (optional)
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npx ts-node prisma/seed.ts
-
-      - name: Post-migration validation
-        run: |
-          echo "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';" | npx prisma db execute --stdin

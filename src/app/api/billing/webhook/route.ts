@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+const { getPrisma } = require('@/lib/getPrisma');
 
 // NowPayments webhook handler
 export async function POST(req: NextRequest) {
+  const prisma = getPrisma();
   const event = await req.json();
   // Validate NowPayments signature if needed
   if (event.payment_status === 'finished' && event.order_id) {

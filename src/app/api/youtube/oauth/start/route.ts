@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+const { getPrisma } = require('@/lib/getPrisma');
 
 // This endpoint starts the YouTube OAuth flow
 export async function POST(req: NextRequest) {
+  const prisma = getPrisma();
   const form = await req.formData();
   const workspaceId = form.get('workspaceId') as string;
   // Construct Google OAuth URL

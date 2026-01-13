@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+const { getPrisma } = require('@/lib/getPrisma');
 
 const plans = {
   basic: { price: 10, name: "Basic" },
@@ -9,6 +10,8 @@ type PlanId = keyof typeof plans // "basic" | "pro"
 
 export async function POST(req: Request) {
   const body = (await req.json()) as { planId?: string; workspaceId?: string }
+
+  const prisma = getPrisma();
 
   const planIdRaw = body.planId
   const workspaceId = body.workspaceId

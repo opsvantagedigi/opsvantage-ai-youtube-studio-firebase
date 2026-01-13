@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+const { getPrisma } = require('@/lib/getPrisma');
 
 // This endpoint handles the YouTube OAuth callback
 export async function GET(req: NextRequest) {
+  const prisma = getPrisma();
   const { searchParams } = new URL(req.url);
   const code = searchParams.get('code');
   const workspaceId = searchParams.get('state');
