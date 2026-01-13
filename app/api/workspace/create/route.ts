@@ -5,7 +5,14 @@ import { auditEvent } from "@/lib/auth/audit";
 
 export async function POST(req: Request) {
   try {
-    const session = await auth();
+    let session;
+    try {
+      session = await auth();
+    } catch (e) {
+      // auth() failure should be treated as unauthenticated for safety
+      console.error("[workspace.create] auth() error:", e);
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
 
     if (!session?.user?.id) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
