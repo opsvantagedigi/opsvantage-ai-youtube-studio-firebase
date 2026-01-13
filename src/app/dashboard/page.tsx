@@ -47,8 +47,14 @@ import DashboardClient from "./DashboardClient";
             </p>
             <p className="text-sm text-slate-200">Dashboard</p>
           </div>
-          <div className="text-xs text-slate-300">
-            {session.user.email}
+          <div className="flex items-center gap-4">
+            <a
+              href="/billing"
+              className="text-blue-600 hover:underline text-sm"
+            >
+              Manage Subscription
+            </a>
+            <span className="text-xs text-slate-300">{session.user.email}</span>
           </div>
         </div>
       </header>

@@ -1,0 +1,28 @@
+name: Post Deploy Smoke
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - vercel-deploy
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run smoke tests against deployed URL
+        run: |
+          echo "Running smoke tests against ${{ secrets.VERCEL_DEPLOY_URL }}"
+          DEPLOY_URL=${{ secrets.VERCEL_DEPLOY_URL }} node ./scripts/smoke.mjs
