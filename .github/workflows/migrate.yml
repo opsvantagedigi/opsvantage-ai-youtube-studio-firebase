@@ -1,7 +1,7 @@
 name: Run Prisma Migrations
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   migrate:
