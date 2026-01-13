@@ -9,12 +9,10 @@ jobs:
   uptime:
     runs-on: ubuntu-latest
 
-    # use secrets directly in steps to avoid invalid context access warnings
-
     steps:
       - name: Check health endpoint
         run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$VERCEL_DEPLOY_URL/api/health")
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${{ secrets.VERCEL_DEPLOY_URL }}/api/health")
           if [ "$STATUS" -ne 200 ]; then
             echo "Health check failed with status $STATUS"
             exit 1
@@ -24,5 +22,5 @@ jobs:
         if: failure()
         run: |
           curl -X POST -H 'Content-type: application/json' \
-            --data "{\"text\":\"🛑 OpsVantage Alert — Heartbeat Missed\nURL: $VERCEL_DEPLOY_URL/api/health\"}" \
-            "$SLACK_WEBHOOK_URL"
+            --data "{\"text\":\"🛑 OpsVantage Alert — Heartbeat Missed\nURL: ${{ secrets.VERCEL_DEPLOY_URL }}/api/health\"}" \
+            ${{ secrets.SLACK_WEBHOOK_URL }}
