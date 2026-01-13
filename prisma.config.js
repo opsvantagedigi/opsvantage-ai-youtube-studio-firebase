@@ -3,7 +3,10 @@ try {
   const { defineConfig } = require('@prisma/config');
   module.exports = defineConfig({
     client: { engineType: 'binary' },
-    datasource: { url: process.env.DATABASE_URL },
+    datasource: {
+      provider: "postgresql",
+      url: process.env.DATABASE_URL,
+    },
   });
 } catch (e) {
   // Fallback: export a plain object if @prisma/config is unavailable in this environment
