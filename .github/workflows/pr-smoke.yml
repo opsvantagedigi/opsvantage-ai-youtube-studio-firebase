@@ -1,1 +1,46 @@
-.github/workflows/pr-smoke.yml
+name: PR Smoke
+
+on:
+	pull_request:
+		branches:
+			- main
+
+jobs:
+	smoke:
+		runs-on: ubuntu-latest
+
+		steps:
+			- name: Checkout
+				uses: actions/checkout@v4
+
+			- name: Setup Node
+				uses: actions/setup-node@v4
+				with:
+					node-version: 20
+
+			- name: Install dependencies
+				run: npm ci
+
+			- name: Build
+				run: npm run build
+				env:
+					DATABASE_URL: ${{ secrets.DATABASE_URL }}
+					NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+					NEXTAUTH_URL: "http://localhost:3000"
+
+			- name: Start dev server
+				run: |
+					npm run dev -- --port 3000 &
+					echo "Waiting for server..."
+					sleep 20
+
+			- name: Run smoke tests
+				run: |
+					DEPLOY_URL=http://localhost:3000 node ./scripts/smoke.mjs
+
+			- name: Notify Slack on failure
+				if: failure()
+				run: |
+					curl -X POST -H 'Content-type: application/json' \
+						--data "{\"text\":\"🛑 OpsVantage Alert — PR Smoke Check Failed\nPR: <${{ github.event.pull_request.html_url }}|PR #${{ github.event.pull_request.number }}>\"}" \
+						${{ secrets.SLACK_WEBHOOK_URL }}
