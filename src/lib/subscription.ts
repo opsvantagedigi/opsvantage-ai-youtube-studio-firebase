@@ -22,15 +22,4 @@ export async function getUserSubscriptionStatus(userId: string | null | undefine
   }
 }
 
-  switch (sub.status) {
-    case "active":
-      return "active"
-    case "pending":
-      return "pending"
-    case "failed":
-    case "expired":
-      return "failed"
-    default:
-      return "pending"
-  }
-}
+// ...existing code...
