@@ -90,34 +90,6 @@ export async function POST(req: NextRequest) {
       { status: 500 }
     );
   }
-// ...existing code...
-      const b64 = hmac.toString("base64")
-
-      const normalized = sigHeader.replace(/^sha256=(.+)$/i, "$1").replace(/^sha256:/i, "")
-
-      if (normalized !== hex && normalized !== b64) {
-        return new NextResponse("Invalid signature", { status: 401 })
-      }
-    } catch (err) {
-      return new NextResponse("Signature verification failed", { status: 401 })
-    }
-  } else {
-    // If no signature header present, require that an IPN secret still exists and proceed
-    // (We already check ipnSecret presence above.)
-  }
-
-  const paymentStatus = payload.payment_status as string | undefined
-  const orderId = payload.order_id as string | undefined
-  const paymentId = payload.payment_id as string | undefined
-
-  if (!orderId || !paymentStatus) {
-    return new NextResponse("Missing fields", { status: 400 })
-  }
-
-  let newStatus: string | null = null
-  switch (paymentStatus.toLowerCase()) {
-    case "finished":
-      newStatus = "active"
       break
     case "partially_paid":
     case "waiting":

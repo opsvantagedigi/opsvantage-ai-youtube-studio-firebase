@@ -25,9 +25,8 @@ const protectedPaths = ["/app", "/dashboard", "/admin"]
   }
 
   return NextResponse.next();
-  return NextResponse.next()
 }
+
 export const config = {
   matcher: ["/app/:path*", "/dashboard/:path*"],
 };
-}

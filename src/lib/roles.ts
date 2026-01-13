@@ -11,4 +11,4 @@ export async function isSuperUser(
   });
 
   return user?.role === "superuser";
-// ...existing code...
+}

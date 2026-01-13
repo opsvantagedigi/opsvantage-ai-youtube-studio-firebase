@@ -2,21 +2,7 @@ import { prisma } from "@/lib/prisma";
 
 export type SubscriptionStatusSimple = "none" | "pending" | "active" | "failed";
 
-import { prisma } from "@/lib/prisma";
-  switch (sub.status) {
-export type SubscriptionStatusSimple = "none" | "pending" | "active" | "failed";
-    case "active":
-export async function getUserSubscriptionStatus(
-  userId: string | null | undefined
-): Promise<SubscriptionStatusSimple> {
-  if (!userId) return "none";
-
-  const sub = await prisma.subscription.findFirst({
-    where: { userId },
-    orderBy: { createdAt: "desc" },
-  });
-
-  if (!sub) return "none";
+// ...existing code...
 
   switch (sub.status) {
     case "active":
