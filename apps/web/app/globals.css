@@ -29,7 +29,7 @@
   --font-orbitron: 'Orbitron', sans-serif;
   --font-inter: 'Inter', sans-serif;
 
-  --brand-gradient: linear-gradient(135deg, #0047FF 0%, #00FFD1 50%, #FFD600 100%);
+  --brand-gradient: linear-gradient(135deg, #0047ff 0%, #00ffd1 50%, #ffd600 100%);
   --background-dark: #050509;
   --card-bg: rgba(255, 255, 255, 0.03);
   --card-border: rgba(255, 255, 255, 0.1);
@@ -98,7 +98,9 @@ a:hover {
   font-weight: 600;
   background-color: #ffffff;
   color: #000000;
-  transition: background-color 150ms ease, transform 150ms ease;
+  transition:
+    background-color 150ms ease,
+    transform 150ms ease;
 }
 .btn-primary:hover {
   background-color: #ffd600;
@@ -165,7 +167,7 @@ a:hover {
   position: relative;
 }
 .ai-pulse::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: -4px;
   border-radius: inherit;
@@ -219,4 +221,43 @@ a:hover {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+/* Additional brand + glass tokens (merged per design request) */
+:root {
+  --brand-gradient: linear-gradient(135deg, #0047ff 0%, #00ffd1 50%, #ffd600 100%);
+  --midnight-obsidian: #030303;
+}
+
+@layer base {
+  body {
+    @apply bg-[#030303] text-white;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  .heading-orbitron {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+.brand-gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 255, 209, 0.3);
+  background: rgba(255, 255, 255, 0.05);
 }
