@@ -12,100 +12,56 @@ permissions:
 
 jobs:
   build:
-    name: Build & Test Backend
+    name: Build, Test & Publish API
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Fix .gitmodules submodule entries
+        run: |
+          if [ -f .gitmodules ]; then
+            git config -f .gitmodules --remove-section submodule.apps/web || true
+            git add .gitmodules || true
+          fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
 
-      - name: Install dependencies
-        run: |
-          cd apps/backend
-          npm install
+      - name: Install root dependencies
+        run: npm ci
 
-      - name: Run tests
-        run: |
-          cd apps/backend
-          npm test
-name: Backend CI
+      - name: Install API dependencies
+        run: npm ci --prefix apps/api
 
-on:
-  push:
-    branches: [ "develop" ]
-  pull_request:
-    branches: [ "develop" ]
-  packages: write
+      - name: Run backend tests
+        run: npm test --prefix apps/backend
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        name: Backend CI
+      - name: Lint (root)
+        run: npm run lint
 
-        on:
-          push:
-            branches: [ main, develop ]
-          pull_request:
-            branches: [ main, develop ]
+      - name: Typecheck (root)
+        run: npm run typecheck || true
 
-        permissions:
-          contents: read
-          packages: write
+      - name: Build API
+        run: npm --prefix apps/api run build
 
-        jobs:
-          build:
-            runs-on: ubuntu-latest
-            steps:
-              - name: Checkout
-                uses: actions/checkout@v4
+      - name: Log in to GHCR
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.CR_PAT }}
 
-              - name: Fix .gitmodules submodule entries
-                run: |
-                  if [ -f .gitmodules ]; then
-                    git config -f .gitmodules --remove-section submodule.apps/web || true
-                    git add .gitmodules || true
-                  fi
-
-              - name: Use Node.js 20
-                uses: actions/setup-node@v4
-                with:
-                  node-version: '20'
-
-              - name: Install root dependencies
-                run: npm ci
-
-              - name: Install API dependencies
-                run: npm ci --prefix apps/api
-
-              - name: Lint (root)
-                run: npm run lint
-
-              - name: Typecheck (root)
-                run: npm run typecheck || true
-
-              - name: Build API
-                run: npm --prefix apps/api run build
-
-              - name: Log in to GHCR
-                uses: docker/login-action@v2
-                with:
-                  registry: ghcr.io
-                  username: ${{ github.actor }}
-                  password: ${{ secrets.CR_PAT }}
-
-              - name: Build and push Docker image
-                uses: docker/build-push-action@v4
-                with:
-                  context: .
-                  file: ./apps/api/Dockerfile
-                  push: true
-                  tags: |
-                    ghcr.io/${{ github.repository_owner }}/ai-youtube-studio-api:develop-${{ github.sha }}
-                    ghcr.io/${{ github.repository_owner }}/ai-youtube-studio-api:develop-latest
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./apps/api/Dockerfile
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/ai-youtube-studio-api:develop-${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/ai-youtube-studio-api:develop-latest
