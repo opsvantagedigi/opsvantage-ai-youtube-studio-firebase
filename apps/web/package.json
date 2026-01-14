@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:favicon": "node scripts/generate-favicon.js"
   },
   "dependencies": {
     "@shadcn/ui": "^0.0.4",
@@ -26,6 +27,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "png-to-ico": "^1.0.0"
   }
 }
