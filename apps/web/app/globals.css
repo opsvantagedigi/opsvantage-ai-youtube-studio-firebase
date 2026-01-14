@@ -1,6 +1,7 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0f1c;
+  --foreground: #ffffff;
+  --muted: rgba(255, 255, 255, 0.8);
   --font-orbitron: 'Orbitron', sans-serif;
   --font-inter: 'Inter', sans-serif;
 }
@@ -12,23 +13,16 @@
   }
 }
 
-/* Global sizing reset */
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
 }
 
-/* Brand background gradient and text color */
-html {
-  background: linear-gradient(135deg, #001f3f 0%, #007f5f 50%, #ffc107 100%);
-  color: white;
-}
-
 body {
-  color: white;
-  background: transparent;
-  /* Use loaded Inter font via CSS variable, fall back to system */
+  color: var(--foreground);
+  background: var(--background);
+  /* prefer loaded variable font, fall back to system */
   font-family: var(
     --font-inter,
     Inter,
@@ -44,7 +38,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Basic reset */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -142,21 +135,28 @@ body {
 }
 
 /* simple brand gradient for headings */
-.brand-gradient {
-  background: linear-gradient(90deg, #005f73, #0a9396, #94d2bd);
+.brand-gradient,
+.gradient-heading {
+  background: linear-gradient(90deg, #3b82f6, #7c3aed, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Buttons */
 .btn-primary {
-  background: #007bff;
+  background: #3b82f6;
   color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-orbitron);
 }
 .btn-outline {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  color: white;
+  color: var(--foreground);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-inter);
 }
 
 /* Ensure images don't overflow */
