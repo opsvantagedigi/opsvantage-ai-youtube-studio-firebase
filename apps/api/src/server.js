@@ -29,7 +29,7 @@ server.get('/api/v1/video-jobs/:id', async (request, reply) => {
 
 const start = async () => {
   try {
-    await server.listen({ port: 3001 });
+    await server.listen({ port: 3001, host: '0.0.0.0' });
     server.log.info('API listening on 3001');
   } catch (err) {
     server.log.error(err);
