@@ -19,7 +19,7 @@ export function Sidebar() {
           height={36}
           className="rounded-md"
         />
-        <span className="font-orbitron text-xl gradient-heading">Studio</span>
+        <span className="font-orbitron text-xl brand-gradient">Studio</span>
       </div>
 
       <nav className="flex flex-col gap-2">
