@@ -32,7 +32,9 @@ export default function RootLayout({
         <link rel="icon" href="/brand-icon.png" />
         <link rel="shortcut icon" href="/brand-icon.png" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
