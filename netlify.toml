@@ -1,15 +1,10 @@
 [build]
-  command = "pnpm install && pnpm --filter apps/web build"
+  command = "cd apps/web && pnpm install && pnpm build"
   publish = "apps/web/.next"
+  environment = { NODE_VERSION = "20" }
 
 [context.production.environment]
   NODE_ENV = "production"
-[build]
-  command = "cd apps/web && pnpm install && pnpm build"
-  publish = "apps/web/.next"
-
-[build.environment]
-  NODE_VERSION = "20"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
@@ -18,9 +13,6 @@
   command = "cd apps/web && pnpm install && pnpm build"
 
 [context.staging]
-  command = "cd apps/web && pnpm install && pnpm build"
-
-[context.production]
   command = "cd apps/web && pnpm install && pnpm build"
 
 [[redirects]]

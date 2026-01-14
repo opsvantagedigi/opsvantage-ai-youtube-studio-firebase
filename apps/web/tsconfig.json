@@ -1,5 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "target": "ES2017",
@@ -23,7 +22,7 @@
       }
     ],
     "paths": {
-      "@repo/queue": ["../../packages/queue/index.ts"],
+      "@repo/*": ["../../packages/*"],
       "@/*": ["./*"]
     }
   },
