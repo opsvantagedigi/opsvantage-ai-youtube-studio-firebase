@@ -14,6 +14,7 @@ import {
   MessageSquare,
   ChevronRight,
 } from "lucide-react"
+import Link from "next/link"
 import { Card } from "../components/ui/card"
 import { Button } from "../components/ui/button"
 import { Textarea } from "../components/ui/textarea"
@@ -63,6 +64,7 @@ type SidebarItem = {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   label: string
   description: string
+  href?: string
 }
 
 const sidebarItems: SidebarItem[] = [
@@ -85,6 +87,12 @@ const sidebarItems: SidebarItem[] = [
     icon: Settings,
     label: "Workspace Settings",
     description: "Govern roles, niches, and engines.",
+  },
+  {
+    icon: Copy,
+    label: "Doctrine",
+    description: "Governance, rituals, and policies.",
+    href: "/doctrine",
   },
 ]
 
@@ -243,22 +251,24 @@ export default function AIExplainerPage() {
                 return (
                   <Tooltip key={item.label}>
                     <TooltipTrigger>
-                      <motion.button
-                        className="group flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-200/80 transition-colors hover:bg-slate-900/70 hover:text-slate-50"
-                        whileHover={{ x: 4 }}
-                        whileTap={{ scale: 0.97 }}
-                      >
-                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-[#003B73]/70 via-[#00A676]/70 to-[#F2C14E]/70 text-slate-950 shadow-md shadow-emerald-500/30">
-                          <Icon className="h-4 w-4" />
-                        </div>
-                        <div className="flex flex-col items-start">
-                          <span>{item.label}</span>
-                          <span className="text-[11px] font-normal text-slate-400">
-                            {item.description}
-                          </span>
-                        </div>
-                        <ChevronRight className="ml-auto h-4 w-4 text-slate-500 opacity-0 transition-opacity group-hover:opacity-100" />
-                      </motion.button>
+                      <Link href={item.href ?? "#"}>
+                        <motion.a
+                          className="group flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-slate-200/80 transition-colors hover:bg-slate-900/70 hover:text-slate-50"
+                          whileHover={{ x: 4 }}
+                          whileTap={{ scale: 0.97 }}
+                        >
+                          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-[#003B73]/70 via-[#00A676]/70 to-[#F2C14E]/70 text-slate-950 shadow-md shadow-emerald-500/30">
+                            <Icon className="h-4 w-4" />
+                          </div>
+                          <div className="flex flex-col items-start">
+                            <span>{item.label}</span>
+                            <span className="text-[11px] font-normal text-slate-400">
+                              {item.description}
+                            </span>
+                          </div>
+                          <ChevronRight className="ml-auto h-4 w-4 text-slate-500 opacity-0 transition-opacity group-hover:opacity-100" />
+                        </motion.a>
+                      </Link>
                     </TooltipTrigger>
                     <TooltipContent className="bg-slate-900 text-slate-100">
                       {item.label}
