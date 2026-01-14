@@ -1,0 +1,13 @@
+Vercel CLI 50.1.3
+Retrieving projectÔÇª
+Deploying ajay-sidals-projects-132aa3d1/opsvantage-ai-explainer-engine
+Uploading [--------------------] (0.0B/1022B)
+Uploading [========------------] (435.0B/1022B)
+Uploading [====================] (1022.0B/1022B)
+Inspect: https://vercel.com/ajay-sidals-projects-132aa3d1/opsvantage-ai-explainer-engine/EovAzJzYpTpAb2JumciJSARn6Tct [3s]
+Production: https://opsvantage-ai-explainer-engine-aw45m96g5.vercel.app [3s]
+Queued...
+Building: Running build in Washington, D.C., USA (East) ÔÇô iad1
+Building: Build machine configuration: 2 cores, 8 GB
+Building: Retrieving list of deployment files...
+Building: Downloading 312 deployment files...
