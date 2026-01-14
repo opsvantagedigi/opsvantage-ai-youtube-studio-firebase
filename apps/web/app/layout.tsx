@@ -1,3 +1,21 @@
+import './globals.css';
+import { orbitron, inter } from './fonts';
+
+export const metadata = {
+  title: 'AI-YouTube Studio',
+  description: 'OpsVantage Digital — AI YouTube Studio',
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${orbitron.variable} ${inter.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
 import type { Metadata } from 'next';
 import './globals.css';
 import { orbitron, inter } from './fonts';

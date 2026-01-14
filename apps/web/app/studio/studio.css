@@ -1,0 +1,17 @@
+/* studio-specific styles (fallbacks) */
+.studio-sidebar {
+  width: 18rem;
+  background: rgba(10, 15, 28, 0.9);
+  padding: 1rem;
+}
+.studio-header {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.studio-main {
+  padding: 2rem;
+}
