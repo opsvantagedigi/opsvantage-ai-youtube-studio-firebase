@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
+const path = require('path')
+
 const nextConfig = {
+  // Keep legacy/top-level turbopack key for compatibility
   turbopack: {
-    // Force Turbopack to treat /apps/web as the project root
     root: __dirname,
   },
-};
+  // Also set under experimental key which Turbopack in some Next versions reads
+  experimental: {
+    turbopack: {
+      root: path.resolve(__dirname),
+    },
+  },
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
