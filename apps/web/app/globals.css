@@ -1,10 +1,10 @@
 /* ---------------------------------------------------------
   Tailwind Base (v4)
 --------------------------------------------------------- */
-/* stylelint-disable-next-line at-rule-no-unknown */
+/* stylelint-disable at-rule-no-unknown */
 @import 'tailwindcss/preflight';
-/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
 
 /* ---------------------------------------------------------
    Font Variables
