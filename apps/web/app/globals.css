@@ -1,18 +1,3 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-orbitron: 'Orbitron', sans-serif;
-  --font-inter: 'Inter', sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* Global sizing reset */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -163,17 +148,6 @@ a {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.8);
   color: white;
-}
-
-/* Ensure images don't overflow */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
