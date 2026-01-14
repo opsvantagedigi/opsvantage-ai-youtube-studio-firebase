@@ -20,31 +20,51 @@ function signHS256(message: string, secret: string) {
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') return res.status(405).end('Method Not Allowed')
 
-  const {
-    serviceToken,
-    userId,
-    email,
-    name,
-    globalRole,
-    activeOrgId,
-    activeWorkspaceId,
-  } = req.body || {}
+  // Diagnostic logging helper
+  function log(label: string, value: any) {
+    try {
+      console.error(`[pages-dev-session] ${label}:`, value)
+    } catch (e) {
+      // noop
+    }
+  }
+
+  let body: Record<string, any> | null = null
+  try {
+    body = req.body || {}
+    log('incoming body', body)
+  } catch (err) {
+    log('body parse error', String(err))
+  }
+
+  const serviceToken = body?.serviceToken
+  const userId = body?.userId
+  const email = body?.email
+  const name = body?.name
+  const globalRole = body?.globalRole
+  const activeOrgId = body?.activeOrgId
+  const activeWorkspaceId = body?.activeWorkspaceId
+
+  log('NEXTAUTH_SECRET exists', !!process.env.NEXTAUTH_SECRET)
+  log('TEST_SERVICE_TOKEN exists', !!process.env.TEST_SERVICE_TOKEN)
 
   if (!SERVICE_TOKEN) {
-    console.error('TEST_SERVICE_TOKEN not configured')
+    log('missing TEST_SERVICE_TOKEN', 'undefined')
     return res.status(500).json({ error: 'Server misconfiguration' })
   }
 
   if (!serviceToken || serviceToken !== SERVICE_TOKEN) {
+    log('invalid service token', serviceToken)
     return res.status(403).json({ error: 'Forbidden' })
   }
 
   if (!NEXTAUTH_SECRET) {
-    console.error('NEXTAUTH_SECRET not configured')
+    log('missing NEXTAUTH_SECRET', 'undefined')
     return res.status(500).json({ error: 'Server misconfiguration' })
   }
 
   if (!userId || !email) {
+    log('missing userId/email', { userId, email })
     return res.status(400).json({ error: 'Missing required fields: userId, email' })
   }
 
@@ -64,15 +84,28 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     exp,
   }
 
-  const encodedHeader = base64url(JSON.stringify(header))
-  const encodedPayload = base64url(JSON.stringify(payload))
-  const signingInput = `${encodedHeader}.${encodedPayload}`
-  const signature = signHS256(signingInput, NEXTAUTH_SECRET as string)
-  const token = `${signingInput}.${signature}`
+  let token: string
+  try {
+    const encodedHeader = base64url(JSON.stringify(header))
+    const encodedPayload = base64url(JSON.stringify(payload))
+    const signingInput = `${encodedHeader}.${encodedPayload}`
+    const signature = signHS256(signingInput, NEXTAUTH_SECRET as string)
+    token = `${signingInput}.${signature}`
+    log('jwt signed', { jti: payload.jti })
+  } catch (err) {
+    log('jwt sign error', String(err))
+    return res.status(500).json({ error: 'Server misconfiguration' })
+  }
 
   const maxAge = 60 * 60 * 4
   const cookie = `next-auth.session-token=${token}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${maxAge}`
 
-  res.setHeader('Set-Cookie', cookie)
+  try {
+    res.setHeader('Set-Cookie', cookie)
+    log('set-cookie', 'written')
+  } catch (err) {
+    log('cookie set error', String(err))
+  }
+
   res.status(200).json({ success: true })
 }
