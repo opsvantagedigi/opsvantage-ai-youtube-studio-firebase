@@ -1,6 +1,7 @@
 /* stylelint-disable at-rule-no-unknown */
-@import 'tailwindcss/preflight';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* stylelint-enable at-rule-no-unknown */
 
 /* ---------------------------------------------------------
