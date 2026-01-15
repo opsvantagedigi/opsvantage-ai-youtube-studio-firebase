@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "EditorConfig.EditorConfig",
+    "eamodio.gitlens",
+    "bradlc.vscode-tailwindcss",
+    "ms-azuretools.vscode-docker",
+    "christian-kohler.path-intellisense",
+    "christian-kohler.npm-intellisense",
+    "jpoissonnier.vscode-styled-components"
+  ]
+}
