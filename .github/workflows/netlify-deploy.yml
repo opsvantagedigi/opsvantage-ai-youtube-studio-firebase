@@ -6,23 +6,12 @@ on:
       - main
 
 jobs:
-  deploy:
+  trigger:
     runs-on: ubuntu-latest
 
-    name: Trigger Netlify Deploy
-
-    on:
-      push:
-        branches:
-          - main
-
-    jobs:
-      trigger:
-        runs-on: ubuntu-latest
-
-        steps:
-          - name: Trigger Netlify build hook
-            uses: fjogeleit/http-request-action@v1
-            with:
-              url: ${{ secrets.NETLIFY_BUILD_HOOK }}
-              method: POST
+    steps:
+      - name: Trigger Netlify build hook
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: ${{ secrets.NETLIFY_BUILD_HOOK }}
+          method: POST

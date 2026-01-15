@@ -1,10 +1,9 @@
-﻿name: CI
+﻿name: Continuous Integration
 
 on:
   pull_request:
     branches:
       - main
-      - develop
 
 jobs:
   build:
@@ -17,36 +16,17 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          name: Continuous Integration
+          node-version: '20'
 
-          on:
-            pull_request:
-              branches:
-                - main
+      - name: Setup pnpm
+        run: |
+          npm install -g pnpm
 
-          jobs:
-            build:
-              runs-on: ubuntu-latest
+      - name: Install dependencies
+        run: |
+          pnpm install --frozen-lockfile
 
-              steps:
-                - name: Checkout
-                  uses: actions/checkout@v4
-
-                - name: Setup Node
-                  uses: actions/setup-node@v4
-                  with:
-                    node-version: '20'
-
-                - name: Setup pnpm
-                  run: |
-                    npm install -g pnpm
-
-                - name: Install dependencies
-                  run: |
-                    pnpm install --frozen-lockfile
-
-                - name: Build web
-                  working-directory: apps/web
-                  run: |
-                    pnpm build
+      - name: Build web
+        working-directory: apps/web
+        run: |
+          pnpm build

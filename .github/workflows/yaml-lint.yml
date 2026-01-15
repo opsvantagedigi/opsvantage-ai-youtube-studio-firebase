@@ -4,26 +4,20 @@ on:
   pull_request:
     branches:
       - main
-      name: YAML Lint
 
-      on:
-        pull_request:
-          branches:
-            - main
+jobs:
+  yamllint:
+    runs-on: ubuntu-latest
 
-      jobs:
-        yamllint:
-          runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-          steps:
-            - name: Checkout
-              uses: actions/checkout@v4
+      - name: Install yamllint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yamllint
 
-            - name: Install yamllint
-              run: |
-                sudo apt-get update
-                sudo apt-get install -y yamllint
-
-            - name: Run yamllint
-              run: |
-                yamllint -f parsable .github/workflows
+      - name: Run yamllint
+        run: |
+          yamllint -f parsable .github/workflows
