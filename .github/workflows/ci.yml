@@ -1,12 +1,12 @@
-name: Continuous Integration
+name: CI
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,17 +16,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
+          cache: pnpm
 
-      - name: Setup pnpm
-        run: |
-          npm install -g pnpm
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
 
       - name: Install dependencies
-        run: |
-          pnpm install --frozen-lockfile
+        run: pnpm install
 
+      - name: Lint
+        run: pnpm lint
 
-      - name: Build web
-        run: pnpm build
-        working-directory: apps/web
+      - name: Type Check
+        run: pnpm typecheck
