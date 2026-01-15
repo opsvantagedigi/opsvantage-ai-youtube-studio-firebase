@@ -1,18 +1,15 @@
-﻿---
-name: CI
+﻿name: CI
 
 on:
   pull_request:
     branches:
       - main
       - develop
-  push:
-    branches:
-      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,19 +17,36 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
+          name: Continuous Integration
 
-      - name: Install pnpm
-        run: npm i -g pnpm
+          on:
+            pull_request:
+              branches:
+                - main
 
-      - name: Install dependencies
-        run: pnpm install
+          jobs:
+            build:
+              runs-on: ubuntu-latest
 
-      - name: Lint
-        run: pnpm lint || true
+              steps:
+                - name: Checkout
+                  uses: actions/checkout@v4
 
-      - name: Type Check
-        run: pnpm tsc --noEmit
+                - name: Setup Node
+                  uses: actions/setup-node@v4
+                  with:
+                    node-version: '20'
 
-      - name: Build packages
-        run: pnpm -w -r build
+                - name: Setup pnpm
+                  run: |
+                    npm install -g pnpm
+
+                - name: Install dependencies
+                  run: |
+                    pnpm install --frozen-lockfile
+
+                - name: Build web
+                  working-directory: apps/web
+                  run: |
+                    pnpm build

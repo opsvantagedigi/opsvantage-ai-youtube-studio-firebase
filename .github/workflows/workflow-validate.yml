@@ -1,5 +1,4 @@
-﻿---
-name: Validate GitHub Workflows
+﻿name: Validate GitHub Workflows
 
 on:
   pull_request:

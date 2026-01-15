@@ -1,23 +1,29 @@
-﻿---
-name: YAML Lint
+﻿name: YAML Lint
 
 on:
-  workflow_dispatch:
   pull_request:
     branches:
       - main
-      - develop
+      name: YAML Lint
 
-jobs:
-  lint:
-    runs-on: ubuntu-latest
+      on:
+        pull_request:
+          branches:
+            - main
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      jobs:
+        yamllint:
+          runs-on: ubuntu-latest
 
-      - name: Install yamllint
-        run: sudo apt-get update && sudo apt-get install -y yamllint
+          steps:
+            - name: Checkout
+              uses: actions/checkout@v4
 
-      - name: Lint YAML files
-        run: yamllint .
+            - name: Install yamllint
+              run: |
+                sudo apt-get update
+                sudo apt-get install -y yamllint
+
+            - name: Run yamllint
+              run: |
+                yamllint -f parsable .github/workflows

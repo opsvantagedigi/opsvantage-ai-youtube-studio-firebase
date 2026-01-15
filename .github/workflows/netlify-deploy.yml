@@ -1,5 +1,4 @@
-﻿---
-name: Trigger Netlify Deploy
+﻿name: Trigger Netlify Deploy
 
 on:
   push:
@@ -9,6 +8,21 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Netlify Build Hook
-        run: curl -X POST "${{ secrets.NETLIFY_BUILD_HOOK_URL }}"
+
+    name: Trigger Netlify Deploy
+
+    on:
+      push:
+        branches:
+          - main
+
+    jobs:
+      trigger:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Trigger Netlify build hook
+            uses: fjogeleit/http-request-action@v1
+            with:
+              url: ${{ secrets.NETLIFY_BUILD_HOOK }}
+              method: POST
