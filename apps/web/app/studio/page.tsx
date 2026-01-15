@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import FloatingToolbar from './components/floating-toolbar'
-import PreviewPanel from './components/preview-panel'
+import { FloatingToolbar } from './components/floating-toolbar'
+import { PreviewPanel } from './components/preview-panel'
 
 export default function StudioPage() {
   const [playing, setPlaying] = useState(false)
