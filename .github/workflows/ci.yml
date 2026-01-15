@@ -1,4 +1,4 @@
-﻿name: Continuous Integration
+name: Continuous Integration
 
 on:
   pull_request:
@@ -30,3 +30,4 @@ jobs:
         working-directory: apps/web
         run: |
           pnpm build
+\n

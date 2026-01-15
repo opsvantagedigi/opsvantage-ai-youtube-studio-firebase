@@ -1,4 +1,4 @@
-﻿name: Auto Regenerate pnpm Lockfile
+name: Auto Regenerate pnpm Lockfile
 
 on:
   push:
@@ -35,3 +35,4 @@ jobs:
         with:
           commit_message: "chore(lockfile): auto-regenerate pnpm-lock.yaml"
           file_pattern: pnpm-lock.yaml
+\n

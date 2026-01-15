@@ -1,4 +1,4 @@
-﻿name: Trigger Netlify Deploy
+name: Trigger Netlify Deploy
 
 on:
   push:
@@ -15,3 +15,4 @@ jobs:
         with:
           url: ${{ secrets.NETLIFY_BUILD_HOOK }}
           method: POST
+\n

@@ -1,4 +1,4 @@
-﻿name: Validate GitHub Workflows
+name: Validate GitHub Workflows
 
 on:
   pull_request:
@@ -16,3 +16,4 @@ jobs:
 
       - name: Validate workflow syntax
         uses: docker://ghcr.io/rhysd/actionlint:latest
+\n
