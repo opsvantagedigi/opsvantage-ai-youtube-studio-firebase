@@ -1,6 +1,9 @@
 import Link from 'next/link'
+import { getServerSession } from 'next-auth'
+import { AuthButtons } from './AuthButtons'
 
-export default function Navbar() {
+export default async function Navbar() {
+  const session = await getServerSession()
   return (
     <header className="sticky top-0 z-20 w-full border-b border-white/5 bg-black/40 px-6 py-6 backdrop-blur-xl">
       <div className="container mx-auto flex items-center justify-between">
@@ -23,6 +26,9 @@ export default function Navbar() {
           >
             Enter Studio
           </Link>
+          <div className="ml-6 flex items-center">
+            <AuthButtons session={session} />
+          </div>
         </nav>
       </div>
     </header>
