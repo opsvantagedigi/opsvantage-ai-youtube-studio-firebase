@@ -1,14 +1,15 @@
 name: OpsVantage CI
+name: CI
 
 on:
-  push:
-    branches: [develop, main]
   pull_request:
+    branches:
+      - main
+      - develop
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -17,13 +18,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
+
+      - name: Build web
+        run: pnpm --filter web build
 
       - name: Lint
         run: pnpm lint

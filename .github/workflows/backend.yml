@@ -1,28 +1,34 @@
-name: Backend CI
+name: Backend Pipeline
 
 on:
   push:
-    branches: ["develop"]
-  pull_request:
-    branches: ["develop"]
-
-permissions:
-  contents: read
+    branches:
+      - main
+      - develop
 
 jobs:
-  build:
-    name: Build & Quick Checks
+  backend:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
+          cache: pnpm
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build worker
+        run: pnpm --filter worker build
       - name: Install dependencies (pnpm)
         run: |
           npm install -g pnpm@8 || true
