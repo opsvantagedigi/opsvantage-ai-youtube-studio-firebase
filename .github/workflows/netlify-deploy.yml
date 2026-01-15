@@ -31,13 +31,9 @@ jobs:
       - name: Build web app
         run: pnpm --filter web build
 
-      - name: Netlify Deploy
-        uses: netlify/actions/cli@v1
-        with:
-          args: deploy --dir=apps/web/.next --prodIfUnlocked
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      # Netlify deploy step removed as part of Cloudflare migration cleanup
+      # (Netlify deploys are now handled separately; removing Netlify actions to avoid
+      # resolution errors on runners where the Netlify action/version may not exist.)
 
       - name: Record Deploy Metadata
         run: |
