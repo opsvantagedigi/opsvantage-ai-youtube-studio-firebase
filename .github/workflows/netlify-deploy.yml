@@ -32,9 +32,10 @@ jobs:
         run: pnpm --filter web build
 
       - name: Netlify Deploy
-        uses: netlify/actions/cli@v1
+        uses: nwtgck/actions-netlify@v2
         with:
-          args: deploy --dir=apps/web/.next --prodIfUnlocked
+          publish-dir: apps/web/.next
+          production-deploy: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
