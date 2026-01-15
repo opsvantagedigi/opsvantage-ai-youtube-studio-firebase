@@ -2,7 +2,7 @@
  * Thumbnail Generator
  * Generates high-CTR thumbnails (stub).
  */
-export function generateThumbnail(): Buffer {
+export function generateThumbnail(script: string, brandAssets: any): Buffer {
   // Stub: Return empty buffer as placeholder
-  return Buffer.from([])
+  return Buffer.from([]);
 }

@@ -3,14 +3,14 @@
  * Abstraction for TTS providers (stub).
  */
 export interface VoiceoverConfig {
-  provider: 'elevenlabs' | 'playht' | 'azure' | 'mock'
-  voice: string
-  pace?: string
-  emotion?: string
-  pronunciation?: Record<string, string>
+  provider: 'elevenlabs' | 'playht' | 'azure' | 'mock';
+  voice: string;
+  pace?: string;
+  emotion?: string;
+  pronunciation?: Record<string, string>;
 }
 
-export function synthesizeVoice(): Buffer {
+export function synthesizeVoice(text: string, config: VoiceoverConfig): Buffer {
   // Stub: Return empty buffer as placeholder
-  return Buffer.from([])
+  return Buffer.from([]);
 }
