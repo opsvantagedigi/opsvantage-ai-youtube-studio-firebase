@@ -1,7 +1,7 @@
 ﻿---
 name: Trigger Netlify Deploy
 
-on:
+'on':
   push:
     branches:
       - main

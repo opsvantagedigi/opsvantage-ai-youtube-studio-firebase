@@ -1,7 +1,7 @@
 ﻿---
 name: Backend Pipeline
 
-on:
+'on':
   push:
     branches:
       - main
@@ -40,5 +40,7 @@ jobs:
 
       - name: Typecheck
         run: pnpm -w run typecheck --if-present || true
+
+
 
 

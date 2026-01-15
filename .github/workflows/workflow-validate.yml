@@ -1,7 +1,7 @@
 ﻿---
 name: Validate GitHub Workflows
 
-on:
+'on':
   pull_request:
     branches:
       - main
