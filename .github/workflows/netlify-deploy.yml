@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Trigger Netlify build hook
         uses: fjogeleit/http-request-action@v1
+
         with:
           url: ${{ secrets.NETLIFY_BUILD_HOOK }}
           method: POST
-\n

@@ -30,9 +30,9 @@ jobs:
           rm -f pnpm-lock.yaml
           pnpm install --lockfile-only
 
+
       - name: Commit lockfile
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(lockfile): auto-regenerate pnpm-lock.yaml"
           file_pattern: pnpm-lock.yaml
-\n
