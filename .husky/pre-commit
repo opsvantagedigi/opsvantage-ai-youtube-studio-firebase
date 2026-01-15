@@ -8,3 +8,10 @@ echo "✓ Pre-commit checks passed."
 . "$(dirname -- "$0")/_/husky.sh"
 
 npm test
+
+echo "Running YAML lint..."
+if command -v yamllint >/dev/null 2>&1; then
+	yamllint . || exit 1
+else
+	echo "Warning: yamllint not installed. Skipping YAML validation."
+fi
