@@ -32,7 +32,7 @@ jobs:
         run: pnpm --filter web build
 
       - name: Netlify Deploy
-        uses: netlify/actions/cli@v2
+        uses: netlify/actions/cli@v1
         with:
           args: deploy --dir=apps/web/.next --prodIfUnlocked
         env:
