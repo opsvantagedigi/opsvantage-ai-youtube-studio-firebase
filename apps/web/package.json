@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:cf": "npx @cloudflare/next-on-pages --experimental-minify",
     "start": "next start",
     "lint": "eslint",
     "build:favicon": "node scripts/generate-favicon.js"
@@ -24,6 +25,7 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@types/node": "^20",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",

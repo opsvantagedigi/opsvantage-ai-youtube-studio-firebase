@@ -1,0 +1,4 @@
+{
+  "buildCommand": "pnpm --filter web build:cf",
+  "buildOutputDirectory": ".vercel/output/static"
+}
