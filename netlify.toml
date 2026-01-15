@@ -21,9 +21,6 @@
   command = "pnpm install && pnpm --filter web build"
   publish = "apps/web/.next"
 
-[context.staging]
-  command = "pnpm install && pnpm --filter web build"
-  publish = "apps/web/.next"
 
 [context."branch=staging"]
   command = "pnpm install && pnpm --filter web build"

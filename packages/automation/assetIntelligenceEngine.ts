@@ -18,13 +18,3 @@ export function getBrandAssets(): BrandAssets {
     motionTemplates: ['slide', 'fade'],
   }
 }
-
-import { logUsageEvent } from '../common/logUsageEvent.js'
-
-export async function getBrandAssetsWithLogging(userId?: string): Promise<BrandAssets> {
-  const out = getBrandAssets()
-  if (userId) {
-    await logUsageEvent(userId, 'asset_intelligence', 1)
-  }
-  return out
-}

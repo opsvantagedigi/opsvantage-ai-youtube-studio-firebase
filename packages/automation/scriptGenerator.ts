@@ -11,11 +11,10 @@ export interface ScriptSections {
   description: string
   chapters: string[]
 }
-import { logUsageEvent } from '../common/logUsageEvent.js'
 
-export async function generateScript(prompt: string, userId?: string): Promise<ScriptSections> {
+export function generateScript(prompt: string): ScriptSections {
   // Stub: Generate script sections from prompt
-  const result: ScriptSections = {
+  return {
     hook: `Hook for: ${prompt}`,
     intro: `Intro for: ${prompt}`,
     body: `Body for: ${prompt}`,
@@ -24,10 +23,4 @@ export async function generateScript(prompt: string, userId?: string): Promise<S
     description: `Description for: ${prompt}`,
     chapters: ['Chapter 1', 'Chapter 2'],
   }
-
-  if (userId) {
-    await logUsageEvent(userId, 'script_generation', 1)
-  }
-
-  return result
 }
