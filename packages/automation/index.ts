@@ -1,2 +1,3 @@
-export * from './jobs.js'
-export * from './orchestrator.js'
+export * from './jobs'
+export * from './orchestrator'
+export { orchestrateVideoCreation } from './orchestrator'
