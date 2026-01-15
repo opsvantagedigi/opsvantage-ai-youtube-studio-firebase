@@ -1,3 +1,4 @@
+import { logUsageEvent } from '../utils/logUsageEvent'
 import { v4 as uuidv4 } from 'uuid'
 import * as fs from 'fs'
 import * as path from 'path'
@@ -7,6 +8,8 @@ function ensureOutputDir(jobId) {
   return out
 }
 export async function runPromptToVideo(jobId, input) {
+  const maybeUserId = input?.userId
+  if (maybeUserId) await logUsageEvent(maybeUserId, 'pipeline_started', 1)
   const createdAt = new Date().toISOString()
   const job = {
     id: jobId,
@@ -47,6 +50,7 @@ export async function runPromptToVideo(jobId, input) {
   job.status = 'rendered'
   // write job metadata
   fs.writeFileSync(path.join(out, 'job.json'), JSON.stringify(job, null, 2))
+  if (maybeUserId) await logUsageEvent(maybeUserId, 'pipeline_completed', 1)
   return job
 }
 //# sourceMappingURL=pipeline.js.map

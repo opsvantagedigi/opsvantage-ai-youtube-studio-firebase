@@ -41,3 +41,12 @@ export interface YoutubePublishJob {
   tags: string[]
   visibility: 'public' | 'unlisted' | 'private'
 }
+
+import { logUsageEvent } from '../common/logUsageEvent.js'
+
+export async function logJobTrigger(job: any, jobType: string) {
+  const userId = job?.userId || job?.ownerId || job?.uploaderId
+  if (userId) {
+    await logUsageEvent(userId, 'job_triggered', 1, { jobType })
+  }
+}

@@ -1,3 +1,4 @@
+
 [build]
   # Build from workspace root so Turbopack and pnpm workspace resolve correctly
   base = "."
@@ -5,14 +6,28 @@
   publish = "apps/web/.next"
   environment = { NODE_VERSION = "20" }
 
-[context.production.environment]
-  NODE_ENV = "production"
+
+[context.production]
+  command = "pnpm install && pnpm --filter web build"
+  publish = "apps/web/.next"
+  environment = { NODE_ENV = "production" }
+
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[context.development]
+
+[context.deploy-preview]
   command = "pnpm install && pnpm --filter web build"
+  publish = "apps/web/.next"
+
+[context.staging]
+  command = "pnpm install && pnpm --filter web build"
+  publish = "apps/web/.next"
+
+[context."branch=staging"]
+  command = "pnpm install && pnpm --filter web build"
+  publish = "apps/web/.next"
 
 [context.staging]
   command = "pnpm install && pnpm --filter web build"

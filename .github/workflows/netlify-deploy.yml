@@ -1,18 +1,53 @@
-name: Trigger Netlify Deploy
+name: Netlify Deploy
 
 on:
   push:
     branches:
       - main
+      - staging
+  pull_request:
 
 jobs:
-  trigger:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger Netlify build hook
-        uses: fjogeleit/http-request-action@v1
+      - name: Checkout
+        uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          url: ${{ secrets.NETLIFY_BUILD_HOOK }}
-          method: POST
+          node-version: "20"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build web app
+        run: pnpm --filter web build
+
+      - name: Netlify Deploy
+        uses: netlify/actions/cli@v2
+        with:
+          args: deploy --dir=apps/web/.next --prodIfUnlocked
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Record Deploy Metadata
+        run: |
+          curl -X POST https://YOUR_DOMAIN/api/deploy/record \
+            -H "Content-Type: application/json" \
+            -d '{
+              "userId": "system",
+              "branch": "${{ github.ref_name }}",
+              "environment": "production",
+              "status": "live",
+              "commitMessage": "${{ github.event.head_commit.message }}",
+              "timestamp": "${{ github.event.head_commit.timestamp }}"
+            }'

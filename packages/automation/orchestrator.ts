@@ -15,6 +15,7 @@ import {
   // ...existing code...
 } from './jobs'
 import { recordJobEvent } from './analytics'
+import { logUsageEvent } from '../common/logUsageEvent.js'
 
 const scriptQueue = createQueue('script-generation')
 // ...existing code...
@@ -53,18 +54,34 @@ export async function orchestrateVideoCreation(req: CreateVideoRequest) {
   return { status: 'queued', videoId: req.videoId }
 }
 
-export async function runVideoAutomationPipeline(input: PromptInput) {
+export async function runVideoAutomationPipeline(input: PromptInput, userId?: string) {
   console.log('Starting pipeline...')
   const prompt = createPrompt(input)
-  const script = generateScript(prompt)
-  const audio = synthesizeVoice(script.body, { provider: 'mock', voice: 'default' })
-  const visuals = composeVisuals(script.body)
-  const video = renderVideo({ script: script.body, visuals, audio })
-  const uploadResult = uploadToYouTube(video, {
-    apiKey: 'YOUTUBE_API_KEY',
-    metadata: {},
-    thumbnail: '',
-  })
-  const analytics = getAnalytics('mockVideoId')
+  const script = await generateScript(prompt, userId)
+  if (userId) await logUsageEvent(userId, 'pipeline_stage', 1, { stage: 'script' })
+
+  const audio = await synthesizeVoice(script.body, { provider: 'mock', voice: 'default' })
+  if (userId) await logUsageEvent(userId, 'pipeline_stage', 1, { stage: 'voiceover' })
+
+  const visuals = await composeVisuals(script.body, userId)
+  if (userId) await logUsageEvent(userId, 'pipeline_stage', 1, { stage: 'visual_composition' })
+
+  const video = await renderVideo({ script: script.body, visuals, audio }, userId)
+  if (userId) await logUsageEvent(userId, 'pipeline_stage', 1, { stage: 'render' })
+
+  const uploadResult = await uploadToYouTube(
+    video,
+    {
+      apiKey: 'YOUTUBE_API_KEY',
+      metadata: {},
+      thumbnail: '',
+    },
+    userId,
+  )
+  if (userId) await logUsageEvent(userId, 'pipeline_stage', 1, { stage: 'upload' })
+
+  const analytics = await getAnalytics('mockVideoId', userId)
+  if (userId) await logUsageEvent(userId, 'pipeline_stage', 1, { stage: 'analytics' })
+
   return { prompt, script, audio, visuals, video, uploadResult, analytics }
 }

@@ -3,6 +3,7 @@ import path from 'path'
 import { google } from 'googleapis'
 import { Worker } from 'bullmq'
 import { connection } from '../../packages/queue'
+import { logUsageEvent } from '../../packages/common/logUsageEvent.js'
 
 async function uploadToYouTube(job: any) {
   const { accessToken, refreshToken, title, description, filePath } = job.data
@@ -10,7 +11,7 @@ async function uploadToYouTube(job: any) {
   const oauth2Client = new google.auth.OAuth2(
     process.env.GOOGLE_CLIENT_ID!,
     process.env.GOOGLE_CLIENT_SECRET!,
-    'postmessage'
+    'postmessage',
   )
 
   oauth2Client.setCredentials({
@@ -34,6 +35,19 @@ async function uploadToYouTube(job: any) {
     },
   })
 
+  // Log upload usage if we can identify a user
+  try {
+    const userId = job?.data?.userId || job?.data?.uploaderId || job?.data?.ownerId
+    if (userId) {
+      await logUsageEvent(userId, 'youtube_upload', 1)
+      if (job?.data?.publish) {
+        await logUsageEvent(userId, 'youtube_publish', 1)
+      }
+    }
+  } catch {
+    // best-effort logging; don't interrupt upload result
+  }
+
   return res.data
 }
 
@@ -42,7 +56,7 @@ new Worker(
   async (job) => {
     return await uploadToYouTube(job)
   },
-  { connection: connection as any }
+  { connection: connection as any },
 )
 
 console.log('YouTube Worker is running...')
