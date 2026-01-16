@@ -1,0 +1,64 @@
+[debug] [2026-01-16T13:37:39.740Z] ----------------------------------------------------------------------
+[debug] [2026-01-16T13:37:39.744Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /nix/store/c776mhyhgykcld7p90ajrka149ifn61a-firebase-tools-14.26.0/lib/node_modules/firebase-tools/lib/bin/firebase.js init hosting
+[debug] [2026-01-16T13:37:39.745Z] CLI Version:   14.26.0
+[debug] [2026-01-16T13:37:39.745Z] Platform:      linux
+[debug] [2026-01-16T13:37:39.746Z] Node Version:  v20.19.1
+[debug] [2026-01-16T13:37:39.746Z] Time:          Fri Jan 16 2026 13:37:39 GMT+0000 (Coordinated Universal Time)
+[debug] [2026-01-16T13:37:39.747Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-16T13:37:40.562Z] No OAuth tokens found
+[debug] [2026-01-16T13:37:40.562Z] No OAuth tokens found
+[error] Failed to fetch Firebase Project from current Studio Workspace: Unable to refresh auth: not yet authenticated.
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/user/ai-youtube-studio/AI-YouTube-Studio
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-01-16T13:37:40.574Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-16T13:37:40.574Z] > authorizing via signed-in user (ajay.sidal@opsvantagedigital.online)
+[debug] [2026-01-16T13:37:40.580Z] No OAuth tokens found
+[debug] [2026-01-16T13:37:40.581Z] No OAuth tokens found
+[debug] [2026-01-16T13:37:40.581Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-16T13:37:40.582Z] > authorizing via signed-in user (ajay.sidal@opsvantagedigital.online)
+[debug] [2026-01-16T13:37:40.586Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/marz-ai [none]
+[debug] [2026-01-16T13:37:40.966Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/marz-ai 200
+[debug] [2026-01-16T13:37:40.967Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/marz-ai {"projectId":"marz-ai","projectNumber":"405271493278","displayName":"Marz AI","name":"projects/marz-ai","resources":{"hostingSite":"marz-ai"},"state":"ACTIVE","etag":"1_185b7d46-6025-485f-8441-fc821e13ed78"}
+[info] i  Using project marz-ai (Marz AI) . 
+[info] 
+=== Hosting Setup
+[debug] [2026-01-16T13:37:40.986Z] No OAuth tokens found
+[debug] [2026-01-16T13:37:40.986Z] No OAuth tokens found
+[debug] [2026-01-16T13:37:40.986Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-16T13:37:40.986Z] > authorizing via signed-in user (ajay.sidal@opsvantagedigital.online)
+[debug] [2026-01-16T13:37:40.987Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/marz-ai [none]
+[debug] [2026-01-16T13:37:41.208Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/marz-ai 200
+[debug] [2026-01-16T13:37:41.208Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/marz-ai {"projectId":"marz-ai","projectNumber":"405271493278","displayName":"Marz AI","name":"projects/marz-ai","resources":{"hostingSite":"marz-ai"},"state":"ACTIVE","etag":"1_185b7d46-6025-485f-8441-fc821e13ed78"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] 
+[info] i  Detected a .git folder at /home/user/ai-youtube-studio/AI-YouTube-Studio 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=783171620&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createQueue } from '@repo/queue'
+import { createQueue } from 'apps/firebase-app/lib/queue'
 
 export async function POST(req: Request) {
   const authHeader = req.headers.get('authorization') || req.headers.get('Authorization')

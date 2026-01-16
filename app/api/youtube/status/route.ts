@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createQueue } from '@repo/queue'
+import { createQueue } from 'apps/firebase-app/lib/queue'
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url)

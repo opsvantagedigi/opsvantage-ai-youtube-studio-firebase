@@ -1,0 +1,54 @@
+type User @table {
+  displayName: String!
+  email: String!
+  createdAt: Timestamp!
+  photoUrl: String
+  subscriptionType: SubscriptionType
+}
+
+type Channel @table {
+  user: User!
+  youtubeChannelId: String!
+  name: String!
+  connectedAt: Timestamp!
+  accessToken: String
+  refreshToken: String
+}
+
+type Project @table {
+  user: User!
+  channel: Channel
+  name: String!
+  createdAt: Timestamp!
+  status: String!
+  description: String
+  targetAudience: String
+  emotionalGoal: String
+}
+
+type VideoContent @table {
+  project: Project!
+  type: String!
+  createdAt: Timestamp!
+  contentData: String
+  duration: Int
+  thumbnailUrl: String
+  youtubeVideoId: String
+}
+
+type AnalysisReport @table {
+  channel: Channel!
+  videoContent: VideoContent
+  reportType: String!
+  generatedAt: Timestamp!
+  reportData: String
+  recommendations: String
+}
+
+type SubscriptionType @table {
+  name: String!
+  price: Float!
+  features: [String]
+  description: String
+  duration: String
+}
