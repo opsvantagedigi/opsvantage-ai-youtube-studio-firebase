@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic'
 import './globals.css'
 import { Orbitron, Inter } from 'next/font/google'
 import React from 'react'
+import AuthSessionProvider from '@/components/providers/session-provider'
 
 const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron' })
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -41,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="ambient-bg" />
         <div id="cursor-glow" className="cursor-glow" />
         <EnvironmentBanner />
-        {children}
+        <AuthSessionProvider>{children}</AuthSessionProvider>
       </body>
     </html>
   )

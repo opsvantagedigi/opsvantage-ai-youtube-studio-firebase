@@ -6,11 +6,13 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import CommandPalette from './components'
 import { Menu, X, LayoutDashboard, FolderKanban, Sparkles, BarChart3 } from 'lucide-react'
+import { useSession, signOut } from 'next-auth/react'
 
 export default function StudioLayout({ children }: { children: ReactNode }) {
   const [collapsed, setCollapsed] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [showCommand, setShowCommand] = useState(false)
+  const { data: session } = useSession()
 
   // Cursor-follow glow
   useEffect(() => {
@@ -166,6 +168,17 @@ export default function StudioLayout({ children }: { children: ReactNode }) {
 
       {/* Main Content */}
       <main className="flex flex-1 flex-col md:ml-0">
+        <header className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+          <div className="text-sm text-white/80">{session?.user?.email ?? 'Not signed in'}</div>
+          <div>
+            <button
+              onClick={() => signOut({ callbackUrl: '/auth/signin' })}
+              className="rounded bg-white/5 px-3 py-1 text-sm hover:bg-white/10"
+            >
+              Sign out
+            </button>
+          </div>
+        </header>
         <CommandPalette open={showCommand} onOpenChange={setShowCommand} />
         {children}
       </main>
