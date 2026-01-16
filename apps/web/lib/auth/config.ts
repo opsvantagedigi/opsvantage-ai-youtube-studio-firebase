@@ -20,7 +20,11 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? '',
     }),
   ],
-  adapter: SupabaseAdapter(getSupabaseClient()),
+  // SupabaseAdapter expects an options object with url and secret (service role key).
+  adapter: SupabaseAdapter({
+    url: process.env.SUPABASE_URL ?? '',
+    secret: process.env.SUPABASE_SERVICE_ROLE_KEY ?? '',
+  }),
   callbacks: {
     async session({ session, user }) {
       // Ensure session.user includes id for client-side code
