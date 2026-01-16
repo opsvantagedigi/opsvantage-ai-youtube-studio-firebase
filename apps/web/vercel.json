@@ -1,6 +1,4 @@
 {
-  "version": 2,
-  "builds": [{ "src": "package.json", "use": "@vercel/next" }],
-  "buildCommand": "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && next build",
-  "outputDirectory": ".next"
+  "installCommand": "corepack enable && corepack prepare pnpm@latest --activate && pnpm install",
+  "buildCommand": "next build"
 }
