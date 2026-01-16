@@ -11,6 +11,16 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 export const metadata = {
   title: 'AI-YouTube Studio | OpsVantage Digital',
   description: 'Next-gen AI video orchestration.',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  openGraph: {
+    images: ['/studio-preview.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/studio-preview.png'],
+  },
 }
 
 const ENV = process.env.NEXT_PUBLIC_ENVIRONMENT

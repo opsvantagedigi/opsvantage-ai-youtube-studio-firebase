@@ -7,7 +7,9 @@ export default function SignInPage() {
   return (
     <div style={{ padding: 40 }}>
       <h1>Sign In</h1>
-      <button onClick={() => signIn('google')}>Sign in with Google</button>
+      <button onClick={() => signIn('google', { callbackUrl: '/studio' })}>
+        Sign in with Google
+      </button>
     </div>
   )
 }

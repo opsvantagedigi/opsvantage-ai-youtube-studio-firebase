@@ -1,0 +1,147 @@
+> [debug] [2026-01-16T06:18:51.837Z] Found config in file "C:\Users\AjaySidal\AI-YouTube-Studio\vercel.json"
+Vercel CLI 50.1.6
+> [debug] [2026-01-16T06:18:51.851Z] user supplied a possible target for deployment or an extension
+> [debug] [2026-01-16T06:18:52.155Z] failed to find extension command with name "vercel---prod"
+> [debug] [2026-01-16T06:18:52.233Z] Setting target to production
+> [debug] [2026-01-16T06:18:52.362Z] Found ".git\config" - detected "C:\Users\AjaySidal\AI-YouTube-Studio" as repo root
+> [debug] [2026-01-16T06:18:52.447Z] Spinner invoked (Retrieving projectÔÇª) with a 1000ms delay
+> [debug] [2026-01-16T06:18:52.450Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:18:52.450Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:18:52.470Z] #1 ÔåÆ GET https://api.vercel.com/teams/team_fIgjxP2pdphZhE932RziMLJf?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:18:52.473Z] #2 ÔåÆ GET https://api.vercel.com/v9/projects/prj_XA1JdtvzHZk0STgZB927NqFS2nst?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:18:53.137Z] #1 ÔåÉ 200 OK: sfo1::jzlqm-1768544330539-b0a72b0b4bec [667ms]
+> [debug] [2026-01-16T06:18:53.169Z] #2 ÔåÉ 200 OK: sfo1::vb2zb-1768544330543-059552c41baf [695ms]
+> [debug] [2026-01-16T06:18:53.487Z] Spinner invoked (Deploying ajay-sidals-projects-132aa3d1/ai-youtube-studio) with a 0ms delay
+[client-debug] 2026-01-16T06:18:53.488Z Creating deployment...
+[client-debug] 2026-01-16T06:18:53.489Z Provided 'path' is a directory.
+[client-debug] 2026-01-16T06:18:53.492Z Found 26 rules in .vercelignore
+[client-debug] 2026-01-16T06:18:53.493Z Building file tree...
+[client-debug] 2026-01-16T06:18:53.562Z Found 345 files in the specified directory
+[client-debug] 2026-01-16T06:18:53.662Z Yielding a 'hashes-calculated' event with 319 hashes
+> [debug] [2026-01-16T06:18:53.663Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:18:53.665Z] #3 ÔåÆ GET https://api.vercel.com/v9/projects/ai-youtube-studio?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:18:53.886Z] #3 ÔåÉ 200 OK: sfo1::vb2zb-1768544331267-c3867c594cc1 [221ms]
+[client-debug] 2026-01-16T06:18:53.888Z Using provided API URL: https://api.vercel.com
+[client-debug] 2026-01-16T06:18:53.888Z Using provided user agent: vercel 50.1.6 node-v20.19.6 win32 (x64)
+[client-debug] 2026-01-16T06:18:53.888Z Setting platform version to harcoded value 2
+[client-debug] 2026-01-16T06:18:53.888Z Creating the deployment and starting upload...
+[client-debug] 2026-01-16T06:18:53.888Z Determining necessary files for upload...
+[client-debug] 2026-01-16T06:18:53.889Z Creating deployment
+[client-debug] 2026-01-16T06:18:53.891Z Sending deployment creation API request
+[client-debug] 2026-01-16T06:18:54.313Z Deployment response: {"error":{"code":"missing_files","message":"Missing files","missing":["35aec16eafcef036414b1c2dddfd30b26e0a9fa0","d22f33d60a0147d40c1b26ad2dbdce1cf8c76d1c","ea8c8ed9c651c1bb4bab09c18d93cb759bbb86dd"]}}
+[client-debug] 2026-01-16T06:18:54.313Z Error: Deployment request status is 400
+[client-debug] 2026-01-16T06:18:54.313Z 3 files are required to upload
+[client-debug] 2026-01-16T06:18:54.313Z Yielding a 'file-count' event
+> [debug] [2026-01-16T06:18:54.313Z] Total files 319, 3 changed
+> [debug] [2026-01-16T06:18:54.314Z] Spinner invoked (Uploading [--------------------] (0.0B/19.7KB)) with a 0ms delay
+[client-debug] 2026-01-16T06:18:54.314Z Building an upload list...
+[client-debug] 2026-01-16T06:18:54.315Z Starting upload
+[client-debug] 2026-01-16T06:18:54.316Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:18:54.318Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:18:54.318Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:18:54.322Z] Spinner invoked (Uploading [==================--] (17.9KB/19.7KB)) with a 0ms delay
+[client-debug] 2026-01-16T06:18:54.615Z DONE in 299ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:18:54.615Z File 35aec16eafcef036414b1c2dddfd30b26e0a9fa0 (C:\Users\AjaySidal\AI-YouTube-Studio\vercel-deploy-root2.log) uploaded
+[client-debug] 2026-01-16T06:18:54.615Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T06:18:54.616Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\vercel-deploy-root2.log (1.74KB)
+> [debug] [2026-01-16T06:18:54.671Z] Spinner invoked (Uploading [====================] (19.7KB/19.7KB)) with a 0ms delay
+[client-debug] 2026-01-16T06:18:54.965Z DONE in 646ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:18:54.965Z File ea8c8ed9c651c1bb4bab09c18d93cb759bbb86dd (C:\Users\AjaySidal\AI-YouTube-Studio\vercel-deploy-root.log) uploaded
+[client-debug] 2026-01-16T06:18:54.965Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T06:18:54.965Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\vercel-deploy-root.log (17.74KB)
+[client-debug] 2026-01-16T06:18:55.561Z DONE in 1243ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:18:55.561Z File d22f33d60a0147d40c1b26ad2dbdce1cf8c76d1c (C:\Users\AjaySidal\AI-YouTube-Studio\vercel.json) uploaded
+[client-debug] 2026-01-16T06:18:55.561Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T06:18:55.561Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\vercel.json (185B)
+[client-debug] 2026-01-16T06:18:55.561Z All files uploaded
+[client-debug] 2026-01-16T06:18:55.561Z Yielding a 'all-files-uploaded' event
+[client-debug] 2026-01-16T06:18:55.561Z Starting deployment creation
+[client-debug] 2026-01-16T06:18:55.561Z Creating deployment
+[client-debug] 2026-01-16T06:18:55.562Z Sending deployment creation API request
+[client-debug] 2026-01-16T06:18:57.646Z Deployment response: {"alias":["ai-youtube-studio-ajay-sidals-projects-132aa3d1.vercel.app"],"aliasAssigned":false,"automaticAliases":["ai-youtube-studio-ajay-sidals-projects-132aa3d1.vercel.app"],"bootedAt":1768544333660,"buildingAt":1768544333660,"buildSkipped":false,"createdAt":1768544333660,"creator":{"uid":"xjXAg4piuxnIHymmqAX83Soa","username":"opsvantagedigi-6056"},"id":"dpl_25vjFv11yRWQw2RzWboCuEhgBMBp","name":"ai-youtube-studio","meta":{"githubCommitAuthorName":"opsvantagedigi","githubCommitAuthorEmail":"ajay.sidal@opsvantagedigital.online","githubCommitMessage":"chore(vercel): root-level config for pnpm workspace build","githubCommitOrg":"opsvantagedigi","githubCommitRef":"main","githubCommitRepo":"AI-YouTube-Studio","githubCommitSha":"294367f01eb6d45b392930e0bfc31c00c4adf07a","githubDeployment":"1","githubOrg":"opsvantagedigi","githubRepo":"AI-YouTube-Studio","gitDirty":"1"},"originCacheRegion":"iad1","project":{"id":"prj_XA1JdtvzHZk0STgZB927NqFS2nst","name":"ai-youtube-studio","framework":null},"public":false,"readyState":"QUEUED","regions":["iad1"],"source":"cli","status":"QUEUED","target":"production","team":{"id":"team_fIgjxP2pdphZhE932RziMLJf","name":"OpsVantage Digital","slug":"ajay-sidals-projects-132aa3d1"},"type":"LAMBDAS","url":"ai-youtube-studio-ct7avskc9-ajay-sidals-projects-132aa3d1.vercel.app","version":2,"previewCommentsEnabled":true,"oidcTokenClaims":{"sub":"owner:ajay-sidals-projects-132aa3d1:project:ai-youtube-studio:environment:production","iss":"https://oidc.vercel.com/ajay-sidals-projects-132aa3d1","scope":"owner:ajay-sidals-projects-132aa3d1:project:ai-youtube-studio:environment:production","aud":"https://vercel.com/ajay-sidals-projects-132aa3d1","owner":"ajay-sidals-projects-132aa3d1","owner_id":"team_fIgjxP2pdphZhE932RziMLJf","project":"ai-youtube-studio","project_id":"prj_XA1JdtvzHZk0STgZB927NqFS2nst","environment":"production","plan":"hobby"},"lambdas":[{"id":"bld_m41l6u0ll","createdAt":1768544334736,"entrypoint":".","readyState":"READY","readyStateAt":1768544334736,"output":[]}],"aliasAssignedAt":null,"build":{"env":[]},"builds":[],"createdIn":"sfo1","env":[],"functions":null,"inspectorUrl":"https://vercel.com/ajay-sidals-projects-132aa3d1/ai-youtube-studio/25vjFv11yRWQw2RzWboCuEhgBMBp","isInConcurrentBuildsQueue":false,"isInSystemBuildsQueue":true,"ownerId":"team_fIgjxP2pdphZhE932RziMLJf","plan":"hobby","projectId":"prj_XA1JdtvzHZk0STgZB927NqFS2nst","projectSettings":{"buildCommand":"pnpm --filter web build","devCommand":null,"framework":null,"commandForIgnoringBuildStep":null,"installCommand":"corepack enable && corepack prepare pnpm@latest --activate && pnpm install","outputDirectory":"apps/web/.next","speedInsights":{"id":"l0vnN2cJTnk6TZUKUvAV23EnIoA","hasData":false},"webAnalytics":{"id":"lXKlNzXg9U3jBk1CrX7i5gd55"},"nodeVersion":"24.x"},"routes":null,"config":{"version":1,"secureComputePrimaryRegion":null,"secureComputeFallbackRegion":null,"functionTimeout":300,"functionType":"fluid","functionMemoryType":"standard","isUsingActiveCPU":true}}
+[client-debug] 2026-01-16T06:18:57.646Z Deployment created
+[client-debug] 2026-01-16T06:18:57.646Z Yielding a 'created' event
+Inspect: https://vercel.com/ajay-sidals-projects-132aa3d1/ai-youtube-studio/25vjFv11yRWQw2RzWboCuEhgBMBp [4s]
+Production: https://ai-youtube-studio-ct7avskc9-ajay-sidals-projects-132aa3d1.vercel.app [4s]
+> [debug] [2026-01-16T06:18:57.648Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:18:57.648Z] Spinner invoked (Queued...) with a 0ms delay
+> [debug] [2026-01-16T06:18:57.649Z] #4 ÔåÆ GET https://api.vercel.com/v2/user
+[client-debug] 2026-01-16T06:18:57.649Z Waiting for deployment to be ready...
+[client-debug] 2026-01-16T06:18:57.650Z Waiting for builds and the deployment to complete...
+> [debug] [2026-01-16T06:18:57.855Z] #4 ÔåÉ 200 OK: sfo1::jzlqm-1768544335250-e170585810ce [206ms]
+> [debug] [2026-01-16T06:18:57.857Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:18:57.858Z] #5 ÔåÆ GET https://api.vercel.com/v3/now/deployments/dpl_25vjFv11yRWQw2RzWboCuEhgBMBp/events?direction=forward&follow=1&format=lines&teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:19:17.091Z] #5 ÔåÉ 200 OK: sfo1::jzlqm-1768544335458-1e5d777f547d [19.23s]
+[client-debug] 2026-01-16T06:19:46.159Z Deployment state changed to BUILDING
+[client-debug] 2026-01-16T06:19:46.159Z Yielding a 'building' event
+> [debug] [2026-01-16T06:19:46.159Z] Spinner invoked (Queued...) with a 0ms delay
+> [debug] [2026-01-16T06:19:47.644Z] Spinner invoked (Building: Running build in Washington, D.C., USA (East) ÔÇô iad1) with a 0ms delay
+> [debug] [2026-01-16T06:19:47.645Z] Spinner invoked (Building: Build machine configuration: 2 cores, 8 GB) with a 0ms delay
+> [debug] [2026-01-16T06:19:47.645Z] Spinner invoked (Building: Retrieving list of deployment files...) with a 0ms delay
+> [debug] [2026-01-16T06:19:47.645Z] Spinner invoked (Building: Previous build caches not available.) with a 0ms delay
+> [debug] [2026-01-16T06:19:47.645Z] Spinner invoked (Building: Downloading 345 deployment files...) with a 0ms delay
+> [debug] [2026-01-16T06:19:50.749Z] Spinner invoked (Building: Running "vercel build") with a 0ms delay
+> [debug] [2026-01-16T06:19:51.785Z] Spinner invoked (Building: Vercel CLI 50.4.3) with a 0ms delay
+> [debug] [2026-01-16T06:19:51.785Z] Spinner invoked (Building: Detected `pnpm-lock.yaml` 9 which may be generated by pnpm@9.x or pnpm@10.x) with a 0ms delay
+> [debug] [2026-01-16T06:19:51.786Z] Spinner invoked (Building: Using pnpm@10.x based on project creation date) with a 0ms delay
+> [debug] [2026-01-16T06:19:51.786Z] Spinner invoked (Building: To use pnpm@9.x, manually opt in using corepack (https://vercel.com/docs/deployments/configure-a-build#corepack)) with a 0ms delay
+> [debug] [2026-01-16T06:19:51.786Z] Spinner invoked (Building: Running "install" command: `corepack enable && corepack prepare pnpm@latest --activate && pnpm install`...) with a 0ms delay
+> [debug] [2026-01-16T06:19:52.819Z] Spinner invoked (Building: Preparing pnpm@latest for immediate activation...) with a 0ms delay
+> [debug] [2026-01-16T06:19:53.851Z] Spinner invoked (Building: Scope: all 7 workspace projects) with a 0ms delay
+> [debug] [2026-01-16T06:19:53.851Z] Spinner invoked (Building: Lockfile is up to date, resolution step is skipped) with a 0ms delay
+> [debug] [2026-01-16T06:19:53.851Z] Spinner invoked (Building: Progress: resolved 1, reused 0, downloaded 0, added 0) with a 0ms delay
+> [debug] [2026-01-16T06:19:53.851Z] Spinner invoked (Building: Packages: +796) with a 0ms delay
+> [debug] [2026-01-16T06:19:53.851Z] Spinner invoked (Building: ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++) with a 0ms delay
+> [debug] [2026-01-16T06:19:54.884Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 54, added 14) with a 0ms delay
+> [debug] [2026-01-16T06:19:55.965Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 193, added 66) with a 0ms delay
+> [debug] [2026-01-16T06:19:56.994Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 341, added 126) with a 0ms delay
+> [debug] [2026-01-16T06:19:56.994Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 473, added 175) with a 0ms delay
+> [debug] [2026-01-16T06:19:59.065Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 541, added 198) with a 0ms delay
+> [debug] [2026-01-16T06:19:59.065Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 556, added 202) with a 0ms delay
+> [debug] [2026-01-16T06:19:59.065Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 569, added 206) with a 0ms delay
+> [debug] [2026-01-16T06:20:01.132Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 571, added 206) with a 0ms delay
+> [debug] [2026-01-16T06:20:01.132Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 655, added 235) with a 0ms delay
+> [debug] [2026-01-16T06:20:03.198Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 791, added 286) with a 0ms delay
+> [debug] [2026-01-16T06:20:03.199Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 795, added 306) with a 0ms delay
+> [debug] [2026-01-16T06:20:05.267Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 796, added 541) with a 0ms delay
+> [debug] [2026-01-16T06:20:05.267Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 796, added 569) with a 0ms delay
+> [debug] [2026-01-16T06:20:07.335Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 796, added 600) with a 0ms delay
+> [debug] [2026-01-16T06:20:07.335Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 796, added 795) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.414Z] Spinner invoked (Building: Progress: resolved 796, reused 0, downloaded 796, added 796, done) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.414Z] Spinner invoked (Building: dependencies:) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.414Z] Spinner invoked (Building: + bullmq 5.66.5) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.414Z] Spinner invoked (Building: + ioredis 5.9.1) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.414Z] Spinner invoked (Building: devDependencies:) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.414Z] Spinner invoked (Building: + @commitlint/cli 20.3.1) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.414Z] Spinner invoked (Building: + @commitlint/config-conventional 20.3.1) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.414Z] Spinner invoked (Building: + @typescript-eslint/eslint-plugin 8.53.0) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: + @typescript-eslint/parser 8.53.0) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: + eslint 8.57.1) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: + eslint-config-prettier 10.1.8) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: + eslint-plugin-react 7.37.5) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: + eslint-plugin-react-hooks 7.0.1) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: + husky 9.1.7) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: + lint-staged 16.2.7) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: + prettier 3.7.4) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: + prettier-plugin-tailwindcss 0.5.14) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: + typescript 5.9.3) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: . prepare$ husky install) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: . prepare: husky - install command is DEPRECATED) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.415Z] Spinner invoked (Building: . prepare: .git can't be found) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.416Z] Spinner invoked (Building: . prepare: Done) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.416Z] Spinner invoked (Building: Ôò¡ Warning ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔò«) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.416Z] Spinner invoked (Building: Ôöé                                                                              Ôöé) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.416Z] Spinner invoked (Building: Ôöé   Ignored build scripts: msgpackr-extract@3.0.3, unrs-resolver@1.11.1.       Ôöé) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.426Z] Spinner invoked (Building: Ôöé   Run "pnpm approve-builds" to pick which dependencies should be allowed     Ôöé) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.426Z] Spinner invoked (Building: Ôöé   to run scripts.                                                            Ôöé) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.426Z] Spinner invoked (Building: Ôöé                                                                              Ôöé) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.426Z] Spinner invoked (Building: Ôò░ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔò») with a 0ms delay
+> [debug] [2026-01-16T06:20:09.427Z] Spinner invoked (Building: Done in 16.4s using pnpm v10.28.0) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.427Z] Spinner invoked (Building: > web@0.1.0 build /vercel/path0/apps/web) with a 0ms delay
+> [debug] [2026-01-16T06:20:09.427Z] Spinner invoked (Building: > next build) with a 0ms delay
+> [debug] [2026-01-16T06:20:10.444Z] Spinner invoked (Building: Attention: Next.js now collects completely anonymous telemetry regarding usage.) with a 0ms delay
+> [debug] [2026-01-16T06:20:10.445Z] Spinner invoked (Building: This information is used to shape Next.js' roadmap and prioritize features.) with a 0ms delay
+> [debug] [2026-01-16T06:20:10.445Z] Spinner invoked (Building: You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:) with a 0ms delay
+> [debug] [2026-01-16T06:20:10.445Z] Spinner invoked (Building: https://nextjs.org/telemetry) with a 0ms delay
+> [debug] [2026-01-16T06:20:10.445Z] Spinner invoked (Building: Ôû▓ Next.js 14.2.5) with a 0ms delay
+> [debug] [2026-01-16T06:20:10.445Z] Spinner invoked (Building: Creating an optimized production build ...) with a 0ms delay

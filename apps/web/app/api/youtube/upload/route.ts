@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     if (!accessToken) return NextResponse.json({ error: 'missing accessToken' }, { status: 400 })
     if (!fileUrl) return NextResponse.json({ error: 'missing fileUrl' }, { status: 400 })
 
-    const payload = await req.json()
+    const payload = bodyJson
 
     // Proxy upload to backend API
     const backend =

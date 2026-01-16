@@ -1,0 +1,80 @@
+> [debug] [2026-01-16T07:10:16.203Z] Found config in file "C:\Users\AjaySidal\AI-YouTube-Studio\vercel.json"
+Vercel CLI 50.1.6
+> [debug] [2026-01-16T07:10:16.209Z] user supplied a possible target for deployment or an extension
+> [debug] [2026-01-16T07:10:16.350Z] failed to find extension command with name "vercel---prod"
+> [debug] [2026-01-16T07:10:16.384Z] Setting target to production
+> [debug] [2026-01-16T07:10:16.476Z] Found ".git\config" - detected "C:\Users\AjaySidal\AI-YouTube-Studio" as repo root
+> [debug] [2026-01-16T07:10:16.525Z] Spinner invoked (Retrieving projectÔÇª) with a 1000ms delay
+> [debug] [2026-01-16T07:10:16.526Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T07:10:16.527Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T07:10:16.537Z] #1 ÔåÆ GET https://api.vercel.com/teams/team_fIgjxP2pdphZhE932RziMLJf?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T07:10:16.539Z] #2 ÔåÆ GET https://api.vercel.com/v9/projects/prj_XA1JdtvzHZk0STgZB927NqFS2nst?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T07:10:17.199Z] #1 ÔåÉ 200 OK: sfo1::gkckn-1768547414522-c79affaf56e6 [662ms]
+> [debug] [2026-01-16T07:10:17.203Z] #2 ÔåÉ 200 OK: sfo1::dwvvm-1768547414518-b0dcbffcb991 [664ms]
+> [debug] [2026-01-16T07:10:17.393Z] Spinner invoked (Deploying ajay-sidals-projects-132aa3d1/ai-youtube-studio) with a 0ms delay
+[client-debug] 2026-01-16T07:10:17.394Z Creating deployment...
+[client-debug] 2026-01-16T07:10:17.394Z Provided 'path' is a directory.
+[client-debug] 2026-01-16T07:10:17.396Z Found 26 rules in .vercelignore
+[client-debug] 2026-01-16T07:10:17.396Z Building file tree...
+[client-debug] 2026-01-16T07:10:17.431Z Found 349 files in the specified directory
+[client-debug] 2026-01-16T07:10:17.510Z Yielding a 'hashes-calculated' event with 323 hashes
+> [debug] [2026-01-16T07:10:17.511Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T07:10:17.512Z] #3 ÔåÆ GET https://api.vercel.com/v9/projects/ai-youtube-studio?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T07:10:17.804Z] #3 ÔåÉ 200 OK: sfo1::dwvvm-1768547415053-c78415daed2d [292ms]
+[client-debug] 2026-01-16T07:10:17.806Z Using provided API URL: https://api.vercel.com
+[client-debug] 2026-01-16T07:10:17.806Z Using provided user agent: vercel 50.1.6 node-v20.19.6 win32 (x64)
+[client-debug] 2026-01-16T07:10:17.806Z Setting platform version to harcoded value 2
+[client-debug] 2026-01-16T07:10:17.806Z Creating the deployment and starting upload...
+[client-debug] 2026-01-16T07:10:17.806Z Determining necessary files for upload...
+[client-debug] 2026-01-16T07:10:17.806Z Creating deployment
+[client-debug] 2026-01-16T07:10:17.808Z Sending deployment creation API request
+[client-debug] 2026-01-16T07:10:18.260Z Deployment response: {"error":{"code":"missing_files","message":"Missing files","missing":["45a088374d801624adeb2c37846060ed0f7900db","6cc7badb6e41ce5028f4ef1d04721c99c3481447"]}}
+[client-debug] 2026-01-16T07:10:18.260Z Error: Deployment request status is 400
+[client-debug] 2026-01-16T07:10:18.260Z 2 files are required to upload
+[client-debug] 2026-01-16T07:10:18.260Z Yielding a 'file-count' event
+> [debug] [2026-01-16T07:10:18.260Z] Total files 323, 2 changed
+> [debug] [2026-01-16T07:10:18.261Z] Spinner invoked (Uploading [--------------------] (0.0B/5.9KB)) with a 0ms delay
+[client-debug] 2026-01-16T07:10:18.261Z Building an upload list...
+[client-debug] 2026-01-16T07:10:18.262Z Starting upload
+[client-debug] 2026-01-16T07:10:18.262Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T07:10:18.265Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T07:10:18.266Z] Spinner invoked (Uploading [=====---------------] (1.7KB/5.9KB)) with a 0ms delay
+> [debug] [2026-01-16T07:10:18.266Z] Spinner invoked (Uploading [====================] (5.9KB/5.9KB)) with a 0ms delay
+[client-debug] 2026-01-16T07:10:18.565Z DONE in 303ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T07:10:18.565Z File 45a088374d801624adeb2c37846060ed0f7900db (C:\Users\AjaySidal\AI-YouTube-Studio\vercel-deploy-monorepo.log) uploaded
+[client-debug] 2026-01-16T07:10:18.565Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T07:10:18.566Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\vercel-deploy-monorepo.log (1.74KB)
+[client-debug] 2026-01-16T07:10:18.578Z DONE in 313ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T07:10:18.579Z File 6cc7badb6e41ce5028f4ef1d04721c99c3481447 (C:\Users\AjaySidal\AI-YouTube-Studio\vercel-deploy-final3.log) uploaded
+[client-debug] 2026-01-16T07:10:18.579Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T07:10:18.579Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\vercel-deploy-final3.log (4.12KB)
+[client-debug] 2026-01-16T07:10:18.579Z All files uploaded
+[client-debug] 2026-01-16T07:10:18.579Z Yielding a 'all-files-uploaded' event
+[client-debug] 2026-01-16T07:10:18.579Z Starting deployment creation
+[client-debug] 2026-01-16T07:10:18.579Z Creating deployment
+[client-debug] 2026-01-16T07:10:18.580Z Sending deployment creation API request
+[client-debug] 2026-01-16T07:10:20.088Z Deployment response: {"error":{"code":"payment_required","message":"Resource is limited - try again in 1 hour (more than 100, code: \"api-deployments-free-per-day\").","limit":{"total":100,"remaining":0,"reset":1768551920168},"resource":"api-deployments-free-per-day"}}
+[client-debug] 2026-01-16T07:10:20.088Z Error: Deployment request status is 402
+[client-debug] 2026-01-16T07:10:20.088Z Yielding a 'error' event
+> [debug] [2026-01-16T07:10:20.089Z] Error: Error: Resource is limited - try again in 1 hour (more than 100, code: "api-deployments-free-per-day").
+Error: Resource is limited - try again in 1 hour (more than 100, code: "api-deployments-free-per-day").
+    at Now.handleDeploymentError (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:153201:23)
+    at processDeployment (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:152963:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Now.create (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:153120:28)
+    at async createDeploy (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:153371:12)
+    at async deploy_default (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:154283:22)
+    at async main18 (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:191812:19)
+> [debug] [2026-01-16T07:10:20.089Z] handling error: Error: Resource is limited - try again in 1 hour (more than 100, code: "api-deployments-free-per-day").
+    at Now.handleDeploymentError (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:153201:23)
+    at processDeployment (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:152963:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Now.create (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:153120:28)
+    at async createDeploy (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:153371:12)
+    at async deploy_default (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:154283:22)
+    at async main18 (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:191812:19)
+Error: Resource is limited - try again in 1 hour (more than 100, code: "api-deployments-free-per-day").
+> [debug] [2026-01-16T07:10:20.601Z] Vercel CLI 50.1.6
+
+> [debug] [2026-01-16T07:10:21.300Z] Telemetry event tracked
+> [debug] [2026-01-16T07:10:21.323Z] Telemetry subprocess exited with code 0

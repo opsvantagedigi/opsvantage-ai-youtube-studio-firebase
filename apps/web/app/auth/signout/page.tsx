@@ -7,7 +7,7 @@ export default function SignOutPage() {
   return (
     <div style={{ padding: 40 }}>
       <h1>Sign Out</h1>
-      <button onClick={() => signOut({ callbackUrl: '/auth/signin' })}>Sign out</button>
+      <button onClick={() => signOut({ callbackUrl: '/' })}>Sign out</button>
     </div>
   )
 }

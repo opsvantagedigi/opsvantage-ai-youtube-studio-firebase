@@ -1,4 +1,8 @@
+'use client'
+
 import Link from 'next/link'
+import React from 'react'
+import AuthButtons from '@/components/auth/AuthButtons'
 
 export default function Navbar() {
   return (
@@ -23,7 +27,9 @@ export default function Navbar() {
           >
             Enter Studio
           </Link>
-          <div className="ml-6 flex items-center" />
+          <div className="ml-6 flex items-center">
+            <AuthButtons />
+          </div>
         </nav>
       </div>
     </header>

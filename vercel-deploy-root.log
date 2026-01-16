@@ -1,0 +1,177 @@
+Vercel CLI 50.1.6
+> [debug] [2026-01-16T06:12:22.580Z] user supplied a possible target for deployment or an extension
+> [debug] [2026-01-16T06:12:22.721Z] failed to find extension command with name "vercel---prod"
+> [debug] [2026-01-16T06:12:22.758Z] Setting target to production
+> [debug] [2026-01-16T06:12:22.839Z] Found ".git\config" - detected "C:\Users\AjaySidal\AI-YouTube-Studio" as repo root
+> [debug] [2026-01-16T06:12:22.891Z] Spinner invoked (Retrieving projectÔÇª) with a 1000ms delay
+> [debug] [2026-01-16T06:12:22.894Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:22.894Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:22.905Z] #1 ÔåÆ GET https://api.vercel.com/teams/team_fIgjxP2pdphZhE932RziMLJf?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:12:22.908Z] #2 ÔåÆ GET https://api.vercel.com/v9/projects/prj_SMLPUQ1SZ18zllK5cG81vxdhVhhB?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:12:23.526Z] #1 ÔåÉ 200 OK: sfo1::4lxm5-1768543940938-2b8d7435e744 [621ms]
+> [debug] [2026-01-16T06:12:23.564Z] #2 ÔåÉ 404 Not Found: sfo1::p9bjk-1768543940940-9cd5ea908531 [656ms]
+Your Project was either deleted, transferred to a new Team, or you donÔÇÖt have access to it anymore.
+> [debug] [2026-01-16T06:12:23.566Z] Spinner invoked (Loading scopesÔÇª) with a 1000ms delay
+> [debug] [2026-01-16T06:12:23.566Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:23.566Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:23.567Z] #3 ÔåÆ GET https://api.vercel.com/v2/user
+> [debug] [2026-01-16T06:12:23.568Z] #4 ÔåÆ GET https://api.vercel.com/v1/teams
+> [debug] [2026-01-16T06:12:23.751Z] #3 ÔåÉ 200 OK: sfo1::p9bjk-1768543941178-b82e1127e8e3 [184ms]
+> [debug] [2026-01-16T06:12:23.774Z] #4 ÔåÉ 200 OK: sfo1::4lxm5-1768543941179-a65de015c7b0 [206ms]
+> [debug] [2026-01-16T06:12:23.787Z] Spinner invoked (Searching for existing projectsÔÇª) with a 1000ms delay
+> [debug] [2026-01-16T06:12:23.787Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:23.787Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:23.788Z] #5 ÔåÆ GET https://api.vercel.com/v9/projects/AI-YouTube-Studio?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:12:23.789Z] #6 ÔåÆ GET https://api.vercel.com/v9/projects/ai-you-tube-studio?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:12:23.990Z] #6 ÔåÉ 404 Not Found: sfo1::p9bjk-1768543941402-65c67c9092e1 [201ms]
+> [debug] [2026-01-16T06:12:24.017Z] #5 ÔåÉ 200 OK: sfo1::4lxm5-1768543941402-e1fa0627a9ed [229ms]
+> [debug] [2026-01-16T06:12:24.076Z] Found ".git\config" - detected "C:\Users\AjaySidal\AI-YouTube-Studio" as repo root
+Linked to ajay-sidals-projects-132aa3d1/ai-youtube-studio (created .vercel)
+> [debug] [2026-01-16T06:12:24.168Z] Found ".git\config" - detected "C:\Users\AjaySidal\AI-YouTube-Studio" as repo root
+> [debug] [2026-01-16T06:12:24.172Z] Spinner invoked (Retrieving projectÔÇª) with a 1000ms delay
+> [debug] [2026-01-16T06:12:24.173Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:24.173Z] #7 ÔåÆ GET https://api.vercel.com/v9/projects/prj_XA1JdtvzHZk0STgZB927NqFS2nst?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:12:24.402Z] #7 ÔåÉ 200 OK: sfo1::4lxm5-1768543941786-65961ccf924b [229ms]
+> Overwriting existing .env.local file
+> Downloading `development` Environment Variables for ajay-sidals-projects-132aa3d1/ai-youtube-studio
+> [debug] [2026-01-16T06:12:24.405Z] Spinner invoked (Downloading) with a 300ms delay
+> [debug] [2026-01-16T06:12:24.405Z] Fetching Environment Variables of project prj_XA1JdtvzHZk0STgZB927NqFS2nst and target development
+> [debug] [2026-01-16T06:12:24.406Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:24.406Z] #8 ÔåÆ GET https://api.vercel.com/v3/env/pull/prj_XA1JdtvzHZk0STgZB927NqFS2nst/development?source=vercel-cli%3Alink&teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:12:24.620Z] #8 ÔåÉ 200 OK: sfo1::4lxm5-1768543942016-6bbfbce15231 [214ms]
+
+Changes:
++ VERCEL_OIDC_TOKEN (Updated)
++ ALLOW_DEV_SESSION
++ DATABASE_URL
++ DATABASE_URL_UNPOOLED
++ EMAIL_FROM
++ GEMINI_API_KEY
++ GITHUB_ID
++ GITHUB_SECRET
++ GITHUB_TOKEN
++ GOOGLE_CLIENT_ID
++ GOOGLE_CLIENT_SECRET
++ MAILER_URL
++ NEXTAUTH_SECRET
++ NEXTAUTH_URL
++ NOWPAYMENTS_API_KEY
++ NOWPAYMENTS_IPN_SECRET
++ NOWPAYMENTS_PUBLIC_KEY
++ OPENAI_API_KEY
++ REDIS_URL
++ SLACK_WEBHOOK_URL
++ SMTP_HOST
++ SMTP_PASS
++ SMTP_PORT
++ SMTP_USER
++ TEST_SERVICE_TOKEN
++ YOUTUBE_CLIENT_ID
++ YOUTUBE_CLIENT_SECRET
++ YOUTUBE_REDIRECT_URI
+
+Updated .env.local file  [220ms]
+> [debug] [2026-01-16T06:12:24.870Z] Spinner invoked (Deploying ajay-sidals-projects-132aa3d1/ai-youtube-studio) with a 0ms delay
+[client-debug] 2026-01-16T06:12:24.870Z Creating deployment...
+[client-debug] 2026-01-16T06:12:24.871Z Provided 'path' is a directory.
+[client-debug] 2026-01-16T06:12:24.874Z Found 26 rules in .vercelignore
+[client-debug] 2026-01-16T06:12:24.874Z Building file tree...
+[client-debug] 2026-01-16T06:12:24.928Z Found 343 files in the specified directory
+[client-debug] 2026-01-16T06:12:25.023Z Yielding a 'hashes-calculated' event with 317 hashes
+> [debug] [2026-01-16T06:12:25.025Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:25.026Z] #9 ÔåÆ GET https://api.vercel.com/v9/projects/ai-youtube-studio?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:12:25.250Z] #9 ÔåÉ 200 OK: sfo1::4lxm5-1768543942637-db87332786c6 [224ms]
+[client-debug] 2026-01-16T06:12:25.251Z Using provided API URL: https://api.vercel.com
+[client-debug] 2026-01-16T06:12:25.251Z Using provided user agent: vercel 50.1.6 node-v20.19.6 win32 (x64)
+[client-debug] 2026-01-16T06:12:25.251Z Setting platform version to harcoded value 2
+[client-debug] 2026-01-16T06:12:25.251Z Creating the deployment and starting upload...
+[client-debug] 2026-01-16T06:12:25.252Z Determining necessary files for upload...
+[client-debug] 2026-01-16T06:12:25.252Z Creating deployment
+[client-debug] 2026-01-16T06:12:25.254Z Sending deployment creation API request
+[client-debug] 2026-01-16T06:12:25.667Z Deployment response: {"error":{"code":"missing_files","message":"Missing files","missing":["082d716a7adc05bc21c8194513c9d3afb97845bc","3d82876d8efa1d6812f98e5e323401a405255b77","3e25c1ba28ecb1aa4fb657665dd298900e93ed67","75c3f2aa35f7cf6ec45bc27feef6e19b990b9d44","ce57088096dd7554743b75c2c440e6cc601f61c6","e1076ecec0ec68888a01a860345d854e6b89b978"]}}
+[client-debug] 2026-01-16T06:12:25.667Z Error: Deployment request status is 400
+[client-debug] 2026-01-16T06:12:25.667Z 6 files are required to upload
+[client-debug] 2026-01-16T06:12:25.667Z Yielding a 'file-count' event
+> [debug] [2026-01-16T06:12:25.667Z] Total files 317, 6 changed
+> [debug] [2026-01-16T06:12:25.668Z] Spinner invoked (Uploading [--------------------] (0.0B/252.6KB)) with a 0ms delay
+[client-debug] 2026-01-16T06:12:25.668Z Building an upload list...
+[client-debug] 2026-01-16T06:12:25.669Z Starting upload
+[client-debug] 2026-01-16T06:12:25.669Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:25.671Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:25.671Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:25.672Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:25.673Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:25.674Z POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:12:25.682Z] Spinner invoked (Uploading [=====---------------] (69.2KB/252.6KB)) with a 0ms delay
+> [debug] [2026-01-16T06:12:25.696Z] Spinner invoked (Uploading [==========----------] (133.2KB/252.6KB)) with a 0ms delay
+> [debug] [2026-01-16T06:12:25.697Z] Spinner invoked (Uploading [===============-----] (197.2KB/252.6KB)) with a 0ms delay
+> [debug] [2026-01-16T06:12:25.704Z] Spinner invoked (Uploading [====================] (252.6KB/252.6KB)) with a 0ms delay
+[client-debug] 2026-01-16T06:12:25.970Z DONE in 301ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:25.970Z File 082d716a7adc05bc21c8194513c9d3afb97845bc (C:\Users\AjaySidal\AI-YouTube-Studio\old-project.env) uploaded
+[client-debug] 2026-01-16T06:12:25.970Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T06:12:25.970Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\old-project.env (1.54KB)
+[client-debug] 2026-01-16T06:12:26.299Z DONE in 625ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:26.299Z File e1076ecec0ec68888a01a860345d854e6b89b978 (C:\Users\AjaySidal\AI-YouTube-Studio\.vscode\settings.json) uploaded
+[client-debug] 2026-01-16T06:12:26.300Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T06:12:26.300Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\.vscode\settings.json (628B)
+[client-debug] 2026-01-16T06:12:26.325Z DONE in 654ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:26.325Z File 3e25c1ba28ecb1aa4fb657665dd298900e93ed67 (C:\Users\AjaySidal\AI-YouTube-Studio\apps\web\vercel-build-logs.log) uploaded
+[client-debug] 2026-01-16T06:12:26.325Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T06:12:26.325Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\apps\web\vercel-build-logs.log (1.62KB)
+[client-debug] 2026-01-16T06:12:26.328Z DONE in 655ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:26.328Z File ce57088096dd7554743b75c2c440e6cc601f61c6 (C:\Users\AjaySidal\AI-YouTube-Studio\vercel-deploy-root.log) uploaded
+[client-debug] 2026-01-16T06:12:26.328Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T06:12:26.328Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\vercel-deploy-root.log (5.16KB)
+[client-debug] 2026-01-16T06:12:26.330Z DONE in 658ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:26.330Z File 75c3f2aa35f7cf6ec45bc27feef6e19b990b9d44 (C:\Users\AjaySidal\AI-YouTube-Studio\apps\web\vercel-deploy-final.log) uploaded
+[client-debug] 2026-01-16T06:12:26.330Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T06:12:26.330Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\apps\web\vercel-deploy-final.log (12.31KB)
+[client-debug] 2026-01-16T06:12:26.568Z DONE in 897ms: POST https://api.vercel.com/v2/files?teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:26.568Z File 3d82876d8efa1d6812f98e5e323401a405255b77 (C:\Users\AjaySidal\AI-YouTube-Studio\pnpm-lock.yaml) uploaded
+[client-debug] 2026-01-16T06:12:26.568Z Yielding a 'file-uploaded' event
+> [debug] [2026-01-16T06:12:26.568Z] Uploaded: C:\Users\AjaySidal\AI-YouTube-Studio\pnpm-lock.yaml (231.32KB)
+[client-debug] 2026-01-16T06:12:26.568Z All files uploaded
+[client-debug] 2026-01-16T06:12:26.568Z Yielding a 'all-files-uploaded' event
+[client-debug] 2026-01-16T06:12:26.568Z Starting deployment creation
+[client-debug] 2026-01-16T06:12:26.568Z Creating deployment
+[client-debug] 2026-01-16T06:12:26.569Z Sending deployment creation API request
+[client-debug] 2026-01-16T06:12:28.667Z Deployment response: {"alias":["ai-youtube-studio-ajay-sidals-projects-132aa3d1.vercel.app"],"aliasAssigned":false,"automaticAliases":["ai-youtube-studio-ajay-sidals-projects-132aa3d1.vercel.app"],"bootedAt":1768543944712,"buildingAt":1768543944712,"buildSkipped":false,"createdAt":1768543944712,"creator":{"uid":"xjXAg4piuxnIHymmqAX83Soa","username":"opsvantagedigi-6056"},"id":"dpl_HJPVXyUyEPWYX8vEKr9ydT3wcmV3","name":"ai-youtube-studio","meta":{"githubCommitAuthorName":"opsvantagedigi","githubCommitAuthorEmail":"ajay.sidal@opsvantagedigital.online","githubCommitMessage":"chore(vercel): use modern build pipeline (pnpm install + next build)","githubCommitOrg":"opsvantagedigi","githubCommitRef":"main","githubCommitRepo":"AI-YouTube-Studio","githubCommitSha":"07cae44c92ee5b373431c006e4d55a97c8191be4","githubDeployment":"1","githubOrg":"opsvantagedigi","githubRepo":"AI-YouTube-Studio","gitDirty":"1"},"originCacheRegion":"iad1","project":{"id":"prj_XA1JdtvzHZk0STgZB927NqFS2nst","name":"ai-youtube-studio","framework":null},"public":false,"readyState":"QUEUED","regions":["iad1"],"source":"cli","status":"QUEUED","target":"production","team":{"id":"team_fIgjxP2pdphZhE932RziMLJf","name":"OpsVantage Digital","slug":"ajay-sidals-projects-132aa3d1"},"type":"LAMBDAS","url":"ai-youtube-studio-gupmyr8v6-ajay-sidals-projects-132aa3d1.vercel.app","version":2,"previewCommentsEnabled":true,"oidcTokenClaims":{"sub":"owner:ajay-sidals-projects-132aa3d1:project:ai-youtube-studio:environment:production","iss":"https://oidc.vercel.com/ajay-sidals-projects-132aa3d1","scope":"owner:ajay-sidals-projects-132aa3d1:project:ai-youtube-studio:environment:production","aud":"https://vercel.com/ajay-sidals-projects-132aa3d1","owner":"ajay-sidals-projects-132aa3d1","owner_id":"team_fIgjxP2pdphZhE932RziMLJf","project":"ai-youtube-studio","project_id":"prj_XA1JdtvzHZk0STgZB927NqFS2nst","environment":"production","plan":"hobby"},"lambdas":[{"id":"bld_k19kldbad","createdAt":1768543945777,"entrypoint":".","readyState":"READY","readyStateAt":1768543945777,"output":[]}],"aliasAssignedAt":null,"build":{"env":[]},"builds":[],"createdIn":"sfo1","env":[],"functions":null,"inspectorUrl":"https://vercel.com/ajay-sidals-projects-132aa3d1/ai-youtube-studio/HJPVXyUyEPWYX8vEKr9ydT3wcmV3","isInConcurrentBuildsQueue":false,"isInSystemBuildsQueue":true,"ownerId":"team_fIgjxP2pdphZhE932RziMLJf","plan":"hobby","projectId":"prj_XA1JdtvzHZk0STgZB927NqFS2nst","projectSettings":{"buildCommand":null,"devCommand":null,"framework":null,"commandForIgnoringBuildStep":null,"installCommand":null,"outputDirectory":null,"speedInsights":{"id":"l0vnN2cJTnk6TZUKUvAV23EnIoA","hasData":false},"webAnalytics":{"id":"lXKlNzXg9U3jBk1CrX7i5gd55"},"nodeVersion":"24.x"},"routes":null,"config":{"version":1,"secureComputePrimaryRegion":null,"secureComputeFallbackRegion":null,"functionTimeout":300,"functionType":"fluid","functionMemoryType":"standard","isUsingActiveCPU":true}}
+[client-debug] 2026-01-16T06:12:28.667Z Deployment created
+[client-debug] 2026-01-16T06:12:28.667Z Yielding a 'created' event
+Inspect: https://vercel.com/ajay-sidals-projects-132aa3d1/ai-youtube-studio/HJPVXyUyEPWYX8vEKr9ydT3wcmV3 [4s]
+Production: https://ai-youtube-studio-gupmyr8v6-ajay-sidals-projects-132aa3d1.vercel.app [4s]
+> [debug] [2026-01-16T06:12:28.668Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:28.668Z] Spinner invoked (Queued...) with a 0ms delay
+> [debug] [2026-01-16T06:12:28.669Z] #10 ÔåÆ GET https://api.vercel.com/v2/user
+[client-debug] 2026-01-16T06:12:28.669Z Waiting for deployment to be ready...
+[client-debug] 2026-01-16T06:12:28.669Z Waiting for builds and the deployment to complete...
+> [debug] [2026-01-16T06:12:28.858Z] #10 ÔåÉ 200 OK: sfo1::p9bjk-1768543946281-6ffa8b4fd8c3 [189ms]
+> [debug] [2026-01-16T06:12:28.860Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:28.860Z] #11 ÔåÆ GET https://api.vercel.com/v3/now/deployments/dpl_HJPVXyUyEPWYX8vEKr9ydT3wcmV3/events?direction=forward&follow=1&format=lines&teamId=team_fIgjxP2pdphZhE932RziMLJf
+[client-debug] 2026-01-16T06:12:30.680Z Deployment state changed to BUILDING
+[client-debug] 2026-01-16T06:12:30.680Z Yielding a 'building' event
+> [debug] [2026-01-16T06:12:30.680Z] Spinner invoked (Queued...) with a 0ms delay
+> [debug] [2026-01-16T06:12:32.199Z] #11 ÔåÉ 200 OK: sfo1::p9bjk-1768543946471-d41b12d7ac35 [3.34s]
+> [debug] [2026-01-16T06:12:32.200Z] Spinner invoked (Building: Running build in Washington, D.C., USA (East) ÔÇô iad1) with a 0ms delay
+> [debug] [2026-01-16T06:12:32.200Z] Spinner invoked (Building: Build machine configuration: 2 cores, 8 GB) with a 0ms delay
+> [debug] [2026-01-16T06:12:32.200Z] Spinner invoked (Building: Retrieving list of deployment files...) with a 0ms delay
+> [debug] [2026-01-16T06:12:32.200Z] Spinner invoked (Building: Previous build caches not available.) with a 0ms delay
+> [debug] [2026-01-16T06:12:33.232Z] Spinner invoked (Building: Downloading 343 deployment files...) with a 0ms delay
+> [debug] [2026-01-16T06:12:35.305Z] Spinner invoked (Building: Running "vercel build") with a 0ms delay
+> [debug] [2026-01-16T06:12:35.305Z] Spinner invoked (Building: Vercel CLI 50.4.3) with a 0ms delay
+[client-debug] 2026-01-16T06:12:36.261Z Deployment state changed to READY
+[client-debug] 2026-01-16T06:12:36.262Z Yielding a 'ready' event
+[2K[1A[2K[GProduction: https://ai-youtube-studio-gupmyr8v6-ajay-sidals-projects-132aa3d1.vercel.app [11s]
+> [debug] [2026-01-16T06:12:36.263Z] Spinner invoked (Completing...) with a 0ms delay
+[client-debug] 2026-01-16T06:12:36.264Z Deployment alias assigned
+[client-debug] 2026-01-16T06:12:36.264Z Deployment is ready
+[client-debug] 2026-01-16T06:12:36.264Z Yielding a 'alias-assigned' event
+Aliased: https://ai-youtube-studio.vercel.app [11s]
+> [debug] [2026-01-16T06:12:36.264Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T06:12:36.266Z] #12 ÔåÆ GET https://api.vercel.com/v13/deployments/dpl_HJPVXyUyEPWYX8vEKr9ydT3wcmV3?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T06:12:36.653Z] #12 ÔåÉ 200 OK: sfo1::6crpg-1768543953885-67ed21c504ec [387ms]
+> [debug] [2026-01-16T06:12:37.309Z] Vercel CLI 50.1.6
+
+> [debug] [2026-01-16T06:12:37.956Z] Telemetry event tracked
+> [debug] [2026-01-16T06:12:37.971Z] Telemetry subprocess exited with code 0
+https://ai-youtube-studio-gupmyr8v6-ajay-sidals-projects-132aa3d1.vercel.app

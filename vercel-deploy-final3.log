@@ -1,0 +1,45 @@
+> [debug] [2026-01-16T07:06:34.016Z] Found config in file "C:\Users\AjaySidal\AI-YouTube-Studio\vercel.json"
+Vercel CLI 50.1.6
+> [debug] [2026-01-16T07:06:34.027Z] user supplied a possible target for deployment or an extension
+> [debug] [2026-01-16T07:06:34.150Z] failed to find extension command with name "vercel---prod"
+> [debug] [2026-01-16T07:06:34.178Z] Setting target to production
+> [debug] [2026-01-16T07:06:34.238Z] Found ".git\config" - detected "C:\Users\AjaySidal\AI-YouTube-Studio" as repo root
+> [debug] [2026-01-16T07:06:34.279Z] Spinner invoked (Retrieving projectÔÇª) with a 1000ms delay
+> [debug] [2026-01-16T07:06:34.280Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T07:06:34.281Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T07:06:34.289Z] #1 ÔåÆ GET https://api.vercel.com/teams/team_fIgjxP2pdphZhE932RziMLJf?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T07:06:34.291Z] #2 ÔåÆ GET https://api.vercel.com/v9/projects/prj_XA1JdtvzHZk0STgZB927NqFS2nst?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T07:06:34.971Z] #2 ÔåÉ 200 OK: sfo1::mbw8c-1768547192288-73c43d6f090a [680ms]
+> [debug] [2026-01-16T07:06:34.977Z] #1 ÔåÉ 200 OK: sfo1::9dk54-1768547192288-6ba5ce4c518a [688ms]
+> [debug] [2026-01-16T07:06:35.223Z] Spinner invoked (Deploying ajay-sidals-projects-132aa3d1/ai-youtube-studio) with a 0ms delay
+[client-debug] 2026-01-16T07:06:35.224Z Creating deployment...
+[client-debug] 2026-01-16T07:06:35.224Z Provided 'path' is a directory.
+[client-debug] 2026-01-16T07:06:35.228Z Found 26 rules in .vercelignore
+[client-debug] 2026-01-16T07:06:35.228Z Building file tree...
+[client-debug] 2026-01-16T07:06:35.272Z Found 348 files in the specified directory
+[client-debug] 2026-01-16T07:06:35.360Z Yielding a 'hashes-calculated' event with 322 hashes
+> [debug] [2026-01-16T07:06:35.361Z] Valid access token, skipping token refresh.
+> [debug] [2026-01-16T07:06:35.362Z] #3 ÔåÆ GET https://api.vercel.com/v9/projects/ai-youtube-studio?teamId=team_fIgjxP2pdphZhE932RziMLJf
+> [debug] [2026-01-16T07:06:35.570Z] #3 ÔåÉ 200 OK: sfo1::9dk54-1768547192906-615ffd8b263d [208ms]
+[client-debug] 2026-01-16T07:06:35.572Z Using provided API URL: https://api.vercel.com
+[client-debug] 2026-01-16T07:06:35.572Z Using provided user agent: vercel 50.1.6 node-v20.19.6 win32 (x64)
+[client-debug] 2026-01-16T07:06:35.572Z Setting platform version to harcoded value 2
+[client-debug] 2026-01-16T07:06:35.572Z Creating the deployment and starting upload...
+[client-debug] 2026-01-16T07:06:35.573Z Determining necessary files for upload...
+[client-debug] 2026-01-16T07:06:35.573Z Creating deployment
+[client-debug] 2026-01-16T07:06:35.574Z Sending deployment creation API request
+[client-debug] 2026-01-16T07:06:35.988Z Deployment response: {"error":{"code":"bad_request","message":"Invalid request: should NOT have additional property `projects`. Please remove it.","action":"View Documentation","link":"https://vercel.com/docs/configuration","keyword":"additionalProperties","dataPath":"","params":{"additionalProperty":"projects"}}}
+[client-debug] 2026-01-16T07:06:35.988Z Error: Deployment request status is 400
+[client-debug] 2026-01-16T07:06:35.988Z Yielding a 'error' event
+> [debug] [2026-01-16T07:06:35.989Z] Error: Error: Schema verification failed
+Error: Schema verification failed
+    at createDeploy (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:153399:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async deploy_default (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:154283:22)
+    at async main18 (C:\Users\AjaySidal\AppData\Local\nvm\v20.19.6\node_modules\vercel\dist\index.js:191812:19)
+Error: Invalid vercel.json - should NOT have additional property `projects`. Please remove it.
+View Documentation: https://vercel.com/docs/concepts/projects/project-configuration
+> [debug] [2026-01-16T07:06:36.608Z] Vercel CLI 50.1.6
+
+> [debug] [2026-01-16T07:06:37.295Z] Telemetry event tracked
+> [debug] [2026-01-16T07:06:37.312Z] Telemetry subprocess exited with code 0

@@ -1,0 +1,5 @@
+Vercel CLI 50.1.6
+The "--since" option was ignored because it is now deprecated. Please remove it.
+The "--limit" option was ignored because it is now deprecated. Please remove it.
+Fetching deployment "dpl_AW3knha4BuqsVBSedZB8k85C2ioD" in ajay-sidals-projects-132aa3d1
+Error: Deployment not ready. Currently: ÔùÅ Error.
