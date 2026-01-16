@@ -1,9 +1,7 @@
 {
   "version": 2,
-  "projects": [
-    {
-      "src": "apps/web/package.json",
-      "use": "@vercel/next"
-    }
-  ]
+  "buildCommand": "pnpm install --frozen-lockfile && pnpm --filter web build",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "outputDirectory": "apps/web/.next",
+  "framework": "nextjs"
 }
