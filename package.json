@@ -1,6 +1,9 @@
 {
   "name": "ai-youtube-studio",
   "version": "1.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
   "description": "Monorepo for Prompt-to-Video web app.",
   "main": "index.js",
   "type": "commonjs",
