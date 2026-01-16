@@ -9,6 +9,7 @@ const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron' })
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   title: 'AI-YouTube Studio | OpsVantage Digital',
   description: 'Next-gen AI video orchestration.',
   icons: {
