@@ -1,18 +1,6 @@
-import { UsageEventStore } from '../../models/UsageEvent';
+import type { UsageEvent } from '../models.js';
 
-export async function logUsageEvent(
-  userId: string,
-  type: string,
-  amount = 1,
-  metadata = {},
-) {
-  const timestamp = new Date().toISOString();
-  UsageEventStore.push({
-    id: `${userId}-${Date.now()}`,
-    userId,
-    type,
-    amount,
-    metadata,
-    timestamp,
-  });
+export function logUsageEvent(event: UsageEvent) {
+  // In a real app, this would send data to a logging service
+  console.log('Usage Event:', event);
 }

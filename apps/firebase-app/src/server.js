@@ -1,5 +1,5 @@
 import express from 'express'
-import { bullBoardApp } from './bull-board/server.js'
+import bullBoardApp from './bull-board/server.js'
 const app = express()
 // ...existing code...
 // ...existing code for job endpoints...

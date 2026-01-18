@@ -1,22 +1,3 @@
-.env*
-node_modules
-dist
-*.mp4
-*.wav
-.vercel
-.env*.local
-
-# Local Netlify folder
-.netlify
-
-# Ignore Next.js and Vercel build artifacts
-.next
-.vercel
-apps/web/.next
-apps/web/.vercel
-# Logs and Vercel deployment artifacts (local)
-apps/web/vercel-deploy*.log
-apps/web/vercel-*.log
-apps/web/vercel-*.json
-apps/web/*.log
-apps/web/old-project.env
+firebase-debug.log
+.idx/
+.env

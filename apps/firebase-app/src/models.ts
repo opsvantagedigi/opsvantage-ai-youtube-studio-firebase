@@ -26,3 +26,8 @@ export interface VideoJob {
   youtubeId?: string
   createdAt: string
 }
+
+export interface UsageEvent {
+  event: string;
+  details: any;
+}

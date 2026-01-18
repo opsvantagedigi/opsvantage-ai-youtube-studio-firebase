@@ -1,0 +1,1 @@
+{"version":3,"file":"uploader.d.ts","sourceRoot":"","sources":["../../../src/lib/automation/uploader.ts"],"names":[],"mappings":"AAAA;;;GAGG;AACH,MAAM,WAAW,YAAY;IAC3B,MAAM,EAAE,MAAM,CAAA;IACd,QAAQ,EAAE,MAAM,CAAC,MAAM,EAAE,GAAG,CAAC,CAAA;IAC7B,SAAS,EAAE,MAAM,CAAA;IACjB,QAAQ,CAAC,EAAE,MAAM,CAAA;CAClB;AAED,wBAAgB,eAAe,CAAC,KAAK,EAAE,MAAM,EAAE,MAAM,EAAE,YAAY,GAAG,OAAO,CAG5E"}

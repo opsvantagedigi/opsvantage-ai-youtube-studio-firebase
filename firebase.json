@@ -1,5 +1,15 @@
 {
   "functions": {
     "source": "functions"
-  }
+  },
+  "apphosting": [
+    {
+      "backendId": "opsvantage-ai-youtube-studio",
+      "source": "dist",
+      "predeploy": [
+        "npm --prefix apps/firebase-app run build"
+      ],
+      "alwaysDeployFromSource": true
+    }
+  ]
 }
