@@ -1,7 +1,7 @@
-import Navbar from '~/components/Navbar'
-import Hero from '~/components/Hero'
-import FeatureGrid from '~/components/FeatureGrid'
-import EnterpriseSection from '~/components/EnterpriseSection'
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
+import FeatureGrid from '@/components/FeatureGrid'
+import EnterpriseSection from '@/components/EnterpriseSection'
 
 export default function LandingPage() {
   return (
