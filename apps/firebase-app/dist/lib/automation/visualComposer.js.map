@@ -1,1 +1,0 @@
-{"version":3,"file":"visualComposer.js","sourceRoot":"","sources":["../../../src/lib/automation/visualComposer.ts"],"names":[],"mappings":"AAUA,MAAM,UAAU,cAAc,CAAC,MAAc;IAC3C,4BAA4B;IAC5B,OAAO;QACL,EAAE,IAAI,EAAE,OAAO,EAAE,SAAS,EAAE,oBAAoB,EAAE,OAAO,EAAE,OAAO,EAAE;QACpE,EAAE,IAAI,EAAE,MAAM,EAAE,SAAS,EAAE,mBAAmB,EAAE,OAAO,EAAE,KAAK,EAAE;KACjE,CAAA;AACH,CAAC"}

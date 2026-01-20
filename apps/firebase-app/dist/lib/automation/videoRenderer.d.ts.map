@@ -1,1 +1,0 @@
-{"version":3,"file":"videoRenderer.d.ts","sourceRoot":"","sources":["../../../src/lib/automation/videoRenderer.ts"],"names":[],"mappings":"AAAA;;;GAGG;AACH,MAAM,WAAW,WAAW;IAC1B,MAAM,EAAE,MAAM,CAAA;IACd,OAAO,EAAE,GAAG,EAAE,CAAA;IACd,KAAK,EAAE,MAAM,CAAA;CACd;AAED,wBAAgB,WAAW,CAAC,KAAK,EAAE,WAAW,GAAG,MAAM,CAGtD"}

@@ -1,1 +1,0 @@
-{"version":3,"file":"seoTrendEngine.js","sourceRoot":"","sources":["../../../src/lib/automation/seoTrendEngine.ts"],"names":[],"mappings":"AAUA,MAAM,UAAU,mBAAmB;IACjC,sCAAsC;IACtC,OAAO;QACL,MAAM,EAAE,CAAC,eAAe,EAAE,gBAAgB,CAAC;QAC3C,MAAM,EAAE,CAAC,yBAAyB,EAAE,wBAAwB,CAAC;QAC7D,QAAQ,EAAE,CAAC,YAAY,EAAE,SAAS,EAAE,QAAQ,CAAC;KAC9C,CAAA;AACH,CAAC"}
