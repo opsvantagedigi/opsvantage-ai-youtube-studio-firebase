@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createQueue } from '@/lib/queue'
+import { createQueue } from '../../../../lib/queue'
 
 export async function POST(req: Request) {
   const authHeader = req.headers.get('authorization') || req.headers.get('Authorization')

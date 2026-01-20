@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import ConnectYouTubeButton from '~/components/ConnectYouTubeButton'
+import ConnectYouTubeButton from './ConnectYouTubeButton'
 
 export default function AccountClientWrapper() {
   return <AccountInner />
