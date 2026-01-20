@@ -2,7 +2,7 @@ import React from 'react';
 import { usePathname } from 'next/navigation';
 import type { ComponentType } from 'react';
 import Link from 'next/link';
-import { cn } from 'apps/firebase-app/lib/utils';
+import { cn } from '@/lib/utils';
 
 interface SidebarItemProps {
   href: string;
