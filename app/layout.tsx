@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic'
 import './globals.css'
 import { Orbitron, Inter } from 'next/font/google'
 import React from 'react'
-import AuthSessionProvider from '~/components/providers/session-provider'
+import AuthSessionProvider from '@/components/providers/session-provider'
 
 const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron' })
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
