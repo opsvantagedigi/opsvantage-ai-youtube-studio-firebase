@@ -17,8 +17,8 @@ export async function GET(req: Request) {
   }
 
   const state = await job.getState()
-  const progress = job.progress()
-  const finished = await job.isFinished()
+  const progress = await job.progress()
+  const finished = await job.isCompleted()
   const failed = await job.isFailed()
 
   return NextResponse.json({ jobId, state, progress, finished, failed })
