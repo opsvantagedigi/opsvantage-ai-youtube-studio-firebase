@@ -1,0 +1,20 @@
+[
+  {
+    "id": "592ed469-ff0a-41a4-934f-5635248114ac",
+    "start": 0,
+    "end": 5,
+    "text": "Hook: Smoke test from docker"
+  },
+  {
+    "id": "b20b9f5a-a72c-4a47-83e9-bdb1aed67743",
+    "start": 5,
+    "end": 40,
+    "text": "Body: Expand on Smoke test from docker"
+  },
+  {
+    "id": "83530c0d-e9b4-4ea9-b7cf-3a8c4d40afe7",
+    "start": 40,
+    "end": 55,
+    "text": "Summary and CTA: Subscribe"
+  }
+]

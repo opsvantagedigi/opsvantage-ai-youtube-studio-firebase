@@ -1,0 +1,19 @@
+name: Validate GitHub Workflows
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+
+      - name: Validate workflow syntax
+        uses: docker://ghcr.io/rhysd/actionlint:latest

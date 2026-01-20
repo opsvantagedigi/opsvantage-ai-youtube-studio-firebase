@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "dev": {
+      "dependsOn": [
+        "^dev"
+      ]
+    },
+    "start": {
+      "dependsOn": [
+        "^start"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test": {
+      "dependsOn": [
+        "^test"
+      ]
+    },
+    "serve": {
+      "dependsOn": [
+        "^serve"
+      ]
+    },
+    "shell": {
+      "dependsOn": [
+        "^shell"
+      ]
+    },
+    "deploy": {
+      "dependsOn": [
+        "^deploy"
+      ]
+    },
+    "logs": {
+      "dependsOn": [
+        "^logs"
+      ]
+    }
+  },
+  "nxCloudId": "696aa9bed97c977f72d174f3"
+}

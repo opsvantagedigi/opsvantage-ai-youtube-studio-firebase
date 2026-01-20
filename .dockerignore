@@ -1,0 +1,13 @@
+node_modules
+**/node_modules
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+.vscode
+.git
+scripts/output
+.next
+dist
+coverage
+Dockerfile
+*.md

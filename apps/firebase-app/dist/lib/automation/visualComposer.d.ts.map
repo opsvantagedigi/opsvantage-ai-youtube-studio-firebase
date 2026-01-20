@@ -1,0 +1,1 @@
+{"version":3,"file":"visualComposer.d.ts","sourceRoot":"","sources":["../../../src/lib/automation/visualComposer.ts"],"names":[],"mappings":"AAAA;;;GAGG;AACH,MAAM,WAAW,WAAW;IAC1B,IAAI,EAAE,MAAM,CAAA;IACZ,SAAS,EAAE,MAAM,CAAA;IACjB,OAAO,EAAE,MAAM,CAAA;CAChB;AAED,wBAAgB,cAAc,CAAC,MAAM,EAAE,MAAM,GAAG,WAAW,EAAE,CAM5D"}

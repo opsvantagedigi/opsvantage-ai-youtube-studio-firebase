@@ -1,0 +1,25 @@
+
+> firebase-app@1.0.0 build
+> tsc -p ./
+
+src/server.ts(7,27): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(plugin: FastifyPluginCallback<FastifyExpressOptions, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger>, opts?: FastifyRegisterOptions<...> | undefined): FastifyInstance<...> & PromiseLike<...>', gave the following error.
+    Argument of type 'typeof fastifyExpress' is not assignable to parameter of type 'FastifyPluginCallback<FastifyExpressOptions, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger>'.
+      Types of parameters 'instance' and 'instance' are incompatible.
+        Type 'FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProvider>' is missing the following properties from type 'FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProviderDefault>': getDecorator, propfind, proppatch, mkcalendar, and 12 more.
+  Overload 2 of 3, '(plugin: FastifyPluginAsync<FastifyExpressOptions, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger>, opts?: FastifyRegisterOptions<...> | undefined): FastifyInstance<...> & PromiseLike<...>', gave the following error.
+    Argument of type 'typeof fastifyExpress' is not assignable to parameter of type 'FastifyPluginAsync<FastifyExpressOptions, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger>'.
+      Target signature provides too few arguments. Expected 3 or more, but got 2.
+  Overload 3 of 3, '(plugin: FastifyPluginCallback<FastifyExpressOptions, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger> | FastifyPluginAsync<...> | Promise<...> | Promise<...>, opts?: FastifyRegisterOptions<...> | undefined): FastifyInstance<...> & PromiseLike<...>', gave the following error.
+    Argument of type 'typeof fastifyExpress' is not assignable to parameter of type 'FastifyPluginCallback<FastifyExpressOptions, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger> | FastifyPluginAsync<...> | Promise<...> | Promise<...>'.
+      Type 'typeof fastifyExpress' is not assignable to type 'FastifyPluginCallback<FastifyExpressOptions, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger>'.
+        Types of parameters 'instance' and 'instance' are incompatible.
+          Type 'FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProvider>' is missing the following properties from type 'FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProviderDefault>': getDecorator, propfind, proppatch, mkcalendar, and 12 more.
+src/server.ts(8,14): error TS2339: Property 'use' does not exist on type 'FastifyInstance<Server<typeof IncomingMessage, typeof ServerResponse>, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProviderDefault> & PromiseLike<...>'.
+npm error Lifecycle script `build` failed with error:
+npm error code 2
+npm error path /home/user/ai-youtube-studio/AI-YouTube-Studio/apps/firebase-app
+npm error workspace firebase-app@1.0.0
+npm error location /home/user/ai-youtube-studio/AI-YouTube-Studio/apps/firebase-app
+npm error command failed
+npm error command sh -c tsc -p ./

@@ -1,0 +1,17 @@
+# Dependency locks (huge token consumers)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Assets (AI doesn't need to read images/videos)
+public/
+assets/
+*.png
+*.jpg
+*.svg

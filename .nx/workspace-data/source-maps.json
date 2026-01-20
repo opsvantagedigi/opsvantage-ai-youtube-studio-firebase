@@ -1,0 +1,176 @@
+{
+  "apps/firebase-app": {
+    "root": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "name": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "tags": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:public": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.0": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.1": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.2": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.description": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageVersion": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageMain": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.executor": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.options": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.metadata": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.options.script": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.metadata.scriptContent": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.metadata.runCommand": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.executor": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options.script": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.scriptContent": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.runCommand": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.executor": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.script": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata.scriptContent": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata.runCommand": [
+      "apps/firebase-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.dev.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.start.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.start.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  }
+}

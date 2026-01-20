@@ -1,0 +1,29 @@
+
+> firebase-app@1.0.0 build
+> tsc -p ./
+
+src/server.ts(6,27): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(plugin: FastifyPluginCallback<Response<any, Record<string, any>, number>, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger>, opts?: FastifyRegisterOptions<...> | undefined): FastifyInstance<...> & PromiseLike<...>', gave the following error.
+    Argument of type 'Express' is not assignable to parameter of type 'FastifyPluginCallback<Response<any, Record<string, any>, number>, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger>'.
+      Types of parameters 'req' and 'instance' are incompatible.
+        Type 'FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProvider>' is not assignable to type 'IncomingMessage | Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+          Type 'FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProvider>' is missing the following properties from type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>': header, accepts, acceptsCharsets, acceptsEncodings, and 94 more.
+  Overload 2 of 3, '(plugin: FastifyPluginAsync<Response<any, Record<string, any>, number>, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger>, opts?: FastifyRegisterOptions<...> | undefined): FastifyInstance<...> & PromiseLike<...>', gave the following error.
+    Argument of type 'Express' is not assignable to parameter of type 'FastifyPluginAsync<Response<any, Record<string, any>, number>, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger>'.
+      Types of parameters 'req' and 'instance' are incompatible.
+        Type 'FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProvider>' is not assignable to type 'IncomingMessage | Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+          Type 'FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProvider>' is missing the following properties from type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>': header, accepts, acceptsCharsets, acceptsEncodings, and 94 more.
+  Overload 3 of 3, '(plugin: FastifyPluginCallback<Response<any, Record<string, any>, number>, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger> | FastifyPluginAsync<...> | Promise<...> | Promise<...>, opts?: FastifyRegisterOptions<...> | undefined): FastifyInstance<...> & PromiseLike<...>', gave the following error.
+    Argument of type 'Express' is not assignable to parameter of type 'FastifyPluginCallback<Response<any, Record<string, any>, number>, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger> | FastifyPluginAsync<...> | Promise<...> | Promise<...>'.
+      Type 'Express' is not assignable to type 'FastifyPluginCallback<Response<any, Record<string, any>, number>, RawServerDefault, FastifyTypeProvider, FastifyBaseLogger>'.
+        Types of parameters 'req' and 'instance' are incompatible.
+          Type 'FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProvider>' is not assignable to type 'IncomingMessage | Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+            Type 'FastifyInstance<RawServerDefault, IncomingMessage, ServerResponse<IncomingMessage>, FastifyBaseLogger, FastifyTypeProvider>' is missing the following properties from type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>': header, accepts, acceptsCharsets, acceptsEncodings, and 94 more.
+src/utils/logUsageEvent.ts(1,10): error TS1484: 'UsageEvent' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+npm error Lifecycle script `build` failed with error:
+npm error code 2
+npm error path /home/user/ai-youtube-studio/AI-YouTube-Studio/apps/firebase-app
+npm error workspace firebase-app@1.0.0
+npm error location /home/user/ai-youtube-studio/AI-YouTube-Studio/apps/firebase-app
+npm error command failed
+npm error command sh -c tsc -p ./

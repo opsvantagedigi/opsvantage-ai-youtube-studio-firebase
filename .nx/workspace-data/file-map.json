@@ -1,0 +1,1272 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.3.3",
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".dockerignore",
+        "hash": "17069778239634964336"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "6053880269617316118"
+      },
+      {
+        "file": ".eslintrc.js",
+        "hash": "3533384596842822598"
+      },
+      {
+        "file": ".firebaserc",
+        "hash": "10034004523186150107"
+      },
+      {
+        "file": ".gitattributes",
+        "hash": "11441312810115557321"
+      },
+      {
+        "file": ".githooks/pre-commit",
+        "hash": "2862435380166265864"
+      },
+      {
+        "file": ".github/scripts/Get-LatestWorkflowRun.ps1",
+        "hash": "2188912208400996878"
+      },
+      {
+        "file": ".github/scripts/Get-WorkflowJobs.ps1",
+        "hash": "4063813214700385552"
+      },
+      {
+        "file": ".github/scripts/README.md",
+        "hash": "7662420456500018754"
+      },
+      {
+        "file": ".github/scripts/Watch-Workflow.ps1",
+        "hash": "15471906581821244585"
+      },
+      {
+        "file": ".github/scripts/inspect_yamllint.ps1",
+        "hash": "12748104025648958525"
+      },
+      {
+        "file": ".github/workflows/auto-regenerate-lockfile.yml",
+        "hash": "15101577410803714922"
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "hash": "8856734923140138029"
+      },
+      {
+        "file": ".github/workflows/workflow-validate.yml",
+        "hash": "1496574562897776571"
+      },
+      {
+        "file": ".github/workflows/yaml-lint.yml",
+        "hash": "8378608019205999408"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "4391170279936051477"
+      },
+      {
+        "file": ".husky/commit-msg",
+        "hash": "7046412544169842588"
+      },
+      {
+        "file": ".husky/pre-commit",
+        "hash": "1038190505859968275"
+      },
+      {
+        "file": ".idx/mcp.json",
+        "hash": "15289232893039884222"
+      },
+      {
+        "file": ".pre-commit-config.yaml",
+        "hash": "414365467555354389"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "468203269090806839"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "3816312927369947478"
+      },
+      {
+        "file": ".vercel.env",
+        "hash": "12137145589239153538"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "6013582923759693723"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "1600955577846048112"
+      },
+      {
+        "file": "MIGRATION.md",
+        "hash": "11585743654483223129"
+      },
+      {
+        "file": "Public/brand-icon.png",
+        "hash": "7916081431448276494"
+      },
+      {
+        "file": "README.md",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "RELEASE_NOTES/v20260116-migration-vercel.md",
+        "hash": "2718812157661630636"
+      },
+      {
+        "file": "SECURITY.md",
+        "hash": "16592695496717124016"
+      },
+      {
+        "file": "app/api/auth/[...nextauth]/route.ts",
+        "hash": "16559148115556498282"
+      },
+      {
+        "file": "app/api/youtube/publish/route.ts",
+        "hash": "8354201170244251939"
+      },
+      {
+        "file": "app/api/youtube/status/route.ts",
+        "hash": "12488588729110513029"
+      },
+      {
+        "file": "app/api/youtube/upload/route.ts",
+        "hash": "17114121963276715543"
+      },
+      {
+        "file": "app/auth/signin/page.tsx",
+        "hash": "6863791306315172809"
+      },
+      {
+        "file": "app/auth/signout/page.tsx",
+        "hash": "3458189008655038944"
+      },
+      {
+        "file": "app/favicon.ico",
+        "hash": "9157999678830540297"
+      },
+      {
+        "file": "app/fonts.ts",
+        "hash": "14392729839098236970"
+      },
+      {
+        "file": "app/globals.css",
+        "hash": "7885174243404546073"
+      },
+      {
+        "file": "app/layout.tsx",
+        "hash": "1063552218271468230"
+      },
+      {
+        "file": "app/page.module.css",
+        "hash": "3101480294477318320"
+      },
+      {
+        "file": "app/page.tsx",
+        "hash": "15585201955877624512"
+      },
+      {
+        "file": "app/privacy/page.tsx",
+        "hash": "14976190165796628371"
+      },
+      {
+        "file": "app/studio/account/page.tsx",
+        "hash": "13485295382630807077"
+      },
+      {
+        "file": "app/studio/analytics/page.tsx",
+        "hash": "10570811768378505313"
+      },
+      {
+        "file": "app/studio/components/command-palette.tsx",
+        "hash": "10203806008442813024"
+      },
+      {
+        "file": "app/studio/components/floating-toolbar.tsx",
+        "hash": "18268006416626653343"
+      },
+      {
+        "file": "app/studio/components/header.tsx",
+        "hash": "13513465791803738902"
+      },
+      {
+        "file": "app/studio/components/index.ts",
+        "hash": "2040284107626946051"
+      },
+      {
+        "file": "app/studio/components/preview-panel.tsx",
+        "hash": "9549305903553623623"
+      },
+      {
+        "file": "app/studio/components/sidebar-item.tsx",
+        "hash": "9303480907592411013"
+      },
+      {
+        "file": "app/studio/components/sidebar.tsx",
+        "hash": "14501559197366937845"
+      },
+      {
+        "file": "app/studio/jobs/[id]/page.tsx",
+        "hash": "14857038687332082876"
+      },
+      {
+        "file": "app/studio/jobs/page.tsx",
+        "hash": "13130023359443893157"
+      },
+      {
+        "file": "app/studio/layout.tsx",
+        "hash": "1260269460960951653"
+      },
+      {
+        "file": "app/studio/new/page.tsx",
+        "hash": "3369433263278329640"
+      },
+      {
+        "file": "app/studio/page.tsx",
+        "hash": "4156994057728708494"
+      },
+      {
+        "file": "app/studio/settings/page.tsx",
+        "hash": "16728118326810809853"
+      },
+      {
+        "file": "app/terms/page.tsx",
+        "hash": "16183746246077721693"
+      },
+      {
+        "file": "commitlint.config.cjs",
+        "hash": "4152766977569906637"
+      },
+      {
+        "file": "components/AccountClientWrapper.tsx",
+        "hash": "15576537214329653777"
+      },
+      {
+        "file": "components/AnalyticsClientWrapper.tsx",
+        "hash": "14027682750771215710"
+      },
+      {
+        "file": "components/ConnectYouTubeButton.tsx",
+        "hash": "18129694202109574325"
+      },
+      {
+        "file": "components/EnterpriseSection.tsx",
+        "hash": "1637736365966997991"
+      },
+      {
+        "file": "components/FeatureGrid.tsx",
+        "hash": "9495273183668967133"
+      },
+      {
+        "file": "components/Hero.tsx",
+        "hash": "9793949678040973910"
+      },
+      {
+        "file": "components/Navbar.tsx",
+        "hash": "17576245465775816008"
+      },
+      {
+        "file": "components/PublishToYouTubePanel.tsx",
+        "hash": "8479832663612611563"
+      },
+      {
+        "file": "components/auth/AuthButtons.tsx",
+        "hash": "5774841601913576444"
+      },
+      {
+        "file": "components/providers/session-provider.tsx",
+        "hash": "5707819467508570953"
+      },
+      {
+        "file": "components/ui/toaster.tsx",
+        "hash": "13205097785765998940"
+      },
+      {
+        "file": "dataconnect/dataconnect.yaml",
+        "hash": "7059431244542065236"
+      },
+      {
+        "file": "dataconnect/schema/schema.gql",
+        "hash": "17773059921692009988"
+      },
+      {
+        "file": "docs/api/openapi.yaml",
+        "hash": "8017905604295160857"
+      },
+      {
+        "file": "docs/developer/architecture.md",
+        "hash": "2804928050801597722"
+      },
+      {
+        "file": "docs/developer/components.md",
+        "hash": "3760695677138410050"
+      },
+      {
+        "file": "docs/diagrams/architecture.mmd",
+        "hash": "10455039775985385316"
+      },
+      {
+        "file": "docs/gcloud-cli.md",
+        "hash": "16161765508508967596"
+      },
+      {
+        "file": "docs/supabase-cli.md",
+        "hash": "10567980663917144419"
+      },
+      {
+        "file": "firebase-debug.log",
+        "hash": "11957382950094088469"
+      },
+      {
+        "file": "firebase.json",
+        "hash": "16682919774953123262"
+      },
+      {
+        "file": "functions/.eslintrc.js",
+        "hash": "14602641669624861997"
+      },
+      {
+        "file": "functions/.gitignore",
+        "hash": "6584717076054073749"
+      },
+      {
+        "file": "functions/firebase-debug.log",
+        "hash": "13044653963639344218"
+      },
+      {
+        "file": "functions/package-lock.json",
+        "hash": "213603075726607210"
+      },
+      {
+        "file": "functions/package.json",
+        "hash": "721983381838625638"
+      },
+      {
+        "file": "functions/src/index.ts",
+        "hash": "14254313274171877737"
+      },
+      {
+        "file": "functions/tsconfig.dev.json",
+        "hash": "1817712665177004581"
+      },
+      {
+        "file": "functions/tsconfig.json",
+        "hash": "6276167813615218451"
+      },
+      {
+        "file": "middleware.ts",
+        "hash": "15333154628014255693"
+      },
+      {
+        "file": "next-env.d.ts",
+        "hash": "5909181270615354023"
+      },
+      {
+        "file": "next.config.js",
+        "hash": "3166875228715850076"
+      },
+      {
+        "file": "nx.json",
+        "hash": "1043822905249161467"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "4718482652863806279"
+      },
+      {
+        "file": "package.json",
+        "hash": "13473250445838126239"
+      },
+      {
+        "file": "postcss.config.js",
+        "hash": "8055263870272897227"
+      },
+      {
+        "file": "providers/app-providers.tsx",
+        "hash": "12740937508902971056"
+      },
+      {
+        "file": "public/brand-icon.png",
+        "hash": "7916081431448276494"
+      },
+      {
+        "file": "public/favicon.ico",
+        "hash": "13462533059454066420"
+      },
+      {
+        "file": "public/file.svg",
+        "hash": "15617830351863523835"
+      },
+      {
+        "file": "public/globe.svg",
+        "hash": "9134466864871335697"
+      },
+      {
+        "file": "public/next.svg",
+        "hash": "8300767200008744458"
+      },
+      {
+        "file": "public/site.webmanifest",
+        "hash": "7500312118977972277"
+      },
+      {
+        "file": "public/studio-preview.png",
+        "hash": "7293613002041052107"
+      },
+      {
+        "file": "public/vercel.svg",
+        "hash": "3007623926711696394"
+      },
+      {
+        "file": "public/window.svg",
+        "hash": "16677869292061012332"
+      },
+      {
+        "file": "scripts/create_vercel_project_api.sh",
+        "hash": "17834483420664460656"
+      },
+      {
+        "file": "scripts/enable-vscode-shell-integration.ps1",
+        "hash": "10522190988584521890"
+      },
+      {
+        "file": "scripts/export_vercel_env.sh",
+        "hash": "16597800342452083222"
+      },
+      {
+        "file": "scripts/generate-favicon-from-png.js",
+        "hash": "16620191939599753353"
+      },
+      {
+        "file": "scripts/generate-favicon.js",
+        "hash": "6761430539511098743"
+      },
+      {
+        "file": "scripts/import_vercel_env.js",
+        "hash": "16242275468838423585"
+      },
+      {
+        "file": "scripts/install-gcloud.ps1",
+        "hash": "10308111918296727593"
+      },
+      {
+        "file": "scripts/install-gcloud.sh",
+        "hash": "16284212458183620027"
+      },
+      {
+        "file": "scripts/install-supabase.ps1",
+        "hash": "8836477310550277452"
+      },
+      {
+        "file": "scripts/install-supabase.sh",
+        "hash": "478535015992978992"
+      },
+      {
+        "file": "scripts/output/26aa6612-cf62-4d81-8b5c-8439ac56fe35/audio-1.txt",
+        "hash": "1137742712950121343"
+      },
+      {
+        "file": "scripts/output/26aa6612-cf62-4d81-8b5c-8439ac56fe35/audio-2.txt",
+        "hash": "16875885597526424914"
+      },
+      {
+        "file": "scripts/output/26aa6612-cf62-4d81-8b5c-8439ac56fe35/audio-3.txt",
+        "hash": "17974166390459282818"
+      },
+      {
+        "file": "scripts/output/26aa6612-cf62-4d81-8b5c-8439ac56fe35/job.json",
+        "hash": "18138516181763148763"
+      },
+      {
+        "file": "scripts/output/26aa6612-cf62-4d81-8b5c-8439ac56fe35/script.json",
+        "hash": "14700142658962591148"
+      },
+      {
+        "file": "scripts/output/26aa6612-cf62-4d81-8b5c-8439ac56fe35/visuals.json",
+        "hash": "4441553154247550907"
+      },
+      {
+        "file": "scripts/output/60c985ae-cc9f-4679-a839-4a1c39ad30a0/audio-1.txt",
+        "hash": "1137742712950121343"
+      },
+      {
+        "file": "scripts/output/60c985ae-cc9f-4679-a839-4a1c39ad30a0/audio-2.txt",
+        "hash": "16875885597526424914"
+      },
+      {
+        "file": "scripts/output/60c985ae-cc9f-4679-a839-4a1c39ad30a0/audio-3.txt",
+        "hash": "17974166390459282818"
+      },
+      {
+        "file": "scripts/output/60c985ae-cc9f-4679-a839-4a1c39ad30a0/job.json",
+        "hash": "16025704377285371606"
+      },
+      {
+        "file": "scripts/output/60c985ae-cc9f-4679-a839-4a1c39ad30a0/script.json",
+        "hash": "15908910162679895930"
+      },
+      {
+        "file": "scripts/output/60c985ae-cc9f-4679-a839-4a1c39ad30a0/visuals.json",
+        "hash": "10247808374398026214"
+      },
+      {
+        "file": "scripts/output/aad6d72a-f32d-4446-bf0a-df69efa5655b/audio-1.txt",
+        "hash": "318875436886232049"
+      },
+      {
+        "file": "scripts/output/aad6d72a-f32d-4446-bf0a-df69efa5655b/audio-2.txt",
+        "hash": "6734692574412399657"
+      },
+      {
+        "file": "scripts/output/aad6d72a-f32d-4446-bf0a-df69efa5655b/audio-3.txt",
+        "hash": "17974166390459282818"
+      },
+      {
+        "file": "scripts/output/aad6d72a-f32d-4446-bf0a-df69efa5655b/job.json",
+        "hash": "10316442290423464802"
+      },
+      {
+        "file": "scripts/output/aad6d72a-f32d-4446-bf0a-df69efa5655b/script.json",
+        "hash": "3056666495837440162"
+      },
+      {
+        "file": "scripts/output/aad6d72a-f32d-4446-bf0a-df69efa5655b/visuals.json",
+        "hash": "10247808374398026214"
+      },
+      {
+        "file": "scripts/set-vercel-env.ps1",
+        "hash": "8226819567475235797"
+      },
+      {
+        "file": "scripts/setup-git-hooks.ps1",
+        "hash": "10427937297599969867"
+      },
+      {
+        "file": "scripts/sync-root-env-to-web.ps1",
+        "hash": "3890118358616807330"
+      },
+      {
+        "file": "styles/globals.css",
+        "hash": "4334908079433177890"
+      },
+      {
+        "file": "tailwind.config.js",
+        "hash": "5751430329307338539"
+      },
+      {
+        "file": "tools/reset-vscode-yaml.ps1",
+        "hash": "8615767554014753026"
+      },
+      {
+        "file": "tools/scan-hidden-chars-reset-vscode-yaml.ps1",
+        "hash": "5843599771465748037"
+      },
+      {
+        "file": "tools/validate-reset-vscode-yaml.ps1",
+        "hash": "8125106783042659971"
+      },
+      {
+        "file": "tools/write-reset-vscode-yaml.ps1",
+        "hash": "11753409722474965859"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "5332476271640467013"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "18133133405178082823"
+      }
+    ],
+    "projectFileMap": {
+      "firebase-app": [
+        {
+          "file": "apps/firebase-app/Dockerfile",
+          "hash": "2416133649212239028"
+        },
+        {
+          "file": "apps/firebase-app/apps/api/.gitignore",
+          "hash": "7916247815794270505"
+        },
+        {
+          "file": "apps/firebase-app/apps/web/.gitignore",
+          "hash": "3615440134845755966"
+        },
+        {
+          "file": "apps/firebase-app/models/APIUsage.d.ts",
+          "hash": "9457060078530109530"
+        },
+        {
+          "file": "apps/firebase-app/models/APIUsage.d.ts.map",
+          "hash": "6813698295982692253"
+        },
+        {
+          "file": "apps/firebase-app/models/APIUsage.js",
+          "hash": "11429164975468215664"
+        },
+        {
+          "file": "apps/firebase-app/models/APIUsage.js.map",
+          "hash": "7241427948000320944"
+        },
+        {
+          "file": "apps/firebase-app/models/AddOn.d.ts",
+          "hash": "4600028185281846375"
+        },
+        {
+          "file": "apps/firebase-app/models/AddOn.d.ts.map",
+          "hash": "6149158469707698036"
+        },
+        {
+          "file": "apps/firebase-app/models/AddOn.js",
+          "hash": "2101669795977875620"
+        },
+        {
+          "file": "apps/firebase-app/models/AddOn.js.map",
+          "hash": "6012884359217324413"
+        },
+        {
+          "file": "apps/firebase-app/models/AuditLog.d.ts",
+          "hash": "13126672368130926782"
+        },
+        {
+          "file": "apps/firebase-app/models/AuditLog.d.ts.map",
+          "hash": "12679147474616847876"
+        },
+        {
+          "file": "apps/firebase-app/models/AuditLog.js",
+          "hash": "15876803008974848154"
+        },
+        {
+          "file": "apps/firebase-app/models/AuditLog.js.map",
+          "hash": "18083902891611542225"
+        },
+        {
+          "file": "apps/firebase-app/models/CreditBalance.d.ts",
+          "hash": "1746080017261310781"
+        },
+        {
+          "file": "apps/firebase-app/models/CreditBalance.d.ts.map",
+          "hash": "9215548630211623918"
+        },
+        {
+          "file": "apps/firebase-app/models/CreditBalance.js",
+          "hash": "13054566840885138760"
+        },
+        {
+          "file": "apps/firebase-app/models/CreditBalance.js.map",
+          "hash": "14997661235886617894"
+        },
+        {
+          "file": "apps/firebase-app/models/DeployMetadata.d.ts",
+          "hash": "12677435902381574954"
+        },
+        {
+          "file": "apps/firebase-app/models/DeployMetadata.d.ts.map",
+          "hash": "11394714247149146464"
+        },
+        {
+          "file": "apps/firebase-app/models/DeployMetadata.js",
+          "hash": "843437813663004919"
+        },
+        {
+          "file": "apps/firebase-app/models/DeployMetadata.js.map",
+          "hash": "13193716419764129487"
+        },
+        {
+          "file": "apps/firebase-app/models/Invoice.d.ts",
+          "hash": "14532591693438752831"
+        },
+        {
+          "file": "apps/firebase-app/models/Invoice.d.ts.map",
+          "hash": "9051541704525855394"
+        },
+        {
+          "file": "apps/firebase-app/models/Invoice.js",
+          "hash": "6546341868253867476"
+        },
+        {
+          "file": "apps/firebase-app/models/Invoice.js.map",
+          "hash": "8133771972347034041"
+        },
+        {
+          "file": "apps/firebase-app/models/MarketplaceItem.d.ts",
+          "hash": "15598885101186127840"
+        },
+        {
+          "file": "apps/firebase-app/models/MarketplaceItem.d.ts.map",
+          "hash": "1761979259940675408"
+        },
+        {
+          "file": "apps/firebase-app/models/MarketplaceItem.js",
+          "hash": "16800601003114447786"
+        },
+        {
+          "file": "apps/firebase-app/models/MarketplaceItem.js.map",
+          "hash": "4807652479047413078"
+        },
+        {
+          "file": "apps/firebase-app/models/Permission.d.ts",
+          "hash": "12050925847872951834"
+        },
+        {
+          "file": "apps/firebase-app/models/Permission.d.ts.map",
+          "hash": "6395951341865219835"
+        },
+        {
+          "file": "apps/firebase-app/models/Permission.js",
+          "hash": "1300140704045490229"
+        },
+        {
+          "file": "apps/firebase-app/models/Permission.js.map",
+          "hash": "879937681213150479"
+        },
+        {
+          "file": "apps/firebase-app/models/Purchase.d.ts",
+          "hash": "14364547328396434100"
+        },
+        {
+          "file": "apps/firebase-app/models/Purchase.d.ts.map",
+          "hash": "9089135501545391639"
+        },
+        {
+          "file": "apps/firebase-app/models/Purchase.js",
+          "hash": "9797196219019110830"
+        },
+        {
+          "file": "apps/firebase-app/models/Purchase.js.map",
+          "hash": "17753056947909213563"
+        },
+        {
+          "file": "apps/firebase-app/models/Role.d.ts",
+          "hash": "15344307553342618174"
+        },
+        {
+          "file": "apps/firebase-app/models/Role.d.ts.map",
+          "hash": "17804057548492734739"
+        },
+        {
+          "file": "apps/firebase-app/models/Role.js",
+          "hash": "579946114391573649"
+        },
+        {
+          "file": "apps/firebase-app/models/Role.js.map",
+          "hash": "17038689512553344087"
+        },
+        {
+          "file": "apps/firebase-app/models/Subscription.d.ts",
+          "hash": "16606346230559232812"
+        },
+        {
+          "file": "apps/firebase-app/models/Subscription.d.ts.map",
+          "hash": "4593034518398933209"
+        },
+        {
+          "file": "apps/firebase-app/models/Subscription.js",
+          "hash": "12523718680523597280"
+        },
+        {
+          "file": "apps/firebase-app/models/Subscription.js.map",
+          "hash": "572601627731086379"
+        },
+        {
+          "file": "apps/firebase-app/models/Team.d.ts",
+          "hash": "838135902669889143"
+        },
+        {
+          "file": "apps/firebase-app/models/Team.d.ts.map",
+          "hash": "13030810073327890178"
+        },
+        {
+          "file": "apps/firebase-app/models/Team.js",
+          "hash": "11820982190607606883"
+        },
+        {
+          "file": "apps/firebase-app/models/Team.js.map",
+          "hash": "12896014122253899162"
+        },
+        {
+          "file": "apps/firebase-app/models/TeamMember.d.ts",
+          "hash": "14514901386131868975"
+        },
+        {
+          "file": "apps/firebase-app/models/TeamMember.d.ts.map",
+          "hash": "4784432818842963833"
+        },
+        {
+          "file": "apps/firebase-app/models/TeamMember.js",
+          "hash": "13200633485832559752"
+        },
+        {
+          "file": "apps/firebase-app/models/TeamMember.js.map",
+          "hash": "16447674000209246955"
+        },
+        {
+          "file": "apps/firebase-app/models/UsageEvent.d.ts",
+          "hash": "4023026516881622204"
+        },
+        {
+          "file": "apps/firebase-app/models/UsageEvent.d.ts.map",
+          "hash": "7210073305215000229"
+        },
+        {
+          "file": "apps/firebase-app/models/UsageEvent.js",
+          "hash": "18344408239313879044"
+        },
+        {
+          "file": "apps/firebase-app/models/UsageEvent.js.map",
+          "hash": "15243706151589083787"
+        },
+        {
+          "file": "apps/firebase-app/models/User.d.ts",
+          "hash": "8101382076395054417"
+        },
+        {
+          "file": "apps/firebase-app/models/User.d.ts.map",
+          "hash": "10744375814883028959"
+        },
+        {
+          "file": "apps/firebase-app/models/User.js",
+          "hash": "3661373876170001950"
+        },
+        {
+          "file": "apps/firebase-app/models/User.js.map",
+          "hash": "5859857537978878021"
+        },
+        {
+          "file": "apps/firebase-app/package-lock.json",
+          "hash": "2768070807764942668"
+        },
+        {
+          "file": "apps/firebase-app/package.json",
+          "hash": "12791625971523556522",
+          "deps": [
+            "npm:@types/node@20.19.30",
+            "npm:@types/uuid@9.0.8",
+            "npm:ts-node-dev",
+            "npm:@bull-board/api@5.23.0",
+            "npm:@bull-board/fastify@5.23.0",
+            "npm:bullmq",
+            "npm:dotenv",
+            "npm:ioredis",
+            "npm:ts-node",
+            "npm:typescript",
+            "npm:uuid@10.0.0"
+          ]
+        },
+        {
+          "file": "apps/firebase-app/routes/audit/log.d.ts",
+          "hash": "9952610406048428108"
+        },
+        {
+          "file": "apps/firebase-app/routes/audit/log.d.ts.map",
+          "hash": "8121109934644381161"
+        },
+        {
+          "file": "apps/firebase-app/routes/audit/log.js",
+          "hash": "17029510211048496058"
+        },
+        {
+          "file": "apps/firebase-app/routes/audit/log.js.map",
+          "hash": "12444738470759895212"
+        },
+        {
+          "file": "apps/firebase-app/routes/deploy/record.d.ts",
+          "hash": "13132784782660075132"
+        },
+        {
+          "file": "apps/firebase-app/routes/deploy/record.d.ts.map",
+          "hash": "1046518453905753172"
+        },
+        {
+          "file": "apps/firebase-app/routes/deploy/record.js",
+          "hash": "10607999760492236545"
+        },
+        {
+          "file": "apps/firebase-app/routes/deploy/record.js.map",
+          "hash": "12961626111449481984"
+        },
+        {
+          "file": "apps/firebase-app/routes/deploy/status.d.ts",
+          "hash": "12708954248136196367"
+        },
+        {
+          "file": "apps/firebase-app/routes/deploy/status.d.ts.map",
+          "hash": "13525233976902457099"
+        },
+        {
+          "file": "apps/firebase-app/routes/deploy/status.js",
+          "hash": "690158706078961221"
+        },
+        {
+          "file": "apps/firebase-app/routes/deploy/status.js.map",
+          "hash": "8403106991148582953"
+        },
+        {
+          "file": "apps/firebase-app/routes/subscription/get.d.ts",
+          "hash": "10318452327372869937"
+        },
+        {
+          "file": "apps/firebase-app/routes/subscription/get.d.ts.map",
+          "hash": "1677518549321348778"
+        },
+        {
+          "file": "apps/firebase-app/routes/subscription/get.js",
+          "hash": "6663988875070327915"
+        },
+        {
+          "file": "apps/firebase-app/routes/subscription/get.js.map",
+          "hash": "14124192473963970031"
+        },
+        {
+          "file": "apps/firebase-app/routes/subscription/upgrade.d.ts",
+          "hash": "2414666911505744602"
+        },
+        {
+          "file": "apps/firebase-app/routes/subscription/upgrade.d.ts.map",
+          "hash": "3505672715396753836"
+        },
+        {
+          "file": "apps/firebase-app/routes/subscription/upgrade.js",
+          "hash": "1330035874115209727"
+        },
+        {
+          "file": "apps/firebase-app/routes/subscription/upgrade.js.map",
+          "hash": "13394897359979554519"
+        },
+        {
+          "file": "apps/firebase-app/routes/usage/record.d.ts",
+          "hash": "2460450387624747582"
+        },
+        {
+          "file": "apps/firebase-app/routes/usage/record.d.ts.map",
+          "hash": "9483280469080437007"
+        },
+        {
+          "file": "apps/firebase-app/routes/usage/record.js",
+          "hash": "14024196234555870012"
+        },
+        {
+          "file": "apps/firebase-app/routes/usage/record.js.map",
+          "hash": "11825439156737346879"
+        },
+        {
+          "file": "apps/firebase-app/src/api/index.ts",
+          "hash": "9207123781162773190"
+        },
+        {
+          "file": "apps/firebase-app/src/bull-board/server.d.ts",
+          "hash": "13055489248426646494"
+        },
+        {
+          "file": "apps/firebase-app/src/bull-board/server.d.ts.map",
+          "hash": "15184217451282171091"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/ai/package.json",
+          "hash": "10933898668087226535"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/analyticsTracker.ts",
+          "hash": "6139895111344889448"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/assetIntelligenceEngine.ts",
+          "hash": "13399802778396504487"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/audioMasteringEngine.ts",
+          "hash": "156478684001960919"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/captionEngine.ts",
+          "hash": "12198655839482469360"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/complianceEngine.ts",
+          "hash": "8578115003892974043"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/contextMemoryEngine.ts",
+          "hash": "15092579434859279915"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/orchestrator.ts",
+          "hash": "1301451455099116405"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/performancePredictionEngine.ts",
+          "hash": "9902854542992905363"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/promptEngine.ts",
+          "hash": "6284574561482284956"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/recommendationEngine.ts",
+          "hash": "16603014541377592915"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/scriptGenerator.ts",
+          "hash": "4205621466988122301"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/seoTrendEngine.ts",
+          "hash": "2576531557817107048"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/thumbnailGenerator.ts",
+          "hash": "6406093663121263810"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/uploader.ts",
+          "hash": "10471463504298055504"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/videoRenderer.ts",
+          "hash": "80401114094998188"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/visualComposer.ts",
+          "hash": "17576285769493949548"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/automation/voiceoverEngine.ts",
+          "hash": "12964252888109662350"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/common/package.json",
+          "hash": "6314265191796969781"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/queue/env.d.ts",
+          "hash": "673849419068665239"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/queue/index.d.ts",
+          "hash": "13050814692262981410"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/queue/index.d.ts.map",
+          "hash": "14849594104431101283"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/queue/index.js",
+          "hash": "6783688787479342628"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/queue/index.js.map",
+          "hash": "13148981795736786716"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/queue/index.ts",
+          "hash": "8896965762433718932"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/queue/package.json",
+          "hash": "1648745322760652364"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/queue/redis.ts",
+          "hash": "805927505376925356"
+        },
+        {
+          "file": "apps/firebase-app/src/lib/utils.ts",
+          "hash": "7519362183662574426"
+        },
+        {
+          "file": "apps/firebase-app/src/models.d.ts",
+          "hash": "8679136448431652520"
+        },
+        {
+          "file": "apps/firebase-app/src/models.d.ts.map",
+          "hash": "6403744855234280155"
+        },
+        {
+          "file": "apps/firebase-app/src/models.js",
+          "hash": "11784219627590858953"
+        },
+        {
+          "file": "apps/firebase-app/src/models.js.map",
+          "hash": "6226581520197626963"
+        },
+        {
+          "file": "apps/firebase-app/src/models.ts",
+          "hash": "12731647452475181101"
+        },
+        {
+          "file": "apps/firebase-app/src/pipeline.d.ts",
+          "hash": "11278004294545773070"
+        },
+        {
+          "file": "apps/firebase-app/src/pipeline.d.ts.map",
+          "hash": "16524202204000063503"
+        },
+        {
+          "file": "apps/firebase-app/src/pipeline.js",
+          "hash": "12210758805929668114"
+        },
+        {
+          "file": "apps/firebase-app/src/pipeline.js.map",
+          "hash": "5376022106818888081"
+        },
+        {
+          "file": "apps/firebase-app/src/pipeline.ts",
+          "hash": "17616725431085056013"
+        },
+        {
+          "file": "apps/firebase-app/src/server.d.ts",
+          "hash": "4879130617637316315"
+        },
+        {
+          "file": "apps/firebase-app/src/server.d.ts.map",
+          "hash": "9268250218175513824"
+        },
+        {
+          "file": "apps/firebase-app/src/server.js",
+          "hash": "8333641096077571765"
+        },
+        {
+          "file": "apps/firebase-app/src/server.js.map",
+          "hash": "3707779273579877724"
+        },
+        {
+          "file": "apps/firebase-app/src/server.ts",
+          "hash": "14456918005701040188"
+        },
+        {
+          "file": "apps/firebase-app/src/utils/logUsageEvent.ts",
+          "hash": "17496984791665633047"
+        },
+        {
+          "file": "apps/firebase-app/tsconfig.json",
+          "hash": "4466182875696787002"
+        },
+        {
+          "file": "apps/firebase-app/utils/logAuditEvent.d.ts",
+          "hash": "12812864760538956978"
+        },
+        {
+          "file": "apps/firebase-app/utils/logAuditEvent.d.ts.map",
+          "hash": "7618958492203631418"
+        },
+        {
+          "file": "apps/firebase-app/utils/logAuditEvent.js",
+          "hash": "11953851767562503284"
+        },
+        {
+          "file": "apps/firebase-app/utils/logAuditEvent.js.map",
+          "hash": "817466653897216697"
+        },
+        {
+          "file": "apps/firebase-app/utils/logUsageEvent.d.ts",
+          "hash": "3524652248211303858"
+        },
+        {
+          "file": "apps/firebase-app/utils/logUsageEvent.d.ts.map",
+          "hash": "8462377550943320974"
+        },
+        {
+          "file": "apps/firebase-app/utils/logUsageEvent.js.map",
+          "hash": "2889158224486708257"
+        },
+        {
+          "file": "apps/firebase-app/worker/package.json",
+          "hash": "81073179043254210"
+        },
+        {
+          "file": "apps/firebase-app/worker/youtubeWorker.ts",
+          "hash": "8720496378540440892"
+        },
+        {
+          "file": "apps/firebase-app/workers/script-generation-worker.d.ts",
+          "hash": "11469690996907676499"
+        },
+        {
+          "file": "apps/firebase-app/workers/script-generation-worker.d.ts.map",
+          "hash": "8207690553611126928"
+        },
+        {
+          "file": "apps/firebase-app/workers/script-generation-worker.js",
+          "hash": "3980626148814436859"
+        },
+        {
+          "file": "apps/firebase-app/workers/script-generation-worker.js.map",
+          "hash": "16246305056820978403"
+        },
+        {
+          "file": "apps/firebase-app/workers/upload-worker.d.ts",
+          "hash": "13246090208394402791"
+        },
+        {
+          "file": "apps/firebase-app/workers/upload-worker.d.ts.map",
+          "hash": "2201415186531429550"
+        },
+        {
+          "file": "apps/firebase-app/workers/upload-worker.js",
+          "hash": "8737467662073121264"
+        },
+        {
+          "file": "apps/firebase-app/workers/upload-worker.js.map",
+          "hash": "16580073985679335091"
+        },
+        {
+          "file": "apps/firebase-app/workers/video-render-worker.d.ts",
+          "hash": "11565876154172350377"
+        },
+        {
+          "file": "apps/firebase-app/workers/video-render-worker.d.ts.map",
+          "hash": "17006767753913463404"
+        },
+        {
+          "file": "apps/firebase-app/workers/video-render-worker.js",
+          "hash": "5042640356946718604"
+        },
+        {
+          "file": "apps/firebase-app/workers/video-render-worker.js.map",
+          "hash": "4873720142559628099"
+        },
+        {
+          "file": "apps/firebase-app/workers/visual-composition-worker.d.ts",
+          "hash": "17371614758208715055"
+        },
+        {
+          "file": "apps/firebase-app/workers/visual-composition-worker.d.ts.map",
+          "hash": "9180853761314600465"
+        },
+        {
+          "file": "apps/firebase-app/workers/visual-composition-worker.js",
+          "hash": "3042464058279394714"
+        },
+        {
+          "file": "apps/firebase-app/workers/visual-composition-worker.js.map",
+          "hash": "5259266603806279123"
+        },
+        {
+          "file": "apps/firebase-app/workers/voiceover-worker.d.ts",
+          "hash": "840963543632979389"
+        },
+        {
+          "file": "apps/firebase-app/workers/voiceover-worker.d.ts.map",
+          "hash": "2696391637225816589"
+        },
+        {
+          "file": "apps/firebase-app/workers/voiceover-worker.js",
+          "hash": "2014813884417101494"
+        },
+        {
+          "file": "apps/firebase-app/workers/voiceover-worker.js.map",
+          "hash": "9763853830771826767"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "1897848268147205023"
+}

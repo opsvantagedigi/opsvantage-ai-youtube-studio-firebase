@@ -1,0 +1,16 @@
+{
+  "name": "worker",
+  "private": true,
+  "version": "0.0.0",
+  "main": "dist/youtube-publish-worker.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/youtube-publish-worker.js"
+  },
+  "dependencies": {
+    "bullmq": "*",
+    "ioredis": "*",
+    "googleapis": "*"
+  }
+}

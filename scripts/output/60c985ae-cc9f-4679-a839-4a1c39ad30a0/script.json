@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2fff6c70-6517-4c3a-8854-63abfdf64a02",
+    "start": 0,
+    "end": 5,
+    "text": "Hook: Why is the sky blue?"
+  },
+  {
+    "id": "488220af-e418-4589-8889-f2b9e5cb8694",
+    "start": 5,
+    "end": 40,
+    "text": "Body: Expand on Why is the sky blue?"
+  },
+  {
+    "id": "5843050f-d4b9-489c-ba19-7bcba2fa889f",
+    "start": 40,
+    "end": 55,
+    "text": "Summary and CTA: Subscribe"
+  }
+]

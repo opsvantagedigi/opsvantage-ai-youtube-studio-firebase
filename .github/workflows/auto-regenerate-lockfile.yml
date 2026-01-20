@@ -1,0 +1,38 @@
+name: Auto Regenerate pnpm Lockfile
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Regenerate lockfile
+        run: |
+          rm -f pnpm-lock.yaml
+          pnpm install --lockfile-only
+
+
+      - name: Commit lockfile
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(lockfile): auto-regenerate pnpm-lock.yaml"
+          file_pattern: pnpm-lock.yaml

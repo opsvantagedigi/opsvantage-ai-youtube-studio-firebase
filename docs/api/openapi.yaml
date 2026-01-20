@@ -1,0 +1,83 @@
+openapi: 3.0.3
+info:
+  title: AI-YouTube-Studio API
+  version: 1.0.0
+  description: API for creating and managing prompt-to-video jobs (MVP).
+servers:
+  - url: http://localhost:3001
+paths:
+  /api/v1/video-jobs:
+    post:
+      summary: Create a new VideoJob
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VideoJobCreate'
+      responses:
+        '201':
+          description: Job created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoJob'
+  /api/v1/video-jobs/{id}:
+    get:
+      summary: Get VideoJob by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Job object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VideoJob'
+
+components:
+  schemas:
+    VideoJobCreate:
+      type: object
+      required: [prompt, tone, length]
+      properties:
+        prompt:
+          type: string
+        tone:
+          type: string
+        length:
+          type: string
+        audience:
+          type: string
+        callToAction:
+          type: string
+    VideoJob:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum: [created, processing, rendered, uploaded, failed]
+        prompt:
+          type: string
+        script:
+          type: array
+          items:
+            type: object
+        audioSegments:
+          type: array
+          items:
+            type: string
+        visuals:
+          type: array
+          items:
+            type: string
+        renderPath:
+          type: string
+        youtubeId:
+          type: string

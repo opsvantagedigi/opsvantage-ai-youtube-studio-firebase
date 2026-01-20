@@ -1,0 +1,1 @@
+AUDIO MOCK for segment: Hook: Smoke test from docker

@@ -1,0 +1,12 @@
+.next
+dist
+node_modules
+pnpm-lock.yaml
+coverage
+build
+.next
+node_modules
+dist
+coverage
+*.mp4
+*.wav

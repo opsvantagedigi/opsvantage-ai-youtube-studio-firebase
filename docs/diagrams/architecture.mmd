@@ -1,0 +1,17 @@
+flowchart LR
+  A[User Prompt] --> B(Prompt Engine)
+  B --> C(Script Generator)
+  C --> D(Voiceover Engine)
+  C --> E(Visual Composer)
+  D --> F(Video Renderer)
+  E --> F
+  F --> G(Uploader)
+  G --> H(Analytics Tracker)
+  subgraph Orchestrator
+    B
+    C
+    D
+    E
+    F
+    G
+  end

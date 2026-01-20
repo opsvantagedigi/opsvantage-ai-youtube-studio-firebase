@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx build firebase-app",
+    "startTime": "2026-01-16T22:12:05.460Z",
+    "endTime": "2026-01-16T22:12:12.362Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "firebase-app:build",
+      "target": "build",
+      "projectName": "firebase-app",
+      "hash": "16766253561612889232",
+      "startTime": "2026-01-16T22:12:05.507Z",
+      "endTime": "2026-01-16T22:12:12.292Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    }
+  ]
+}

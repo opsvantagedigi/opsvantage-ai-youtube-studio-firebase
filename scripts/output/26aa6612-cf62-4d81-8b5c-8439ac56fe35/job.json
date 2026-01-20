@@ -1,0 +1,38 @@
+{
+  "id": "26aa6612-cf62-4d81-8b5c-8439ac56fe35",
+  "status": "rendered",
+  "prompt": {
+    "prompt": "Why is the sky blue?",
+    "tone": "informal",
+    "length": "short",
+    "callToAction": "Subscribe"
+  },
+  "createdAt": "2026-01-14T08:15:58.068Z",
+  "script": [
+    {
+      "id": "246cac18-733a-4aa0-8e21-9ee03bbdea29",
+      "start": 0,
+      "end": 5,
+      "text": "Hook: Why is the sky blue?"
+    },
+    {
+      "id": "86178871-567d-4a89-ab64-b74f51923b99",
+      "start": 5,
+      "end": 40,
+      "text": "Body: Expand on Why is the sky blue?"
+    },
+    {
+      "id": "5efc2f37-1407-4413-a908-ae0cd3df7a05",
+      "start": 40,
+      "end": 55,
+      "text": "Summary and CTA: Subscribe"
+    }
+  ],
+  "audioSegments": [
+    "C:\\Users\\AjaySidal\\AI-YouTube-Studio\\scripts\\output\\26aa6612-cf62-4d81-8b5c-8439ac56fe35\\audio-1.txt",
+    "C:\\Users\\AjaySidal\\AI-YouTube-Studio\\scripts\\output\\26aa6612-cf62-4d81-8b5c-8439ac56fe35\\audio-2.txt",
+    "C:\\Users\\AjaySidal\\AI-YouTube-Studio\\scripts\\output\\26aa6612-cf62-4d81-8b5c-8439ac56fe35\\audio-3.txt"
+  ],
+  "visuals": ["visual_1", "visual_2", "visual_3"],
+  "renderPath": "C:\\Users\\AjaySidal\\AI-YouTube-Studio\\scripts\\output\\26aa6612-cf62-4d81-8b5c-8439ac56fe35\\rendered.mp4"
+}
