@@ -1,11 +1,9 @@
-'use client';
-
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Search, Sparkles, Video, Settings, LayoutDashboard } from 'lucide-react';
 
 interface CommandPaletteProps {
-  onOpenChange: (open: boolean) => void;
+  onOpenChange: (value: boolean) => void;
 }
 
 const actions = [

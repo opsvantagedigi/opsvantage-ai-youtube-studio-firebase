@@ -3,12 +3,18 @@
 
 import { useEffect, useState } from 'react'
 
+interface Metric {
+  label: string;
+  value: string;
+}
+
 export default function AnalyticsClientWrapper() {
   return <AnalyticsInner />
 }
 
 function AnalyticsInner() {
-  const [metrics, setMetrics] = (globalThis as any).__ai_youtube_metrics || [[], () => {}]
+  // eslint-disable-next-line no-unused-vars
+  const [metrics, setMetrics] = (globalThis as { __ai_youtube_metrics: [Metric[], (metrics: Metric[]) => void] })?.__ai_youtube_metrics || [[], () => {}]
   const [isConnected, setIsConnected] = useState(false)
 
   useEffect(() => {
@@ -36,7 +42,7 @@ function AnalyticsInner() {
         stored in localStorage under `youtube_access_token`.
       </p>
       <div className="grid gap-4 md:grid-cols-3">
-        {(metrics || []).map((m: any, i: number) => (
+        {(metrics || []).map((m: Metric, i: number) => (
           <div key={i} className="glass-card rounded-2xl p-6">
             <p className="mb-2 text-[11px] text-gray-500">{m.label}</p>
             <p className="heading-orbitron text-xl">{m.value}</p>

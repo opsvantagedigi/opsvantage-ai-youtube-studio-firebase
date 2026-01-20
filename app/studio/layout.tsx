@@ -22,7 +22,7 @@ export default function StudioLayout({ children }: { children: ReactNode }) {
     const handleMove = (e: MouseEvent) => {
       const x = e.clientX - 110
       const y = e.clientY - 110
-      ;(glow as HTMLElement).style.transform = `translate3d(${x}px, ${y}px, 0)`
+      (glow as HTMLElement).style.transform = `translate3d(${x}px, ${y}px, 0)`
       ;(glow as HTMLElement).style.opacity = '1'
     }
     const handleLeave = () => {
