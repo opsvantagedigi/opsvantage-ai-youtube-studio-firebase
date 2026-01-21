@@ -8,30 +8,48 @@ const db = getFirestore(app);
 const apiKey = process.env.GEMINI_API_KEY;
 
 if (!apiKey) {
-  console.warn("GEMINI_API_KEY is not set. Using a mock response for script generation.");
+  console.error("FATAL: GEMINI_API_KEY environment variable is not set. Script generation will fail.");
 }
+
 const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
 
 export async function generateScript(videoIdea: string, niche: string) {
-  // ... (existing generateScript function remains the same)
-  console.log(`Generating script for: ${videoIdea} in niche: ${niche}`);
+  console.log(`Generating script for: "${videoIdea}" in niche: "${niche}"`);
 
   if (!genAI) {
-    return `# Mock Title: How to Make a Great Video...`;
+    console.error("Script generation failed: GoogleGenerativeAI not initialized because API key is missing.");
+    return "Error: Could not generate script. The API key is not configured on the server.";
   }
 
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-  const prompt = `You are a professional YouTube scriptwriter...`; // Prompt is unchanged
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+  const prompt = `
+    You are a professional YouTube scriptwriter known for creating viral content.
+    Your task is to write a complete, engaging script for a new video.
+
+    **Video Topic:** "${videoIdea}"
+    **Target Niche:** "${niche}"
+
+    **Instructions:**
+    1.  **Title:** Create a catchy, SEO-friendly title that grabs attention. Start the output with "Title: [Your Title]".
+    2.  **Introduction (Hook):** Start with a strong hook to capture viewer interest in the first 15 seconds.
+    3.  **Main Body:** Structure the content logically. Use storytelling, explain concepts clearly, and maintain an engaging, conversational tone suitable for the niche.
+    4.  **Call to Action (CTA):** Include a subtle CTA to like, subscribe, or comment.
+    5.  **Outro:** End with a memorable outro that encourages viewers to watch another video.
+    6.  **Formatting:** The entire output must be a single block of text. Use markdown for formatting (e.g., **bold** for scene directions or emphasis).
+
+    Generate the script now.
+    `;
 
   try {
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = await response.text();
-    console.log("Successfully generated script.");
+    console.log("Successfully generated script from Gemini API.");
     return text;
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error generating script from Gemini API:", error);
-    return "Error: Could not generate script.";
+    return `Error: Could not generate script. Gemini API call failed. [See server logs for details]`;
   }
 }
 

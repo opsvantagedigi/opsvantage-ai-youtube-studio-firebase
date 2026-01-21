@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image'; // Import the Next.js Image component
+import Link from 'next/link';
 
 export const BusinessNav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,28 +13,30 @@ export const BusinessNav = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded bg-gradient-to-br from-blue-600 via-emerald-600 to-yellow-600 flex items-center justify-center">
-            <Zap size={18} className="text-white fill-current" />
-          </div>
-          <div className="text-2xl font-orbitron font-bold tracking-wider text-white">
-            OPS<span className="text-emerald-500">VANTAGE</span>
-          </div>
+          <Image src="/opsvantage-logo.png" alt="OpsVantage Digital Logo" width={32} height={32} />
+          <Link href="/">
+            <div className="text-2xl font-orbitron font-bold tracking-wider text-white">
+              OPS<span className="text-emerald-500">VANTAGE</span> DIGITAL
+            </div>
+          </Link>
         </div>
         
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-8 text-sm font-inter font-medium text-slate-400">
-          {['Services', 'Case Studies', 'Products', 'About'].map((item) => (
-            <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:text-emerald-400 transition-colors">
+          {['Services', 'Case Studies', 'Products', 'About', 'Pricing'].map((item) => (
+            <Link key={item} href={`/${item.toLowerCase().replace(' ', '-')}`} className="hover:text-emerald-400 transition-colors">
               {item}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <button className="px-6 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-black transition-all duration-300 font-inter text-sm font-semibold tracking-wide">
-            Book Strategy Call
-          </button>
+          <Link href="/ai-youtube-studio">
+            <span className="px-6 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-black transition-all duration-300 font-inter text-sm font-semibold tracking-wide">
+              Get Started
+            </span>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -44,14 +48,16 @@ export const BusinessNav = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full h-screen bg-[#050a14] p-8 flex flex-col space-y-8 z-40 border-t border-white/10">
-          {['Services', 'Case Studies', 'Products', 'About'].map((item) => (
-            <a key={item} href="#" className="text-2xl font-orbitron text-white hover:text-emerald-400 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+          {['Services', 'Case Studies', 'Products', 'About', 'Pricing'].map((item) => (
+            <Link key={item} href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-2xl font-orbitron text-white hover:text-emerald-400 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
               {item}
-            </a>
+            </Link>
           ))}
-          <button className="w-full py-4 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-orbitron font-bold rounded-lg">
-            Book Strategy Call
-          </button>
+          <Link href="/ai-youtube-studio">
+            <span className="w-full py-4 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-orbitron font-bold rounded-lg">
+              Get Started
+            </span>
+          </Link>
         </div>
       )}
     </nav>

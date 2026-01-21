@@ -2,9 +2,11 @@
 import React from 'react';
 import { Inter, Orbitron } from 'next/font/google';
 import { ArrowRight, CheckCircle, Code, Cpu, Layers, BarChart, Smartphone, Zap, Globe, Shield } from 'lucide-react';
-import { BusinessNav } from '@/components/BusinessNav'; // Import the new client component
+import { BusinessNav } from '@/components/BusinessNav';
+import Link from 'next/link';
 
 // --- FONTS ---
+
 const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-orbitron' });
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -45,6 +47,7 @@ const portfolio = [
 export default function Home() {
 
   // This is a simplified version of the tab state for a server component
+
   const activeTab = services[0];
 
   return (
@@ -72,9 +75,11 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <button className="w-full md:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-orbitron font-bold text-sm tracking-wider uppercase rounded transition-transform hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-              Start Your Project
-            </button>
+            <Link href="/ai-youtube-studio">
+              <button className="w-full md:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-orbitron font-bold text-sm tracking-wider uppercase rounded transition-transform hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                Get Started
+              </button>
+            </Link>
             <button className="w-full md:w-auto px-8 py-4 bg-transparent border border-slate-700 hover:border-emerald-500 text-white font-orbitron font-bold text-sm tracking-wider uppercase rounded transition-colors">
               Explore Solutions
             </button>
