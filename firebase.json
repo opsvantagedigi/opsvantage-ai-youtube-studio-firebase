@@ -15,5 +15,8 @@
         "function": "ssrmarzai"
       }
     ]
+  },
+  "firestore": {
+    "rules": "firestore.rules"
   }
 }

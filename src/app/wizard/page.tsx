@@ -2,12 +2,16 @@
 
 import { Logo } from "@/components/Logo";
 import Link from "next/link";
-import { useState, useTransition, useMemo, FC, FormEvent, ChangeEvent } from "react";
-import { generateScript } from "../actions";
+import { useState, useTransition, useMemo, FC, FormEvent, ChangeEvent, useEffect } from "react";
+import { generateScript, saveProject } from "../actions"; // Import saveProject
 import Calendar from 'react-calendar';
 import './WizardPage.css';
+import ProtectedRoute from "@/components/ProtectedRoute";
+import { auth } from '../firebase'; // Import auth
+import { User, onAuthStateChanged } from 'firebase/auth'; // Import User and onAuthStateChanged
+import { useRouter } from 'next/navigation'; // Import useRouter
 
-// Type definitions
+// Type definitions (unchanged)
 interface WizardData {
     niche?: string;
     videoIdea?: string;
@@ -16,35 +20,19 @@ interface WizardData {
     videosPerDay: number;
     duration: number;
 }
-
 interface StepProps {
     onNext: (data?: Partial<WizardData>) => void;
     onBack?: () => void;
     wizardData: WizardData;
     setWizardData: (data: WizardData) => void;
 }
-
 interface IdeaStepProps extends StepProps {}
-
-interface ScriptStepProps {
-    script: string;
-    onBack: () => void;
-    onNext: () => void;
-}
-
+interface ScriptStepProps { script: string; onBack: () => void; onNext: () => void; }
 interface SchedulingStepProps extends StepProps {}
+interface ConfirmationStepProps { onBack: () => void; onConfirm: () => void; wizardData: WizardData; }
 
-interface ConfirmationStepProps {
-    onBack: () => void;
-    onConfirm: () => void;
-    wizardData: WizardData;
-}
-
-const niches = [
-    "Technology", "History", "Finance", "Gaming", "Science",
-    "Health & Fitness", "Travel", "Cooking", "DIY & Crafts", "Education"
-];
-
+// Child components (IdeaStep, ScriptStep, etc.) remain the same
+const niches = ["Technology", "History", "Finance", "Gaming", "Science", "Health & Fitness", "Travel", "Cooking", "DIY & Crafts", "Education"];
 const BASE_PRICE_PER_VIDEO = 10;
 const DURATION_DISCOUNT: { [key: number]: number } = { 1: 1.0, 2: 0.9, 3: 0.85, 4: 0.8 };
 
@@ -58,14 +46,8 @@ const IdeaStep: FC<IdeaStepProps> = ({ onNext, wizardData, setWizardData }) => {
             alert("Please select a niche and enter your video idea.");
         }
     };
-
-    const handleNicheChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        setWizardData({ ...wizardData, niche: e.target.value });
-    };
-
-    const handleIdeaChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        setWizardData({ ...wizardData, videoIdea: e.target.value });
-    };
+    const handleNicheChange = (e: ChangeEvent<HTMLSelectElement>) => setWizardData({ ...wizardData, niche: e.target.value });
+    const handleIdeaChange = (e: ChangeEvent<HTMLTextAreaElement>) => setWizardData({ ...wizardData, videoIdea: e.target.value });
 
     return (
         <div className="glass-box">
@@ -110,7 +92,7 @@ const SchedulingStep: FC<SchedulingStepProps> = ({ onBack, onNext, wizardData, s
         if (value && !Array.isArray(value)) {
           setWizardData({ ...wizardData, startDate: value as Date });
         }
-      };
+    };
 
     return (
         <div className="glass-box">
@@ -120,7 +102,7 @@ const SchedulingStep: FC<SchedulingStepProps> = ({ onBack, onNext, wizardData, s
                     <h3 className="text-2xl font-bold mb-4 text-left">Select a Start Date</h3>
                     <Calendar onChange={handleDateChange} value={startDate} minDate={new Date()} />
                 </div>
-                <div className="flex flex-col justify-between">
+                <div>
                     <div>
                         <div className="mb-4">
                             <label htmlFor="videosPerDay" className="block text-left text-lg font-medium mb-2">Videos Per Day</label>
@@ -136,7 +118,6 @@ const SchedulingStep: FC<SchedulingStepProps> = ({ onBack, onNext, wizardData, s
                     <div className="mt-6 p-4 rounded-lg bg-gray-800 border border-green-500">
                         <h3 className="text-xl font-bold text-green-400">Estimated Price</h3>
                         <p className="text-4xl font-display font-bold">${totalPrice.toFixed(2)}</p>
-                        <p className="text-sm text-gray-400">for {videosPerDay && duration ? videosPerDay * duration * 7 : 0} videos</p>
                     </div>
                 </div>
             </div>
@@ -173,16 +154,26 @@ const ConfirmationStep: FC<ConfirmationStepProps> = ({ onBack, onConfirm, wizard
             </div>
             <div className="flex justify-between mt-8">
                 <button onClick={onBack} className="secondary-cta-button">Back to Scheduling</button>
-                <button onClick={onConfirm} className="cta-button cta-glow w-1/2">Confirm & Start Generation</button>
+                <button onClick={onConfirm} className="cta-button cta-glow w-1/2">Confirm & Save Project</button>
             </div>
         </div>
     );
 }
 
+
 export default function WizardPage() {
   const [step, setStep] = useState(1);
   const [wizardData, setWizardData] = useState<WizardData>({ videosPerDay: 1, duration: 1, startDate: new Date() });
   const [isPending, startTransition] = useTransition();
+  const [user, setUser] = useState<User | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const handleNext = (data?: Partial<WizardData>) => {
     const updatedData = { ...wizardData, ...data };
@@ -200,29 +191,43 @@ export default function WizardPage() {
     }
   };
 
-  const handleConfirm = () => {
-      console.log("Final wizard data:", wizardData);
-      alert("Video generation process started! You will be notified upon completion.");
+  const handleConfirm = async () => {
+      if (!user) {
+          alert("You must be logged in to save a project.");
+          return;
+      }
+
+      startTransition(async () => {
+        const result = await saveProject(wizardData, user.uid);
+        if (result.success) {
+            alert("Project saved successfully! Redirecting to dashboard.");
+            router.push('/dashboard');
+        } else {
+            alert(`Error: ${result.error}`);
+        }
+      });
   }
 
   const handleBack = () => setStep(s => s - 1);
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center font-sans">
-        <header className="glass-header absolute top-0 left-0 w-full flex items-center justify-between p-6">
-            <div className="flex items-center"><Logo /><Link href="/" className="text-2xl font-bold ml-3 font-display">OpsVantage AI-YouTube Studio</Link></div>
-            <nav><Link href="/dashboard" className="text-lg font-medium hover:text-gray-400 transition-colors">Dashboard</Link></nav>
-        </header>
-        <main className="text-center w-full max-w-4xl px-4">
-            {isPending && step === 1 && (
-                 <div className="glass-box"><h2 className="text-4xl font-bold mb-4 font-display">Generating Script...</h2><p className="text-lg">The AI is working its magic.</p></div>
-            )}
-            {!isPending && step === 1 && <IdeaStep onNext={handleNext} wizardData={wizardData} setWizardData={setWizardData} />}
-            {step === 2 && wizardData.script && <ScriptStep script={wizardData.script} onBack={handleBack} onNext={handleNext} />}
-            {step === 3 && <SchedulingStep onBack={handleBack} onNext={handleNext} wizardData={wizardData} setWizardData={setWizardData} />}
-            {step === 4 && <ConfirmationStep onBack={handleBack} onConfirm={handleConfirm} wizardData={wizardData} />}
-        </main>
-        <footer className="absolute bottom-0 w-full text-center p-6 text-sm text-gray-500">&copy; 2024 OpsVantage AI-YouTube Studio. All rights reserved.</footer>
-    </div>
+    <ProtectedRoute>
+      <div className="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center font-sans">
+          <header className="glass-header absolute top-0 left-0 w-full flex items-center justify-between p-6">
+              <div className="flex items-center"><Logo /><Link href="/" className="text-2xl font-bold ml-3 font-display">OpsVantage AI-YouTube Studio</Link></div>
+              <nav><Link href="/dashboard" className="text-lg font-medium hover:text-gray-400 transition-colors">Dashboard</Link></nav>
+          </header>
+          <main className="text-center w-full max-w-4xl px-4">
+              {isPending && (
+                  <div className="glass-box"><h2 className="text-4xl font-bold mb-4 font-display">Working...</h2><p className="text-lg">Please wait a moment.</p></div>
+              )}
+              {!isPending && step === 1 && <IdeaStep onNext={handleNext} wizardData={wizardData} setWizardData={setWizardData} />}
+              {step === 2 && wizardData.script && <ScriptStep script={wizardData.script} onBack={handleBack} onNext={handleNext} />}
+              {step === 3 && <SchedulingStep onBack={handleBack} onNext={handleNext} wizardData={wizardData} setWizardData={setWizardData} />}
+              {step === 4 && <ConfirmationStep onBack={handleBack} onConfirm={handleConfirm} wizardData={wizardData} />}
+          </main>
+          <footer className="absolute bottom-0 w-full text-center p-6 text-sm text-gray-500">&copy; 2024 OpsVantage AI-YouTube Studio. All rights reserved.</footer>
+      </div>
+    </ProtectedRoute>
   );
 }
