@@ -1,18 +1,55 @@
-E0121 17:54:57.479907  259235 dev.go:83] Failed to load initial config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:54:57.481190  259235 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
-I0121 17:54:57.505918  259235 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001
-E0121 17:55:07.482088  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:55:17.490221  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:55:27.482091  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:55:37.490189  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:55:47.491117  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:55:57.482059  259235 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
-E0121 17:55:57.482165  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:56:07.491116  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:56:17.491184  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:56:27.482173  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:56:37.487288  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:56:47.493103  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:56:57.482285  259235 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
-E0121 17:56:57.482398  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
-E0121 17:57:07.482019  259235 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:09:44.592200  263132 dev.go:83] Failed to load initial config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:09:44.592933  263132 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
+I0121 18:09:44.603207  263132 dev.go:104] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+E0121 18:09:54.597172  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:10:04.604099  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:10:14.593340  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:10:24.602138  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:10:34.603322  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:10:44.593299  263132 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
+E0121 18:10:44.593395  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:10:54.602170  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:11:04.603213  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:11:14.593336  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:11:24.598132  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:11:34.603244  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:11:44.593298  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:11:44.596047  263132 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
+E0121 18:11:54.597357  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:12:04.599422  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:12:14.594017  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:12:24.599228  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:12:34.599501  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:12:44.593957  263132 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
+E0121 18:12:44.594070  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:12:54.599369  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:13:04.602268  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:13:14.593689  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:13:24.602140  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:13:34.598932  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:13:44.593760  263132 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
+E0121 18:13:44.593899  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:13:54.593841  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:14:04.593525  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:14:14.593634  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:14:24.599341  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:14:34.602248  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:14:44.593619  263132 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
+E0121 18:14:44.593759  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:14:54.602171  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:15:04.596715  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:15:14.593383  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:15:24.602200  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:15:34.602218  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:15:44.596152  263132 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
+E0121 18:15:44.596250  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:15:54.602197  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:16:04.593661  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:16:14.593354  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:16:24.602202  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:16:34.602805  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:16:44.593403  263132 watch.go:116] watchAllDir unable to walk dir `/home/user/ai-youtube-studio/dataconnect`: lstat /home/user/ai-youtube-studio/dataconnect: no such file or directory
+E0121 18:16:44.593530  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:16:54.602420  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:17:04.602168  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
+E0121 18:17:14.593533  263132 watch.go:40] Failed to load config from "/home/user/ai-youtube-studio/dataconnect": could not find dataconnect.yaml in `/home/user/ai-youtube-studio/dataconnect`
