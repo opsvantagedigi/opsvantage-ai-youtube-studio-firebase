@@ -1,10 +1,2 @@
-# Next.js build output
-.next
-
-# Firebase CLI logs
-.firebase
-
-# IDE-specific files
-undefined/
-node_modules
 dataconnect-debug.log
+firebase-debug.log
