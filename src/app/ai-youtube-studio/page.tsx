@@ -2,9 +2,9 @@
 
 import { Logo } from "@/components/Logo";
 import Link from "next/link";
-import { useAuth } from '../context/AuthContext'; // Import the new context hook
+import { useAuth } from '../../context/AuthContext'; // CORRECTED PATH
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { auth } from '../firebase';
+import { auth } from '../../firebase'; // CORRECTED PATH
 
 // This component now uses the central context, making it reliable.
 const AuthNav = () => {

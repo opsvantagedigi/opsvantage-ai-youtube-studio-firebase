@@ -13,7 +13,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (!currentUser) {
-        router.push('/'); // Redirect to home page if not logged in
+        router.push('/ai-youtube-studio'); // Redirect to AI studio home page if not logged in
       } else {
         setUser(currentUser);
         setLoading(false);
