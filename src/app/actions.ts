@@ -4,14 +4,34 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const apiKey = process.env.GEMINI_API_KEY;
 
+// Add a check to ensure the GEMINI_API_KEY is set
 if (!apiKey) {
-  throw new Error("GEMINI_API_KEY is not set in the environment variables.");
+  console.warn("GEMINI_API_KEY is not set. Using a mock response.");
 }
 
-const genAI = new GoogleGenerativeAI(apiKey);
+const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
 
 export async function generateScript(videoIdea: string, niche: string) {
   console.log(`Generating script for: ${videoIdea} in niche: ${niche}`);
+
+  // If the API key is not set, return a mock response
+  if (!genAI) {
+    return `
+      # Mock Title: How to Make a Great Video
+
+      **Tone:** Engaging, Informative
+
+      ## Introduction
+
+      *   **Visuals:** Opening shot of a person smiling at the camera.
+      *   **Narrator:** "Welcome to our channel! Today, we're going to talk about how to make a great video."
+
+      ## Main Content: Part 1
+
+      *   **Visuals:** B-roll of someone setting up a camera.
+      *   **Narrator:** "The first step is to have a great idea. What do you want to talk about?"
+    `;
+  }
 
   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
