@@ -2,8 +2,13 @@
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Get the API key from environment variables
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const apiKey = process.env.GEMINI_API_KEY;
+
+if (!apiKey) {
+  throw new Error("GEMINI_API_KEY is not set in the environment variables.");
+}
+
+const genAI = new GoogleGenerativeAI(apiKey);
 
 export async function generateScript(videoIdea: string, niche: string) {
   console.log(`Generating script for: ${videoIdea} in niche: ${niche}`);
@@ -52,7 +57,6 @@ export async function generateScript(videoIdea: string, niche: string) {
     return text;
   } catch (error) {
     console.error("Error generating script from Gemini API:", error);
-    // Return a more user-friendly error message
     return "Error: Could not generate script. Please check the API key and try again.";
   }
 }
