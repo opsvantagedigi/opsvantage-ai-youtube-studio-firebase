@@ -3,14 +3,35 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { getFirestore, collection, addDoc, serverTimestamp, query, where, getDocs, orderBy } from "firebase/firestore";
 import { app } from "./firebase";
+import fs from 'fs';
 
 const db = getFirestore(app);
-const apiKey = process.env.GEMINI_API_KEY;
 
-if (!apiKey) {
-  console.error("FATAL: GEMINI_API_KEY environment variable is not set. Script generation will fail.");
+function getApiKey(): string | undefined {
+  const secretPath = '/secrets/GEMINI_API_KEY';
+  
+  if (fs.existsSync(secretPath)) {
+    try {
+      const key = fs.readFileSync(secretPath, 'utf8').trim();
+      console.log("Successfully read GEMINI_API_KEY from secret file.");
+      return key;
+    } catch (error) {
+      console.error("Error reading GEMINI_API_KEY from secret file:", error);
+      return undefined;
+    }
+  }
+
+  const apiKeyFromEnv = process.env.GEMINI_API_KEY;
+  if (apiKeyFromEnv) {
+    console.log("Using GEMINI_API_KEY from environment variable for local development.");
+    return apiKeyFromEnv;
+  }
+  
+  console.error("FATAL: GEMINI_API_KEY is not available as a secret or environment variable.");
+  return undefined;
 }
 
+const apiKey = getApiKey();
 const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
 
 export async function generateScript(videoIdea: string, niche: string) {
