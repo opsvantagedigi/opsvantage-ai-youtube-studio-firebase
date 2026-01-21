@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   title: "OpsVantage AI-YouTube Studio",
   description: "The autonomous, emotionally intelligent, enterprise-grade AI system that creates YouTube videos for you.",
   icons: {
-    icon: '/opsvantage-logo.png.png',
-    apple: '/opsvantage-logo.png.png',
+    icon: '/opsvantage-logo.png',
+    apple: '/opsvantage-logo.png',
   }
 };
 
