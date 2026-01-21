@@ -1,5 +1,14 @@
 {
-  "node": {},
+  "node": {
+    "fc5223abb96c900d615f2a71edebed21e5c8f03d": {
+      "workers": {
+        "app/wizard/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fuser%2Fai-youtube-studio%2Fsrc%2Fapp%2Factions.ts%22%2C%5B%22generateScript%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/wizard/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
-  "encryptionKey": "5c0AGA5s9gUySoekADkl/ord/DsQU/6vkbFRR8dpD4M="
+  "encryptionKey": "d4aWZ7D2+GLrJrqqMcu0OXPVRLHL/EYllw82C7zg3Zs="
 }
