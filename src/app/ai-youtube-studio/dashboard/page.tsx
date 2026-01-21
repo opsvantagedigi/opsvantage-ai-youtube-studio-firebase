@@ -5,8 +5,8 @@ import Link from "next/link";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged, User } from 'firebase/auth';
-import { auth } from '../firebase';
-import { getProjects } from '../actions';
+import { auth } from '../../firebase';
+import { getProjects } from '../../actions';
 import { useRouter } from "next/navigation";
 
 interface Project {
@@ -32,7 +32,7 @@ export default function DashboardPage() {
                     setProjects(result.projects as Project[]);
                 }
             } else {
-                router.push('/'); // Redirect if user logs out
+                router.push('/ai-youtube-studio'); // Redirect if user logs out
             }
             setLoading(false);
         });
@@ -43,7 +43,7 @@ export default function DashboardPage() {
     const handleSignOut = async () => {
         try {
             await auth.signOut();
-            router.push('/');
+            router.push('/ai-youtube-studio');
         } catch (error) {
             console.error("Error signing out: ", error);
         }
@@ -62,7 +62,7 @@ export default function DashboardPage() {
                         <h1 className="text-2xl font-bold ml-3 font-orbitron">Dashboard</h1>
                     </div>
                     <nav className="flex items-center gap-4">
-                        <Link href="/" className="text-lg font-medium hover:text-gray-400 transition-colors">Home</Link>
+                        <Link href="/ai-youtube-studio" className="text-lg font-medium hover:text-gray-400 transition-colors">Home</Link>
                         <button onClick={handleSignOut} className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
                             Logout
                         </button>
@@ -74,7 +74,7 @@ export default function DashboardPage() {
                         <div className="text-center mt-20">
                             <h2 className="text-3xl font-bold mb-4">No Projects Yet!</h2>
                             <p className="text-lg mb-8">It looks like you haven&apos;t created any video projects. Let&apos;s change that!</p>
-                            <Link href="/wizard" className="inline-block px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-green-400 to-blue-500 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 ease-in-out">
+                            <Link href="/ai-youtube-studio/wizard" className="inline-block px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-green-400 to-blue-500 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 ease-in-out">
                                 Create Your First Video
                             </Link>
                         </div>

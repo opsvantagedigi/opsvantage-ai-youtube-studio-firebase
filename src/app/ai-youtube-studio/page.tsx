@@ -4,7 +4,7 @@ import { Logo } from "@/components/Logo";
 import Link from "next/link";
 import { useAuth } from '../context/AuthContext'; // Import the new context hook
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { auth } from './firebase';
+import { auth } from '../firebase';
 
 // This component now uses the central context, making it reliable.
 const AuthNav = () => {
@@ -25,7 +25,7 @@ const AuthNav = () => {
 
   if (user) {
     return (
-      <Link href="/dashboard" className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+      <Link href="/ai-youtube-studio/dashboard" className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
         Dashboard
       </Link>
     );
@@ -59,7 +59,7 @@ export default function Home() {
             <p className="text-xl mb-8">
               The autonomous, emotionally intelligent, enterprise-grade AI system that creates YouTube videos for you.
             </p>
-            <Link href="/wizard" className="inline-block px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-green-400 to-blue-500 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 ease-in-out">
+            <Link href="/ai-youtube-studio/wizard" className="inline-block px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-green-400 to-blue-500 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 ease-in-out">
                 Get Started
             </Link>
         </div>

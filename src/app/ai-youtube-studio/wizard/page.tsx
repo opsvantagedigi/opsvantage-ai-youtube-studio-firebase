@@ -3,11 +3,11 @@
 import { Logo } from "@/components/Logo";
 import Link from "next/link";
 import { useState, useTransition, useMemo, FC, FormEvent, ChangeEvent, useEffect } from "react";
-import { generateScript, saveProject } from "../actions"; // Import saveProject
+import { generateScript, saveProject } from "../../actions"; // Import saveProject
 import Calendar from 'react-calendar';
 import './WizardPage.css';
 import ProtectedRoute from "@/components/ProtectedRoute";
-import { auth } from '../firebase'; // Import auth
+import { auth } from '../../firebase'; // Import auth
 import { User, onAuthStateChanged } from 'firebase/auth'; // Import User and onAuthStateChanged
 import { useRouter } from 'next/navigation'; // Import useRouter
 
@@ -201,7 +201,7 @@ export default function WizardPage() {
         const result = await saveProject(wizardData, user.uid);
         if (result.success) {
             alert("Project saved successfully! Redirecting to dashboard.");
-            router.push('/dashboard');
+            router.push('/ai-youtube-studio/dashboard');
         } else {
             alert(`Error: ${result.error}`);
         }
@@ -214,8 +214,8 @@ export default function WizardPage() {
     <ProtectedRoute>
       <div className="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center font-sans">
           <header className="glass-header absolute top-0 left-0 w-full flex items-center justify-between p-6">
-              <div className="flex items-center"><Logo /><Link href="/" className="text-2xl font-bold ml-3 font-display">OpsVantage AI-YouTube Studio</Link></div>
-              <nav><Link href="/dashboard" className="text-lg font-medium hover:text-gray-400 transition-colors">Dashboard</Link></nav>
+              <div className="flex items-center"><Logo /><Link href="/ai-youtube-studio" className="text-2xl font-bold ml-3 font-display">OpsVantage AI-YouTube Studio</Link></div>
+              <nav><Link href="/ai-youtube-studio/dashboard" className="text-lg font-medium hover:text-gray-400 transition-colors">Dashboard</Link></nav>
           </header>
           <main className="text-center w-full max-w-4xl px-4">
               {isPending && (
