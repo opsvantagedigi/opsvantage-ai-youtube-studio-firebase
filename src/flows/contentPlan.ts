@@ -39,13 +39,18 @@ export const generateContentPlanFlow = defineFlow(
     });
     const contentPlanData = JSON.parse(llmResponse.text());
 
+    const planId = db.collection('contentPlans').doc().id;
     const plan = {
+      id: planId,
       projectId: input.projectId,
       status: 'active' as const,
       items: contentPlanData.content_plan,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
+
+    await db.collection('contentPlans').doc(planId).set(plan);
+    await db.collection('projects').doc(input.projectId).update({ contentPlanId: planId });
 
     return plan;
   }
