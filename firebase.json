@@ -8,10 +8,11 @@
     ],
     "frameworksBackend": {
       "region": "us-central1"
-    },
-    "cloud-run-options": {
-      "memory": "512MiB"
     }
+  },
+  "functions": {
+    "runtime": "nodejs20",
+    "memory": "512MiB"
   },
   "firestore": {
     "rules": "firestore.rules"
