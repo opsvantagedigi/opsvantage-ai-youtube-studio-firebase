@@ -7,10 +7,10 @@
       "**/node_modules/**"
     ],
     "frameworksBackend": {
-      "region": "us-central1",
-      "run": {
-        "memory": "512MiB"
-      }
+      "region": "us-central1"
+    },
+    "cloud-run-options": {
+      "memory": "512MiB"
     }
   },
   "firestore": {
