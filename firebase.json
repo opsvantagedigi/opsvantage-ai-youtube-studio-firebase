@@ -7,12 +7,9 @@
       "**/node_modules/**"
     ],
     "frameworksBackend": {
-      "region": "us-central1"
+      "region": "us-central1",
+      "memory": "512MiB"
     }
-  },
-  "functions": {
-    "runtime": "nodejs20",
-    "memory": "512MiB"
   },
   "firestore": {
     "rules": "firestore.rules"
