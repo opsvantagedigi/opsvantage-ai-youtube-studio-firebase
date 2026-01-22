@@ -13,13 +13,12 @@ export const generateScriptFlow = defineFlow(
     authPolicy: (auth: any, input: any) => {},
   },
   async (input) => {
-    const prompt = GENERATE_SCRIPT_PROMPT_TEMPLATE.replace('{idea}', input.idea);
+    const prompt = `${GENERATE_SCRIPT_SYSTEM_PROMPT}\n${GENERATE_SCRIPT_PROMPT_TEMPLATE.replace('{idea}', input.idea)}`;
 
     const llmResponse = await generate({ 
         model: gemini15Pro,
         prompt: prompt,
         config: { temperature: 0.7 },
-        system: GENERATE_SCRIPT_SYSTEM_PROMPT,
     });
     const scriptData = JSON.parse(llmResponse.text());
 

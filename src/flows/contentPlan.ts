@@ -29,13 +29,12 @@ export const generateContentPlanFlow = defineFlow(
 
     const niche = projectData.niche;
 
-    const prompt = GENERATE_CONTENT_PLAN_PROMPT_TEMPLATE.replace('{idea}', niche);
+    const prompt = `${GENERATE_CONTENT_PLAN_SYSTEM_PROMPT}\n${GENERATE_CONTENT_PLAN_PROMPT_TEMPLATE.replace('{idea}', niche)}`;
 
     const llmResponse = await generate({ 
         model: gemini15Pro,
         prompt: prompt,
         config: { temperature: 0.7 },
-        system: GENERATE_CONTENT_PLAN_SYSTEM_PROMPT,
     });
     const contentPlanData = JSON.parse(llmResponse.text());
 
