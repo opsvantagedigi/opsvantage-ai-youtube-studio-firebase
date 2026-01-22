@@ -1,6 +1,7 @@
 import { defineFlow } from '@genkit-ai/flow';
 import * as z from 'zod';
-import { geminiPro } from '@genkit-ai/googleai';
+import { gemini15Pro } from '@genkit-ai/googleai';
+import { generate } from '@genkit-ai/ai';
 import { ContentPlanSchema } from '../models/contentPlan';
 import * as admin from 'firebase-admin';
 
@@ -28,16 +29,17 @@ export const generateContentPlanFlow = defineFlow(
 
     const prompt = `Generate a content plan with 10 video ideas for a YouTube channel in the niche of ${niche}.`;
 
-    const llmResponse = await geminiPro.generate({ 
+    await generate({ 
+        model: gemini15Pro,
         prompt: prompt,
         config: { temperature: 0.7 },
     });
-    const planText = llmResponse.text();
 
     // TODO: Implement the logic to parse the planText and generate the other fields of the ContentPlan schema.
     const plan = {
       projectId: input.projectId,
-      videoIdeas: planText.split('\n').map(idea => ({ title: idea, description: '' })).slice(0, 10),
+      status: 'active' as const,
+      items: [],
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };

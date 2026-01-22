@@ -1,6 +1,7 @@
 import { defineFlow } from '@genkit-ai/flow';
 import * as z from 'zod';
 import { VideoSchema } from '../models/video';
+import { Script } from '../models/script';
 import * as admin from 'firebase-admin';
 
 if (!admin.apps.length) {
@@ -18,15 +19,15 @@ async function generateVideoFromScript(scriptText: string): Promise<string> {
   return videoUrl;
 }
 
-export const generateVideoFlow = defineFlow(
+export const renderVideoFlow = defineFlow(
   {
-    name: 'generateVideo',
+    name: 'renderVideo',
     inputSchema: z.object({ scriptId: z.string() }),
     outputSchema: VideoSchema,
   },
   async (input) => {
     const scriptDoc = await db.collection('scripts').doc(input.scriptId).get();
-    const scriptData = scriptDoc.data();
+    const scriptData = scriptDoc.data() as Script;
 
     if (!scriptData) {
       throw new Error('Script not found');
@@ -36,16 +37,17 @@ export const generateVideoFlow = defineFlow(
 
     const video = {
       projectId: scriptData.projectId,
-      videoId: 'video_' + Math.random().toString(36).substring(7),
+      planItemId: null,
+      title: scriptData.seoMetadata.title,
+      status: 'ready' as const,
       scriptId: input.scriptId,
-      videoUrl: videoUrl,
-      status: 'completed',
+      voiceoverPath: null,
+      videoPath: videoUrl,
+      thumbnailPath: null,
+      youtubeVideoId: null,
+      publishedAt: null,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      publishedAt: null,
-      youtubeVideoId: null,
-      privacyStatus: 'private',
-      madeForKids: false,
     };
 
     // Save the video to Firestore

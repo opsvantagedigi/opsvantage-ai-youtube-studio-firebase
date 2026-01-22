@@ -1,32 +1,31 @@
-import { configureGenkit } from '@genkit-ai/core';
+import { configure } from '@genkit-ai/core';
 import { firebase } from '@genkit-ai/firebase';
 import { googleAI } from '@genkit-ai/googleai';
+import { onFlow } from '@genkit-ai/firebase/functions';
 
-// Import models
-export * from './models/user';
-export * from './models/subscription';
-export * from './models/project';
-export * from './models/contentPlan';
-export * from './models/video';
-export * from './models/script';
-export * from './models/monetisationProfile';
-export * from './models/usage';
-export * from './models/analytics';
-
-// Import flows
-export * from './flows/billing';
-export * from './flows/webhook';
-export * from './flows/project';
-export * from './flows/content';
-export * from './flows/contentPlan';
-export * from './flows/video';
-export * from './flows/analytics';
-
-configureGenkit({
+configure({
   plugins: [
     firebase(),
-    googleAI({ apiKey: process.env.GEMINI_API_KEY }),
+    googleAI({ apiVersion: "v1beta" }),
   ],
-  logLevel: 'debug',
+  logLevel: "debug",
   enableTracingAndMetrics: true,
 });
+
+// Import all your flows
+import { getProjectAnalyticsFlow } from './flows/analytics';
+import { createSubscriptionPayment } from './flows/billing';
+import { generateScriptFlow } from './flows/content';
+import { generateContentPlanFlow } from './flows/contentPlan';
+import { createProjectFlow } from './flows/project';
+import { renderVideoFlow } from './flows/video';
+import { handlePaymentWebhook } from './flows/webhook';
+
+// Export each flow as an HTTPS function
+export const getAnalytics = onFlow(getProjectAnalyticsFlow, {});
+export const createCheckoutSession = onFlow(createSubscriptionPayment, {});
+export const generateScript = onFlow(generateScriptFlow, {});
+export const generateContentPlan = onFlow(generateContentPlanFlow, {});
+export const createProject = onFlow(createProjectFlow, {});
+export const renderVideo = onFlow(renderVideoFlow, {});
+export const nowpaymentsWebhook = onFlow(handlePaymentWebhook, {});

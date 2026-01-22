@@ -2,29 +2,30 @@
   "name": "opsvantage-ai-youtube-studio-firebase",
   "version": "0.1.0",
   "private": true,
+  "main": "lib/index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsc",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf lib"
   },
   "dependencies": {
-    "@genkit-ai/ai": "^1.27.0",
-    "@genkit-ai/core": "^1.27.0",
-    "@genkit-ai/firebase": "^1.27.0",
-    "@genkit-ai/flow": "^0.5.17",
-    "@genkit-ai/googleai": "^1.27.0",
+    "@genkit-ai/core": "^0.5.1",
+    "@genkit-ai/firebase": "^0.5.1",
+    "@genkit-ai/flow": "^0.5.1",
+    "@genkit-ai/googleai": "^0.5.1",
     "@google/generative-ai": "^0.24.1",
     "firebase": "^12.8.0",
-    "firebase-admin": "^13.6.0",
-    "firebase-functions": "^7.0.3",
-    "genkit": "^1.27.0",
+    "firebase-admin": "^12.1.0",
+    "firebase-functions": "^5.0.1",
+    "genkit": "^0.5.1",
     "lucide-react": "^0.562.0",
     "next": "^14.2.35",
     "react": "^18",
     "react-calendar": "^6.0.0",
     "react-dom": "^18",
-    "zod": "^4.3.5"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20",

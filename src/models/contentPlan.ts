@@ -3,6 +3,7 @@ import * as z from 'zod';
 export const ContentPlanSchema = z.object({
   projectId: z.string(),
   createdAt: z.string(),
+  updatedAt: z.string(),
   status: z.enum(['active', 'archived']),
   items: z.array(
     z.object({

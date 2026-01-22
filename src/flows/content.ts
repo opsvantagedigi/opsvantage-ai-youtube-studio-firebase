@@ -1,6 +1,7 @@
 import { defineFlow } from '@genkit-ai/flow';
 import * as z from 'zod';
-import { geminiPro } from '@genkit-ai/googleai';
+import { gemini15Pro } from '@genkit-ai/googleai';
+import { generate } from '@genkit-ai/ai';
 import { ScriptSchema } from '../models/script';
 
 export const generateScriptFlow = defineFlow(
@@ -12,7 +13,8 @@ export const generateScriptFlow = defineFlow(
   async (input) => {
     const prompt = `Generate a video script about ${input.topic}.`;
 
-    const llmResponse = await geminiPro.generate({ 
+    const llmResponse = await generate({ 
+        model: gemini15Pro,
         prompt: prompt,
         config: { temperature: 0.7 },
     });
