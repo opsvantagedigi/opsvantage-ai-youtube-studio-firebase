@@ -8,7 +8,9 @@
     ],
     "frameworksBackend": {
       "region": "us-central1",
-      "memory": "512MiB"
+      "run": {
+        "memory": "512MiB"
+      }
     }
   },
   "firestore": {
