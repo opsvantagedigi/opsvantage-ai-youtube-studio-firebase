@@ -16,7 +16,142 @@
   ],
   "flows": [
     {
-      "name": "menuSuggestionFlow",
+      "name": "generateContentStrategy",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "generateScript",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "generateVoiceover",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "generateVideoAssets",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "assembleFinalVideo",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "uploadToYouTube",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "connectYouTubeAccount",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "handleYouTubeAuthCallback",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "generateMonetisationPlan",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "createMonetisationProfile",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "getMonetisationProfile",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "runGrowthAnalytics",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "executePromotionTask",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "schedulePromotionCampaign",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "createSubscriptionPayment",
+      "triggers": [
+        {
+          "name": "https",
+          "on": "request"
+        }
+      ]
+    },
+    {
+      "name": "handlePaymentWebhook",
       "triggers": [
         {
           "name": "https",

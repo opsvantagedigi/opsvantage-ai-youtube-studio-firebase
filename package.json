@@ -16,10 +16,12 @@
     "@genkit-ai/flow": "^0.5.1",
     "@genkit-ai/googleai": "^0.5.1",
     "@google/generative-ai": "^0.24.1",
+    "axios": "^1.13.2",
     "firebase": "^12.8.0",
     "firebase-admin": "^12.1.0",
     "firebase-functions": "^5.0.1",
     "genkit": "^0.5.1",
+    "googleapis": "^170.1.0",
     "lucide-react": "^0.562.0",
     "next": "^14.2.35",
     "react": "^18",
@@ -28,6 +30,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/axios": "^0.9.36",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

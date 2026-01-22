@@ -1,0 +1,97 @@
+rules_version = '2';
+service cloud.firestore {
+  // Allow all operations during development
+  // In production, implement more granular security rules
+  match /databases/{database}/documents {
+    // User profiles - users can read/write their own profile
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Subscriptions - users can read/write their own subscription
+    match /subscriptions/{subscriptionId} {
+      allow read, write: if request.auth != null && 
+        resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null;
+    }
+    
+    // Usage tracking - users can read/write their own usage
+    match /usage/{usageId} {
+      allow read, write: if request.auth != null && 
+        resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null;
+    }
+    
+    // Projects - users can read/write their own projects
+    match /projects/{projectId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null;
+    }
+    
+    // Content plans - users can read/write content plans for their projects
+    match /contentPlans/{contentPlanId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == get(/databases/$(database)/documents/projects/$(resource.data.projectId)).data.userId;
+      allow create: if request.auth != null;
+    }
+    
+    // Videos - users can read/write videos for their projects
+    match /videos/{videoId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == get(/databases/$(database)/documents/projects/$(resource.data.projectId)).data.userId;
+      allow create: if request.auth != null;
+    }
+    
+    // Scripts - users can read/write scripts for their videos
+    match /scripts/{scriptId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == get(/databases/$(database)/documents/videos/$(resource.data.videoId)).data.userId;
+      allow create: if request.auth != null;
+    }
+    
+    // Monetisation profiles - users can read/write their own monetisation profiles
+    match /monetisationProfiles/{profileId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == get(/databases/$(database)/documents/projects/$(resource.data.projectId)).data.userId;
+      allow create: if request.auth != null;
+    }
+    
+    // Affiliates - users can read/write their own affiliate data
+    match /affiliates/{affiliateId} {
+      allow read, write: if request.auth != null && request.auth.uid == affiliateId;
+      allow create: if request.auth != null;
+    }
+    
+    // Analytics - users can read/write analytics for their projects
+    match /analyticsVideo/{analyticsVideoId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == get(/databases/$(database)/documents/projects/$(resource.data.projectId)).data.userId;
+      allow create: if request.auth != null;
+    }
+    
+    match /analyticsChannel/{analyticsChannelId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == get(/databases/$(database)/documents/projects/$(resource.data.projectId)).data.userId;
+      allow create: if request.auth != null;
+    }
+    
+    // Promotion tasks and campaigns - users can read/write for their projects
+    match /promotionTasks/{taskId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == get(/databases/$(database)/documents/projects/$(resource.data.projectId)).data.userId;
+      allow create: if request.auth != null;
+    }
+    
+    match /promotionCampaigns/{campaignId} {
+      allow read, write: if request.auth != null && 
+        request.auth.uid == get(/databases/$(database)/documents/projects/$(resource.data.projectId)).data.userId;
+      allow create: if request.auth != null;
+    }
+    
+    // Integration configs - only admins can access (backend functions bypass these rules)
+    match /integrationConfigs/{configId} {
+      allow read, write: if false; // Only accessible via backend functions with admin SDK
+    }
+  }
+}
