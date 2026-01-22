@@ -9,6 +9,7 @@ export const generateScriptFlow = defineFlow(
     name: 'generateScript',
     inputSchema: z.object({ topic: z.string(), projectId: z.string() }),
     outputSchema: ScriptSchema,
+    authPolicy: (auth: any, input: any) => {},
   },
   async (input) => {
     const prompt = `Generate a video script about ${input.topic}.`;

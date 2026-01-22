@@ -22,6 +22,7 @@ export const createSubscriptionPayment = defineFlow(
       paymentUrl: z.string(),
       paymentId: z.string(),
     }),
+    authPolicy: (auth: any, input: any) => {},
   },
   async (input) => {
     const { paymentUrl, paymentId } = await createNowPaymentsInvoice(input.userId, input.plan);

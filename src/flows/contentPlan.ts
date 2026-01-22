@@ -16,6 +16,7 @@ export const generateContentPlanFlow = defineFlow(
     name: 'generateContentPlan',
     inputSchema: z.object({ projectId: z.string() }),
     outputSchema: ContentPlanSchema,
+    authPolicy: (auth: any, input: any) => {},
   },
   async (input) => {
     const projectDoc = await db.collection('projects').doc(input.projectId).get();

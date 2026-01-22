@@ -7,6 +7,7 @@ export const getProjectAnalyticsFlow = defineFlow(
     name: 'getProjectAnalytics',
     inputSchema: z.object({ projectId: z.string() }),
     outputSchema: AnalyticsSchema,
+    authPolicy: (auth: any, input: any) => {},
   },
   async (input) => {
     // In a real application, you would fetch and calculate this data from your database.

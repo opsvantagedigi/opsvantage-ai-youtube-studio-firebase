@@ -24,6 +24,7 @@ export const renderVideoFlow = defineFlow(
     name: 'renderVideo',
     inputSchema: z.object({ scriptId: z.string() }),
     outputSchema: VideoSchema,
+    authPolicy: (auth: any, input: any) => {},
   },
   async (input) => {
     const scriptDoc = await db.collection('scripts').doc(input.scriptId).get();
@@ -39,7 +40,7 @@ export const renderVideoFlow = defineFlow(
       projectId: scriptData.projectId,
       planItemId: null,
       title: scriptData.seoMetadata.title,
-      status: 'ready' as const,
+      status: 'draft' as const,
       scriptId: input.scriptId,
       voiceoverPath: null,
       videoPath: videoUrl,

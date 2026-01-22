@@ -14,6 +14,7 @@ export const createProjectFlow = defineFlow(
     name: 'createProject',
     inputSchema: ProjectSchema.omit({ userId: true, createdAt: true, updatedAt: true, connectedYouTubeChannelId: true }),
     outputSchema: z.string(), // Returns the ID of the newly created project
+    authPolicy: (auth: any, input: any) => {},
   },
   async (projectDetails) => {
     const newProject = {

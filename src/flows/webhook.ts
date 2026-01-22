@@ -26,6 +26,7 @@ export const handlePaymentWebhook = defineFlow(
     name: 'handlePaymentWebhook',
     inputSchema: nowPaymentsWebhookSchema,
     outputSchema: z.void(),
+    authPolicy: (auth: any, input: any) => {},
   },
   async (payload) => {
     console.log('Received NOWPayments Webhook:', payload);
