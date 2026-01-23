@@ -1,7 +1,6 @@
 import { defineFlow } from '@genkit-ai/flow';
 import * as z from 'zod';
 import * as admin from 'firebase-admin';
-import axios from 'axios';
 
 if (!admin.apps.length) {
   admin.initializeApp();

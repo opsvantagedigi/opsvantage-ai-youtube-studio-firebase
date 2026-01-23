@@ -41,10 +41,9 @@ export const generateContentStrategyFlow = defineFlow(
       throw new Error(`Project ${input.projectId} not found`);
     }
 
-    const projectData = projectDoc.data();
+    const projectData = projectDoc.data()!;
 
     // 2. Fetch channel data from YouTube API (if connected)
-    let channelData = null;
     if (projectData.connectedYouTubeChannelId) {
       // This would require YouTube service implementation
       // For now, we'll skip this step and focus on niche analysis
@@ -67,7 +66,7 @@ export const generateContentStrategyFlow = defineFlow(
       4. Potential content themes
     `;
 
-    const nicheAnalysisResponse = await generate({
+    await generate({
       model: gemini15Pro,
       prompt: nicheAnalysisPrompt,
       config: { temperature: 0.7 },
@@ -102,7 +101,7 @@ export const generateContentStrategyFlow = defineFlow(
       Return the results as a structured JSON array.
     `;
 
-    const contentPlanResponse = await generate({
+    await generate({
       model: gemini15Pro,
       prompt: contentPlanPrompt,
       config: { temperature: 0.8 },
@@ -116,13 +115,13 @@ export const generateContentStrategyFlow = defineFlow(
       title: `${projectData.niche} Video #${i + 1}`,
       targetKeywords: [`keyword${i + 1}`, `${projectData.niche.replace(/\s+/g, '')}${i + 1}`],
       estimatedDifficulty: ['low', 'medium', 'high'][Math.floor(Math.random() * 3)] as 'low' | 'medium' | 'high',
-      format: Math.random() > 0.5 ? 'long_form' : 'shorts',
+      format: Math.random() > 0.5 ? 'long_form' as const : 'shorts' as const,
       scheduledDate: new Date(Date.now() + (i + 1) * 24 * 60 * 60 * 1000).toISOString(), // Schedule for future dates
-      status: 'planned' as const,
+      status: 'planned' as 'planned' | 'in_progress' | 'published',
     }));
 
     // 5. Store content plan in Firestore
-    const contentPlanRef = await db.collection('contentPlans').add({
+    await db.collection('contentPlans').add({
       projectId: input.projectId,
       createdAt: new Date().toISOString(),
       status: 'active',

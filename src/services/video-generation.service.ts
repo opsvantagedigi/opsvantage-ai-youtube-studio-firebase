@@ -1,5 +1,4 @@
 // video-generation.service.ts
-import axios from 'axios';
 import * as admin from 'firebase-admin';
 
 const db = admin.firestore();
@@ -31,8 +30,8 @@ export class VideoGenerationService {
       throw new Error(`Script with ID ${scriptId} not found`);
     }
 
-    const scriptData = scriptDoc.data();
-    const scriptText = scriptData.scriptText;
+    const scriptData = scriptDoc.data()!;
+    const scriptText = scriptData!.scriptText;
 
     switch (this.config.provider) {
       case 'pika':

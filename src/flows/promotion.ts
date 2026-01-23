@@ -1,7 +1,6 @@
 import { defineFlow } from '@genkit-ai/flow';
 import * as z from 'zod';
 import * as admin from 'firebase-admin';
-import { YouTubeService } from '../services/youtube.service';
 
 if (!admin.apps.length) {
   admin.initializeApp();
@@ -36,8 +35,6 @@ export const executePromotionTaskFlow = defineFlow(
     // const projectData = projectDoc.data(); // Not currently used but kept for future implementation
     // const userId = projectData.userId; // Not currently used but kept for future implementation
 
-    // Initialize YouTube service
-    const youtubeService = new YouTubeService();
     
     try {
       let resultMessage = '';

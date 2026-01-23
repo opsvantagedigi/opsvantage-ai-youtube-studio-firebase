@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { getFirestore, collection, getDocs, query, where, orderBy, limit } from 'firebase/firestore';
-import { app } from '../../lib/firebase'; // Assuming we have a firebase config file
+import { app } from '../../lib/firebase';
 
 const DashboardPage = () => {
   const [user, setUser] = useState<any>(null);

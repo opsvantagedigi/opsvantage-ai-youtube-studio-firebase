@@ -1,6 +1,5 @@
 // app/api/genkit/generate-script/route.ts
 import { NextRequest } from 'next/server';
-import { generateScriptFlow } from '../../../../src';
 
 export async function POST(req: NextRequest) {
   try {
@@ -14,9 +13,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Call the GenKit flow
-    const result = await generateScriptFlow({ idea, projectId, planItemId });
+    // Call the deployed Genkit flow via HTTP request
+    const response = await fetch(`https://us-central1-marz-ai-studio-ops.cloudfunctions.net/generateScript`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ idea, projectId, planItemId }),
+    });
 
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
     return Response.json(result);
   } catch (error) {
     console.error('Error in generate-script API route:', error);

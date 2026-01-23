@@ -1,10 +1,5 @@
 // video-editing.service.ts
-import * as admin from 'firebase-admin';
-import { spawn } from 'child_process';
-import * as fs from 'fs';
-import * as path from 'path';
 
-const db = admin.firestore();
 
 export class VideoEditingService {
   /**
@@ -67,28 +62,4 @@ export class VideoEditingService {
     return `gs://mock-bucket/final-video-${Date.now()}.mp4`;
   }
 
-  /**
-   * Real implementation using FFmpeg (would run in Cloud Run or similar)
-   */
-  private async runFFmpegCommand(commands: string[]): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const ffmpegProcess = spawn('ffmpeg', commands);
-      
-      ffmpegProcess.stdout.on('data', (data) => {
-        console.log(`FFmpeg stdout: ${data}`);
-      });
-      
-      ffmpegProcess.stderr.on('data', (data) => {
-        console.error(`FFmpeg stderr: ${data}`);
-      });
-      
-      ffmpegProcess.on('close', (code) => {
-        if (code === 0) {
-          resolve();
-        } else {
-          reject(new Error(`FFmpeg process exited with code ${code}`));
-        }
-      });
-    });
-  }
 }

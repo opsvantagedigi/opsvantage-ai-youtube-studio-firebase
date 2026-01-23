@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { app } from '../../../../lib/firebase';
-import { getFirestore, doc, getDoc, collection, addDoc, query, where, getDocs } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
 // Note: GenKit flows run on the server, so we'll call them via API routes
 
 const ContentStrategyPage = () => {
@@ -26,7 +26,7 @@ const ContentStrategyPage = () => {
         try {
           // Fetch project data
           const projectDoc = await getDoc(doc(db, 'projects', id as string));
-          if (projectDoc.exists) {
+          if (projectDoc.exists()) {
             setProject({ id: projectDoc.id, ...projectDoc.data() });
             
             // Fetch existing content plan

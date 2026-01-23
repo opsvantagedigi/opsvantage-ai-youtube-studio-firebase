@@ -2,8 +2,6 @@ import { defineFlow } from '@genkit-ai/flow';
 import * as z from 'zod';
 import * as admin from 'firebase-admin';
 import { VideoGenerationService } from '../services/video-generation.service';
-import { gemini15Pro } from '@genkit-ai/googleai';
-import { generate } from '@genkit-ai/ai';
 
 if (!admin.apps.length) {
   admin.initializeApp();
