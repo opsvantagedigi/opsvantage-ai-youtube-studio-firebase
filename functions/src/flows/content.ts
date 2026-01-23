@@ -4,6 +4,7 @@ import { gemini15Pro } from '@genkit-ai/googleai';
 import { generate } from '@genkit-ai/ai';
 import * as admin from 'firebase-admin';
 import { ScriptSchema } from '../models/script';
+import { GENERATE_SCRIPT_SYSTEM_PROMPT, GENERATE_SCRIPT_PROMPT_TEMPLATE } from '../prompts';
 
 if (!admin.apps.length) {
   admin.initializeApp();
@@ -29,7 +30,7 @@ export const generateScriptFlow = defineFlow(
       throw new Error(`Project ${input.projectId} not found`);
     }
 
-    const projectData = projectDoc.data()!;
+    const projectData = projectDoc.data();
 
     // If plan item ID is provided, fetch the specific content plan item
     let planItem = null;
@@ -69,8 +70,8 @@ export const generateScriptFlow = defineFlow(
       1. Create an attention-grabbing hook within the first 15 seconds
       2. Structure the content with clear sections
       3. Include a strong call-to-action
-      4. Optimize for ${(projectData?.targetAudience || 'general').substring(0, 100)} audience
-      5. Match the ${(projectData?.tone || 'neutral').substring(0, 50)} tone
+      4. Optimize for ${projectData!.targetAudience?.substring(0, 100)} audience
+      5. Match the ${projectData!.tone?.substring(0, 50)} tone
 
       OUTPUT FORMAT:
       Provide the response as a JSON object with the following structure:

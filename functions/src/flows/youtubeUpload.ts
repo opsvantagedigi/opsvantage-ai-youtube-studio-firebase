@@ -11,6 +11,7 @@ if (!admin.apps.length) {
 }
 
 const db = admin.firestore();
+const bucket = admin.storage().bucket(); // Get Firebase Storage bucket
 
 export const uploadToYouTubeFlow = defineFlow(
   {
